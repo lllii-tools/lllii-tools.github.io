@@ -588,5 +588,6 @@ function reset() {
   clearRel();
   rarityFilter('relBk');
   document.getElementById('black99').checked = true;
+  document.getElementById('expMaxRarity').innerText = 'ブラック';
   expCalculate();
 }
