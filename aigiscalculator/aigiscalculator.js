@@ -559,9 +559,9 @@ function expCalculate() {
   }
   function result() {
     if(!(requiredExp)) {
-      expResult.innerHTML = '必要経験値：' + '<span>入力に誤りがあります</span>';
+      expResult.innerHTML = '必要経験値　' + '<span>無効な数値が入力されています</span>';
     } else {
-      expResult.innerHTML = '必要経験値：' + '<span>' + (requiredExp - uExp) + '</span>';
+      expResult.innerHTML = '必要経験値　' + '<span>' + (requiredExp - uExp) + '</span>';
     }
   }
 
