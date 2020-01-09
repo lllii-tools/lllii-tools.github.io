@@ -1,7 +1,7 @@
 /*
 略称
 Bk = Black
-Pt = Plutinum
+Pt = Platinum
 Gl = Gold
 Sl = Silver
 */
@@ -28,7 +28,7 @@ function clearRel() {
   }
 }
 
-// class^=rel要素のスタイル
+// class^=rel要素の表示初期化
 clearRel();
 const relBk = document.getElementsByClassName('relBk');
 for(i=0; i < relBk.length; i++) {
@@ -36,9 +36,8 @@ for(i=0; i < relBk.length; i++) {
 }
 expCalculate();
 
-// キー押下時リアルタイムexpCalculate実行
+// キー押下時リアルタイムexpCalculate()実行
 document.addEventListener('keyup', expCalculate);
-
 
 // タグinputに変更があった場合、関数expCalculateを実行する
 input = document.getElementsByTagName('input');
@@ -58,7 +57,6 @@ function getClass(...x) {
     }
   })
 }
-//getClass('relBk', 'relPt');
 
 // 選択したレアリティにより表示／非表示する要素
 function rarityFilter(rr) {
@@ -549,11 +547,11 @@ function expCalculate() {
   const maxSilverLevel = [50,55];
   const maxSilverExp = [16000, 21492];
 
-  // ラジオボタンのvalueは文字列として処理されているのでNumber型に直す。
+  // ラジオボタンのvalueはデフォルトだとString型として扱われているようなのでNumber型指定をする。
   const selectedMax = Number(max);
 
   function reqExp(maxLevel, maxExp, totalExp) {
-    // indexOfで検索されるデータは、デフォルトだとString型として扱われているようなのでNumber型指定をする。型指定が適切でないと「-1」を返す。
+    // indexOfで検索されるデータはデフォルトだとString型として扱われているようなのでNumber型指定をする。型指定が適切でないと「-1」を返す。
     const x = maxLevel.indexOf(Number(max));
     requiredExp = (maxExp[x] - (totalExp[current]) - (next));
   }
