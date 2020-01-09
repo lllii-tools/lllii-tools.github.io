@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>千年戦争アイギス経験値計算機 Min</title>
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+  <style>
+    body{min-width: 375px;margin:0;padding:0;font-size: 14px;color:rgb(24,24,24);background: rgb(240,240,240);}
+    main{padding:20px;}
+    a,
+    input,
+    label{transition:all 0.1s linear;}
+    input,
+    label{box-sizing: border-box;}
+    button{height:36px;margin-top: 20px;padding:0 10px;background: rgb(255, 255, 255);border:none;border-radius:4px;}
+    header{display:flex;justify-content: center;align-items: center;padding:5px 20px;border-bottom:1px solid rgba(24,24,24,0.1);}
+    header h1{width: 100%;font-size: 14px;font-weight: normal;font-family: 'Lora', serif;}
+    header h1 b{display:block;font-size: 14px;font-weight: normal;letter-spacing: 0.2em;}
+    header h1 + span{}
+    header a{color:rgb(240,240,240);}
+    footer{padding:20px;}
+    footer small{opacity:0.4;font-size: 11px;}
+    input[type="number"]{width: 60px;padding:5px 0;font-size:20px;font-weight: bold;background: none;border:none;border-bottom:1px solid rgba(24,24,24,0.1);}
+    input[type="number"]:focus{outline:none;border-bottom:1px solid rgb(0, 115, 209);}
+    input + label{display:inline-block;}
+    form > div{margin-bottom:20px;}
+    form div p{margin:0;}
+    form div b{display:block;margin-bottom: 8px;}
+    input[type="radio"]{display:none;}
+    input[type="radio"] + label{user-select: none;display:flex;justify-content: center;align-items: center;width: 48px;height: 36px;color:rgba(24, 24, 24, 0.3);border:1px solid rgb(24, 24, 24, 0.2);border-radius:4px;}
+    input[type="radio"] + label:hover{color:rgba(24,24,24,0.5);border:1px solid rgba(24,24,24,0.5);cursor:pointer;}
+    input[type="radio"]:checked + label{font-weight: bold;color:rgb(255,255,255);background: /*rgb(0, 115, 209)*/ linear-gradient(90deg,rgb(3, 126, 197),rgb(7, 170, 162));border:none;}
+    #rarityList{display:flex;}
+    #rarityList label{width: 80px;margin-right:8px;}
+    .expMax > div{display:none;}
+    .expMax > div input + label{margin-right: 8px;}
+    #expResult{padding:20px 20px 10px;border-bottom:1px solid rgba(24,24,24,0.06);}
+    #expResult span{font-size: 30px;}
+    #results{background: rgb(248,248,248);}
+    #results form{}
+    #results form div{margin:5px 0;}
+    #results form div label span{margin-left: 1em;font-size: 11px;}
+    #results form div input[type="number"]{width: 40px;}
+    .relBk,
+    .relPt,
+    .relGl,
+    .relSl{display:none;}
+    #expUnits form{padding:20px;}
+    #expUnits form > div{display:flex;align-items: center;height: 27px;margin-bottom: 8px;}
+    #expUnits form label{display:flex;align-items: center;width: 280px;height: 27px;}
+    #expUnits form label span{color:rgba(24,24,24,0.4);}
+    #expUnits .icon{display:inline-block;overflow:hidden;width: 27px;height:27px;margin-right:8px;background: rgb(240,240,240);border-radius:30px;}
+    #expUnits .icon img{width:27px;height:27px;object-fit: contain;}
+    #haveSarriette{}
+    #haveSarriette > p{display:flex;align-items: center;width: 280px;}
+    label[for="uSarriette"]{width:50px !important;}
+    label[for="uSarriette"] > input[type="checkbox"]{display:none;}
+    label[for="uSarriette"] > input[type="checkbox"] + span{display:inline-block;width: 40px; height:23px;position: relative;margin-left:0 !important;background: rgb(224,224,224);border-radius:999px;cursor:pointer;}
+    label[for="uSarriette"] > input[type="checkbox"] + span::after{transition:all 0.1s linear;content:'';display:block;width: 15px;height: 15px;position: absolute;top:4px;left:21px;background: white;border-radius:999px;}
+    label[for="uSarriette"] > input[type="checkbox"]:checked + span{background: /*rgb(0, 115, 209)*/ linear-gradient(90deg,rgb(13, 116, 175),rgb(10, 150, 160))}
+    label[for="uSarriette"] > input[type="checkbox"]:checked + span::after{left:4px;}
+    /* Dark mode */
+    /*
+    body{color:rgb(224,224,224);background: rgb(27, 28, 31);}
+    main{padding:20px;}
+    input[type="radio"] + label{color:rgb(240,240,240);border:1px solid rgb(240,240,240);}
+    input[type="radio"]:checked + label{color:rgb(27, 28, 31);background: rgb(240,240,240);}
+    #results{background: rgb(18, 18, 20);box-shadow:none;}
+    input{color:rgb(224,224,224);}
+    */
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>
+      <b>千年戦争アイギス経験値計算機 Min</b>
+    </h1>
+  </header>
+
+  <main>
+    <form action="" name="expCalculator" id="expCalculator">
+      <div>
+        <p><b>レアリティ</b></p>
+        <div id="rarityList">
+          <input type="radio" name="rarity" value="black" id="rarityBlack" checked onchange="selectRarity();"><label for="rarityBlack">ブラック</label>
+          <input type="radio" name="rarity" value="platinum" id="rarityPlatinum" onchange="selectRarity();"><label for="rarityPlatinum">プラチナ</label>
+          <input type="radio" name="rarity" value="gold" id="rarityGold" onchange="selectRarity();"><label for="rarityGold">ゴールド</label>
+          <input type="radio" name="rarity" value="silver" id="raritySilver" onchange="selectRarity();"><label for="raritySilver">シルバー</label>
+        </div>
+      </div>
+      <div class="expMax">
+        <p><b>最大レベル（<span id="expMaxRarity"></span>）</b></p>
+        <div id="expMaxBlack" class="relBk">
+          <input type="radio" name="expMax" value="99" id="black99"><label for="black99">99</label>
+          <input type="radio" name="expMax" value="80" id="black80"><label for="black80">80</label>
+          <input type="radio" name="expMax" value="50" id="black50"><label for="black50">50</label>
+        </div>
+        <div id="expMaxPlatinum" class="relPt">
+          <input type="radio" name="expMax" value="99" id="platinum99"><label for="platinum99">99</label>
+          <input type="radio" name="expMax" value="90" id="platinum90"><label for="platinum90">90</label>
+          <input type="radio" name="expMax" value="70" id="platinum70"><label for="platinum70">70</label>
+          <input type="radio" name="expMax" value="50" id="platinum50"><label for="platinum50">50</label>
+        </div>
+        <div id="expMaxGold" class="relGl">
+          <input type="radio" name="expMax" value="99" id="gold99"><label for="gold99">99</label>
+          <input type="radio" name="expMax" value="80" id="gold80"><label for="gold80">80</label>
+          <input type="radio" name="expMax" value="60" id="gold60"><label for="gold60">60</label>
+          <input type="radio" name="expMax" value="50" id="gold50"><label for="gold50">50</label>
+        </div>
+        <div id="expMaxSilver" class="relSl">
+          <input type="radio" name="expMax" value="55" id="silver55"><label for="silver55">55</label>
+          <input type="radio" name="expMax" value="50" id="silver50"><label for="silver50">50</label>
+        </div>
+      </div>
+      <div>
+        <b><label for="">現在のレベル</label></b>
+        <input type="number" name="expCurrent" value="1" min="1" max ="98" onfocus="this.select();">
+      </div>
+      <div>
+        <b><label for="">次のレベルまで</label></b>
+        <input type="number" name="expNext" value="0" min="0" max="3915" onfocus="this.select();">
+      </div>
+    </form>
+    <div id="results">
+      <div id="expResult"></div>
+      <div id="expUnits">
+        <form name="formUnits">
+          <div id="haveSarriette">
+            <p>
+              <i class="icon"><img src="assets/icon_sarriette.png" alt=""></i>育成聖霊サリエット
+            </p>
+            <label for="uSarriette">
+              <input type="checkbox" name="sarriette" id="uSarriette">
+              <span></span>
+            </label>
+          </div>
+          <div>
+            <label for=""><i class="icon"><img src="assets/icon_barmor.png" alt=""></i>ブラックアーマー 8倍<span id="uBarmorExp"></span></label>
+            <input type="number" value="0" min="0" max="99" id="uBarmor" onfocus="this.select();">
+          </div>
+          <div>
+            <label for=""><i class="icon"><img src="assets/icon_parmor.png" alt=""></i>プラチナアーマー 8倍<span id="uParmorExp"></span></label>
+            <input type="number" value="0" min="0" max="99" id="uParmor" onfocus="this.select();">
+          </div>
+          <div class="relBk">
+            <label for=""><i class="icon"><img src="assets/icon_farah.png" alt=""></i>小祝福黒精霊ファラハ<span id="uFarahExp"></span></label>
+            <input type="number" value="0" min="0" max="99" id="uFarah" onfocus="this.select();">
+          </div>
+          <div class="relPt">
+            <label for=""><i class="icon"><img src="assets/icon_freude.png" alt=""></i>小祝福白金精霊フロイデ<span id="uFreudeExp"></span></label>
+            <input type="number" value="0" min="0" max="99" id="uFreude" onfocus="this.select();">
+          </div>
+          <div class="relGl">
+            <label for=""><i class="icon"><img src="assets/icon_alegria.png" alt=""></i>小祝福金精霊アレグリア<span id="uAlegriaExp"></span id="uAlegria"></label>
+            <input type="number" value="0" min="0" max="99" id="uAlegria" onfocus="this.select();">
+          </div>
+          <!--
+          <div class="relSl">
+            <label for=""><i class="icon"></i>小祝福銀精霊アムール<span></span></label>
+            <input type="number" value="0" min="0" max="99" id="uAmour" onfocus="this.select();">
+          </div>
+          -->
+          <div>
+            <label for=""><i class="icon"><img src="assets/icon_please.png" alt=""></i>小祝福精霊プレーゼ<span id="uPleaseExp"></span></label>
+            <input type="number" value="0" min="0" max="99" id="uPlease" onfocus="this.select();">
+          </div>
+          <div>
+            <label for=""><i class="icon"><img src="assets/icon_prazer.png" alt=""></i>小祝福精霊プラセル<span id="uPrazerExp"></span></label>
+            <input type="number" value="0" min="0" max="99" id="uPrazer" onfocus="this.select();">
+          </div>
+        </form>
+      </div>
+    </div>
+    <button class="btn" onclick="reset();">リセット</button>
+  </main>
+
+  <footer>
+    <small>Updated 20.01.08</small>
+  </footer>
+
+  <script src="aigiscalculator.js"></script>
+</body>
+</html>
