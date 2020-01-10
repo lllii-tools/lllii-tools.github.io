@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>千年戦争アイギス経験値計算機 Min</title>
   <style>
-    body{min-width: 375px;margin:0;padding:0;font-size: 12px;font-family: sans-serif;color:rgb(24,24,24);background: rgb(240,240,240);}
+    body{min-width: 375px;margin:0;padding:0;font-size: 12px;font-family: sans-serif;color:rgb(24,24,24);background: rgb(241,242,243);}
     main{padding:20px;}
     input,
     label{box-sizing: border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);}
     button{height:36px;margin-top: 20px;padding:0 10px;background: rgb(255, 255, 255);border:none;border-radius:4px;box-shadow:0 2px 3px 0 rgba(24,24,24,0.1);}
-    header{display:flex;justify-content: center;align-items: center;padding:5px 20px;border-bottom:1px solid rgba(24,24,24,0.1);}
+    header{display:flex;justify-content: center;align-items: center;padding:5px 20px;border-bottom:3px solid rgba(24,24,24,0.06);}
     header h1{width: 100%;font-size: 14px;font-weight: normal;}
     header h1 b{display:block;font-size: 14px;font-weight: normal;letter-spacing: 0.2em;}
     header h1 + span{}
@@ -19,15 +19,15 @@
     footer{padding:20px;}
     footer small{opacity:0.4;font-size: 11px;}
     input[type="number"]{transition:all 0.1s linear;width: 60px;padding:3px 0;font-size:20px;font-weight: bold;background: none;border:none;border-bottom:1px solid rgba(24,24,24,0.1);}
-    input[type="number"]:focus{outline:none;border-bottom:1px solid rgb(40,157,230);}
+    input[type="number"]:focus{outline:none;border-bottom:1px solid rgb(219,88,118);}
     input + label{display:inline-block;}
     form > div{margin-bottom:20px;}
     form div p{margin:0;}
     form div b{display:block;margin-bottom: 5px;}
     input[type="radio"]{display:none;}
-    input[type="radio"] + label{transition:all 0.1s linear;user-select: none;display:flex;justify-content: center;align-items: center;width: 36px;height: 36px;color:rgba(24, 24, 24, 0.3);border:1px solid rgb(24, 24, 24, 0.2);border-radius:4px;}
+    input[type="radio"] + label{transition:all 0.1s linear;user-select: none;display:flex;justify-content: center;align-items: center;width: 36px;height: 36px;color:rgba(24, 24, 24, 0.3);border:1px solid rgb(24, 24, 24, 0.2);border-radius:3px;}
     input[type="radio"] + label:hover{color:rgba(24,24,24,0.5);border:1px solid rgba(24,24,24,0.5);cursor:pointer;}
-    input[type="radio"]:checked + label{font-weight: bold;color:rgb(255,255,255);background:linear-gradient(90deg,rgb(40,157,230),rgb(6,171,201));border:none;}
+    input[type="radio"]:checked + label{font-weight: bold;color:rgb(255,255,255);background:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));border:none;}
     #rarityList{display:flex;}
     #rarityList label{width: 80px;margin-right:8px;}
     .expMax > div{display:none;}
@@ -55,7 +55,7 @@
     label[for="uSarriette"] > input[type="checkbox"]{display:none;}
     label[for="uSarriette"] > input[type="checkbox"] + span{transition:all 0.1s linear;display:inline-block;width: 40px; height:23px;position: relative;margin-left:0 !important;background: rgb(224,224,224);border-radius:999px;cursor:pointer;}
     label[for="uSarriette"] > input[type="checkbox"] + span::after{transition:all 0.1s linear;content:'';display:block;width: 15px;height: 15px;position: absolute;top:4px;left:4px;background: white;border-radius:999px;}
-    label[for="uSarriette"] > input[type="checkbox"]:checked + span{background:linear-gradient(90deg,rgb(40,157,230),rgb(6,171,201));}
+    label[for="uSarriette"] > input[type="checkbox"]:checked + span{background:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));}
     label[for="uSarriette"] > input[type="checkbox"]:checked + span::after{left:21px;}
   </style>
 </head>

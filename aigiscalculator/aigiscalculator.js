@@ -67,17 +67,15 @@ function rarityFilter(rr) {
       return x == rr
     })
     getClass(selected);
-    //console.log('一致：' + selected);
 
     // 選択レアリティじゃない場合
     const selectedNot = relList.filter(function(x) {
       return x != rr
     })
     getClass(selectedNot);
-    //console.log('不一致：' + selectedNot);
   }
 }
-//rarityFilter('relBk')
+
 
 // レアリティ選択時
 function selectRarity() {
@@ -88,30 +86,42 @@ function selectRarity() {
   let rareGl = document.getElementById('rarityGold');
   let rareSl = document.getElementById('raritySilver');
 
+  // サリエットチェックの有無
+  const sarriette = document.getElementById('uSarriette');
+  function sarriChecked() {
+    if(sarriette.checked == true) {
+      document.formUnits.reset();
+      sarriette.checked = true
+    } else if(sarriette.checked == false) {
+      document.formUnits.reset();
+      sarriette.checked = false
+    }
+  }
+
   if(rareBk.checked) {
     selectedRarity.innerText = 'ブラック';
-    document.formUnits.reset();
+    sarriChecked();
     clearRadio();
     clearRel();
     rarityFilter('relBk');
     document.getElementById('black99').checked = true;
   } else if(rarePt.checked) {
     selectedRarity.innerText = 'プラチナ';
-    document.formUnits.reset();
+    sarriChecked();
     clearRadio();
     clearRel();
     rarityFilter('relPt');
     document.getElementById('platinum99').checked = true;
   } else if(rareGl.checked) {
     selectedRarity.innerText = 'ゴールド';
-    document.formUnits.reset();
+    sarriChecked();
     clearRadio();
     clearRel();
     rarityFilter('relGl');
     document.getElementById('gold99').checked = true;
   } else if(rareSl.checked) {
     selectedRarity.innerText = 'シルバー';
-    document.formUnits.reset();
+    sarriChecked();
     clearRadio();
     clearRel();
     rarityFilter('relSl');
