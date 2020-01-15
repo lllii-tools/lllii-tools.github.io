@@ -1,0 +1,112 @@
+$clBase:rgb(241,242,243);
+$clKey:rgb(219,88,118);
+$clKeyGrad:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));
+$clDark:rgb(30,34,52);
+@function clDark($op:1) {
+  @return rgba(30,34,52,$op);
+}
+$clWhite: rgb(254,254,254);
+$clClear: rgba(0,0,0,0);
+
+@mixin centerXY{display:flex;justify-content: center;align-items: center;}
+@mixin centerY{display:flex;align-items: center;}
+
+@mixin anime{transition:all 0.1s linear;}
+
+*{box-sizing: border-box;}
+body{min-width: 375px;margin:0;padding:0;font-size: 12px;font-family: sans-serif;color:$clDark;background: $clBase;}
+main{padding:20px;}
+b{font-weight: normal;}
+button{height:36px;padding:0 10px;background: white;border:none;border-radius:4px;box-shadow:0 2px 3px 0 rgba(24,24,24,0.1);}
+header{display:flex;justify-content: center;align-items: center;padding:5px 20px;border-bottom:3px solid rgba(24,24,24,0.06);
+  h1{width: 100%;font-size: 14px;font-weight: normal;
+    b{display:block;font-size: 14px;font-weight: normal;letter-spacing: 0.2em;
+      &.langEn{letter-spacing: 0.1em;}
+    }
+  }
+  select{width: 40px;height: 24px;font-size: 14px;font-weight: normal;border:none;}
+}
+
+.btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 60px;border-radius:4px;cursor: pointer;user-select: none;
+  &On{color:$clWhite;background: $clKeyGrad;border:none;
+    &:hover{color:$clWhite;}
+  }
+  &Off{color:clDark(0.36);border:1px solid clDark(0.24);
+    &:hover{color:clDark(0.6);border-color:clDark(0.6);}
+  }
+  &Reset{width: 80px;}
+}
+.radioBtn{display:none;
+  &:checked + label{@extend .btn,.btnOn;}
+  & + label{@extend .btn,.btnOff;margin-right:8px;}
+}
+.input,
+select{display: flex;justify-content: center;align-items: center;width: 60px;height: 36px;font-size: 18px;font-weight: bold;background:none;border:none;border-bottom:1px solid clDark(0.16);
+  &:focus{color:$clKey;border-color:$clKey;outline:none;}
+  &::selection{color: $clKey;}
+}
+
+.formBase{
+  & > div{margin-bottom:20px;
+    & > div{display: flex;}
+    b{display:block;margin-bottom:5px;}
+  }
+  .param{
+    .radioBtn{
+      &:checked + label,
+      & + label{@extend .btn;width: 36px;}
+    }
+  }
+  .exps{display: flex;
+    & > div{display: block;}
+    .expCurrent{position:relative;margin-right:60px;
+      &::after{content:'';display:block;position: absolute;bottom:0;left:92px;width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
+    }
+    .expMax{
+      & > div{display: flex;
+        .radioBtn{
+          &:checked + label,
+          & + label{@extend .btn;width: 36px;}
+        }
+      }
+    }
+  }
+}
+
+
+.results{background: $clWhite;margin-bottom:20px;
+  .expResult{@include centerY;height: 72px;padding:0 20px;border-bottom: 1px solid clDark(0.1);
+    span{display:inline-block;margin-right: 12px;}
+    b{font-size: 30px;font-weight: normal;}
+  }
+  .formExpItems{
+    & > div{
+      & > div{@include centerY;justify-content: space-between;margin:5px 0;}
+      label span{margin-left: 1em;font-size: 11px;}
+      input[type="number"]{width: 40px;}
+    }
+  }
+  .expItems{padding:15px;
+    label{@include centerY;
+      span{color:clDark(0.4);}
+    }
+  }
+}
+
+
+.bottoms{@include centerY;justify-content: space-between;
+  p span{opacity:0.4;display:inline-block;margin-right: 4px;font-size: 11px;}
+}
+.fa-twitter {transition:all 0.1s linear;opacity:0.4;font-size: 16px;color:rgb(30,34,52);
+  &:hover {opacity:1;}
+}
+
+.lang{
+  &Jp{}
+  &En{display:none !important;}
+}
+
+.relLv{
+  .icon{@include centerXY;width: 24px;height: 24px;margin-right: 8px;font-style: normal;color:$clWhite;background: orange;border-radius:99px;}
+}
+.relHp{display:none !important;}

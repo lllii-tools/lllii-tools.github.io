@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>英雄戦姫WWX 経験値計算機</title>
+  <meta name="description" content="英雄戦姫WWX経験値計算機のα版">
+  <script src="https://kit.fontawesome.com/188d4ed550.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>
+      <b class="langJp">英雄戦姫WWX 経験値計算機 α</b>
+      <b class="langEn">Eiyuu Senki WWX EXP Calculator</b>
+    </h1>
+    <select name="" class="selectLang" id="">
+      <option value="JP" selected>JP</option>
+      <option value="EN">EN</option>
+    </select>
+  </header>
+  <main>
+    <form action="" class="formBase">
+      <div class="rarity">
+        <b class="langJp">レアリティ</b>
+        <b class="langEn">RARITY</b>
+        <div>
+          <input type="radio" value="★4" name="rarity" id="rarity4" class="radioBtn" checked><label for="rarity4">★4</label>
+          <input type="radio" value="★3" name="rarity" id="rarity3" class="radioBtn"><label for="rarity3">★3</label>
+          <input type="radio" value="★2" name="rarity" id="rarity2" class="radioBtn"><label for="rarity2">★2</label>
+        </div>
+      </div>
+      <div class="param">
+        <b class="langJp">パラメータ</b class="langJp">
+        <b class="langEn">PARAMETER</b>
+        <div>
+          <input type="radio" value="Lv" name="param" id="paramLv" class="radioBtn" checked><label for="paramLv">Lv</label>
+          <input type="radio" value="HP" name="param" id="paramHp" class="radioBtn"><label for="paramHp">HP</label>
+          <input type="radio" value="HP" name="param" id="paramPa" class="radioBtn"><label for="paramPa">物攻</label>
+          <input type="radio" value="HP" name="param" id="paramPd" class="radioBtn"><label for="paramPd">物防</label>
+          <input type="radio" value="HP" name="param" id="paramMa" class="radioBtn"><label for="paramMa">魔攻</label>
+          <input type="radio" value="HP" name="param" id="paramMd" class="radioBtn"><label for="paramMd">魔防</label>
+        </div>
+      </div>
+      <div class="exps">
+        <div class="expCurrent">
+          <lable>
+            <b class="langJp">現在値</b class="langJp">
+            <b class="langEn">CURRENT</b class="langEn">
+          </lable>
+          <input type="number" value="1" min="1" max="99" class="input" onfocus="this.select();">
+        </div>
+        <div class="expMax relLv">
+          <b class="langJp">最大値</b class="langJp">
+          <b class="langEn">MAX</b>
+          <select name="" id="">
+            <option value="">100</option>
+            <option value="">85</option>
+            <option value="">70</option>
+            <option value="">60</option>
+            <option value="">50</option>
+            <option value="">30</option>
+          </select>
+        </div>
+        <div class="expMax relHp">
+          <lable><b>最大値</b></lable>
+          <input type="number" class="input" onfocus="this.select();">
+        </div>
+      </div>
+      <div>
+        <b class="langJp">次の強化まで</b class="langJp">
+        <b class="langEn">FOR THE NEXT</b class="langEn">
+        <input type="number" value="0" class="input" onfocus="this.select();">
+      </div>
+    </form>
+    <div class="results">
+      <div class="expResult">
+        <span class="langJp">必要経験値</span>
+        <span class="langEn">Required EXP</span>
+        <b>10000000</b>
+      </div>
+      <form action="" class="formExpItems">
+        <div class="expItems relLv">
+          <div>
+            <label for=""><i class="icon">I</i>Lv強化の書 I<span>300EXP</span></label><input type="number" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for=""><i class="icon">II</i>Lv強化の書 II<span>3000EXP</span></label><input type="number" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for=""><i class="icon">III</i>Lv強化の書 III<span>15000EXP</span></label><input type="number" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="bottoms">
+      <button class="btn btnReset" onclick="reset();">
+        <span class="langJp">リセット</span>
+        <span class="langEn">Reset</span>
+      </button>
+      <p>
+        <span>Contact me</span>
+        <a href="https://twitter.com/lllii133" target="_blank"><i class="fab fa-twitter"></i></a>
+      </p>
+    </div>
+  </main>
+  <script src="wwxcalculator.js"></script>
+</body>
