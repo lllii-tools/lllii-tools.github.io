@@ -1,3 +1,10 @@
+$yellow:rgb(239,211,9);
+$lightblue:rgb(100,190,230);
+$red:rgb(234,130,130);
+$blue:rgb(108,148,237);
+$pink:rgb(230,143,210);
+$violet:rgb(176,133,235);
+
 $clBase:rgb(241,242,243);
 $clKey:rgb(219,88,118);
 $clKeyGrad:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));
@@ -12,22 +19,29 @@ $clClear: rgba(0,0,0,0);
 @mixin centerY{display:flex;align-items: center;}
 
 @mixin anime{transition:all 0.1s linear;}
+@mixin animeOp{@include anime;opacity:1;
+  &:hover{opacity:0.72;}
+}
 
 *{box-sizing: border-box;}
 body{min-width: 375px;margin:0;padding:0;font-size: 12px;font-family: sans-serif;color:$clDark;background: $clBase;}
 main{padding:20px;}
 b{font-weight: normal;}
-button{height:36px;padding:0 10px;background: white;border:none;border-radius:4px;box-shadow:0 2px 3px 0 rgba(24,24,24,0.1);}
-header{display:flex;justify-content: center;align-items: center;padding:5px 20px;border-bottom:3px solid rgba(24,24,24,0.06);
+button{height:36px;padding:0 10px;background: white;border:none;border-radius:4px;box-shadow:0 2px 3px 0 clDark(0.1);}
+header{display:flex;justify-content: center;align-items: center;height: 50px;padding:0 12px;border-bottom:3px solid clDark(0.06);
   h1{width: 100%;font-size: 14px;font-weight: normal;
     b{display:block;font-size: 14px;font-weight: normal;letter-spacing: 0.2em;
+      i::after{content:'＊';}
       &.langEn{letter-spacing: 0.1em;}
     }
   }
-  select{width: 40px;height: 24px;font-size: 14px;font-weight: normal;border:none;}
+  .home{@include animeOp;line-height: 0;
+    img{width: 25px;}
+  }
+  select{display:none;width: 40px;height: 24px;font-size: 14px;font-weight: normal;border:none;}
 }
 
-.btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 60px;border-radius:4px;cursor: pointer;user-select: none;
+.btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 72px;border-radius:4px;cursor: pointer;user-select: none;
   &On{color:$clWhite;background: $clKeyGrad;border:none;
     &:hover{color:$clWhite;}
   }
@@ -62,33 +76,51 @@ select{display: flex;justify-content: center;align-items: center;width: 60px;hei
     .expCurrent{position:relative;margin-right:60px;
       &::after{content:'';display:block;position: absolute;bottom:0;left:92px;width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
     }
-    .expMax{
-      & > div{display: flex;
-        .radioBtn{
-          &:checked + label,
-          & + label{@extend .btn;width: 36px;}
-        }
-      }
-    }
+    .expMax{}
+  }
+  .expNext{
+    input{width: 80px;}
   }
 }
 
 
 .results{background: $clWhite;margin-bottom:20px;
   .expResult{@include centerY;height: 72px;padding:0 20px;border-bottom: 1px solid clDark(0.1);
-    span{display:inline-block;margin-right: 12px;}
-    b{font-size: 30px;font-weight: normal;}
+    & > span{display:inline-block;margin-right: 12px;}
+    b{font-size: 30px;font-weight: normal;
+      small{color: clDark(0.2);}
+    }
   }
   .formExpItems{
     & > div{
-      & > div{@include centerY;justify-content: space-between;margin:5px 0;}
-      label span{margin-left: 1em;font-size: 11px;}
-      input[type="number"]{width: 40px;}
+      & > div{@include centerY;justify-content: space-between;margin:5px 0;
+        label{@include centerY;
+          span{width: 100px;}
+          small{font-size: 11px;color:clDark(0.4);}
+        }
+        input[type="number"]{width: 60px;}
+      }
     }
-  }
-  .expItems{padding:15px;
-    label{@include centerY;
-      span{color:clDark(0.4);}
+    .expItems{padding:10px 15px;
+      .icon{@include centerXY;width: 18px;height: 18px;margin-right: 8px;font-size: 10px;font-style: normal;color:$clWhite;border-radius:99px;}
+      &.relLv{
+        .icon{background: $yellow;}
+      }
+      &.relHp{
+        .icon{background: $lightblue;}
+      }
+      &.relPa{
+        .icon{background: $red;}
+      }
+      &.relPd{
+        .icon{background:$blue;}
+      }
+      &.relMa{
+        .icon{background: $pink;}
+      }
+      &.relMd{
+        .icon{background: $violet;}
+      }
     }
   }
 }
@@ -106,7 +138,4 @@ select{display: flex;justify-content: center;align-items: center;width: 60px;hei
   &En{display:none !important;}
 }
 
-.relLv{
-  .icon{@include centerXY;width: 24px;height: 24px;margin-right: 8px;font-style: normal;color:$clWhite;background: orange;border-radius:99px;}
-}
-.relHp{display:none !important;}
+

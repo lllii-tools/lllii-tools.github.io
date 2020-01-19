@@ -4,43 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>英雄戦姫WWX 経験値計算機</title>
-  <meta name="description" content="英雄戦姫WWX経験値計算機のα版">
+  <title>英雄戦姫WW 経験値計算機</title>
+  <meta name="description" content="英雄戦姫WWの経験値計算機。">
   <script src="https://kit.fontawesome.com/188d4ed550.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header>
     <h1>
-      <b class="langJp">英雄戦姫WWX 経験値計算機 α</b>
-      <b class="langEn">Eiyuu Senki WWX EXP Calculator</b>
+      <b class="langJp">英雄<i></i>戦姫WW 経験値計算機 α</b>
+      <b class="langEn">Eiyuu Senki WW EXP Calculator</b>
     </h1>
+    <a href="../" class="home"><img src="../src/logo.png" alt="lllii-tools"></a>
     <select name="" class="selectLang" id="">
       <option value="JP" selected>JP</option>
       <option value="EN">EN</option>
     </select>
   </header>
   <main>
-    <form action="" class="formBase">
+    <form action="" class="formBase" id="formBase">
       <div class="rarity">
         <b class="langJp">レアリティ</b>
         <b class="langEn">RARITY</b>
         <div>
-          <input type="radio" value="★4" name="rarity" id="rarity4" class="radioBtn" checked><label for="rarity4">★4</label>
-          <input type="radio" value="★3" name="rarity" id="rarity3" class="radioBtn"><label for="rarity3">★3</label>
-          <input type="radio" value="★2" name="rarity" id="rarity2" class="radioBtn"><label for="rarity2">★2</label>
+          <input type="radio" value="rare4" name="rarity" id="rarity4" class="radioBtn" onchange="selectRarity();"><label for="rarity4">★4</label>
+          <input type="radio" value="rare3" name="rarity" id="rarity3" class="radioBtn" onchange="selectRarity();"><label for="rarity3">★3</label>
+          <input type="radio" value="rare2" name="rarity" id="rarity2" class="radioBtn" onchange="selectRarity();"><label for="rarity2">★2</label>
         </div>
       </div>
       <div class="param">
         <b class="langJp">パラメータ</b class="langJp">
         <b class="langEn">PARAMETER</b>
         <div>
-          <input type="radio" value="Lv" name="param" id="paramLv" class="radioBtn" checked><label for="paramLv">Lv</label>
-          <input type="radio" value="HP" name="param" id="paramHp" class="radioBtn"><label for="paramHp">HP</label>
-          <input type="radio" value="HP" name="param" id="paramPa" class="radioBtn"><label for="paramPa">物攻</label>
-          <input type="radio" value="HP" name="param" id="paramPd" class="radioBtn"><label for="paramPd">物防</label>
-          <input type="radio" value="HP" name="param" id="paramMa" class="radioBtn"><label for="paramMa">魔攻</label>
-          <input type="radio" value="HP" name="param" id="paramMd" class="radioBtn"><label for="paramMd">魔防</label>
+          <input type="radio" value="Lv" name="param" id="paramLv" class="radioBtn" onchange="selectParam();"><label for="paramLv">Lv</label>
+          <input type="radio" value="HP" name="param" id="paramHp" class="radioBtn" onchange="selectParam();"><label for="paramHp">HP</label>
+          <input type="radio" value="PA" name="param" id="paramPa" class="radioBtn" onchange="selectParam();"><label for="paramPa">物攻</label>
+          <input type="radio" value="PD" name="param" id="paramPd" class="radioBtn" onchange="selectParam();"><label for="paramPd">物防</label>
+          <input type="radio" value="MA" name="param" id="paramMa" class="radioBtn" onchange="selectParam();"><label for="paramMa">魔攻</label>
+          <input type="radio" value="MD" name="param" id="paramMd" class="radioBtn" onchange="selectParam();"><label for="paramMd">魔防</label>
         </div>
       </div>
       <div class="exps">
@@ -49,47 +50,230 @@
             <b class="langJp">現在値</b class="langJp">
             <b class="langEn">CURRENT</b class="langEn">
           </lable>
-          <input type="number" value="1" min="1" max="99" class="input" onfocus="this.select();">
+          <input type="number" value="1" min="1" max="99" class="input relLv" id="currentValLv" onfocus="this.select();">
+          <input type="number" value="0" min="0" max="99" class="input relNotLv" id="currentValParam" onfocus="this.select();">
         </div>
         <div class="expMax relLv">
-          <b class="langJp">最大値</b class="langJp">
-          <b class="langEn">MAX</b>
-          <select name="" id="">
-            <option value="">100</option>
-            <option value="">85</option>
-            <option value="">70</option>
-            <option value="">60</option>
-            <option value="">50</option>
-            <option value="">30</option>
+          <b>
+            <span class="langJp">最大値</span>
+            <span class="langEn">MAX</span>
+            <span id="expMaxR"></span>
+          </b class="langJp">
+          <select name="" id="maxValLvR4" class="relR4" onchange="calc();">
+            <option value="100">100</option>
+            <option value="85">85</option>
+            <option value="70">70</option>
+            <option value="60">60</option>
+            <option value="50">50</option>
+            <option value="30">30</option>
+          </select>
+          <select name="" id="maxValLvR3" class="relR3" onchange="calc();">
+            <option value="100">100</option>
+            <option value="85">85</option>
+            <option value="70">70</option>
+            <option value="60">60</option>
+            <option value="50">45</option>
+            <option value="30">30</option>
+          </select>
+          <select name="" id="maxValLvR2" class="relR2" onchange="calc();">
+            <option value="100">100</option>
+            <option value="70">70</option>
+            <option value="55">55</option>
+            <option value="40">40</option>
+            <option value="25">25</option>
           </select>
         </div>
-        <div class="expMax relHp">
-          <lable><b>最大値</b></lable>
-          <input type="number" class="input" onfocus="this.select();">
+        <div class="expMax relNotLv">
+          <lable><b>目標値</b></lable>
+          <input type="number" value="1" min="1" max="999" class="input" id="maxVal" onfocus="this.select();">
         </div>
       </div>
-      <div>
+      <div class="expNext">
         <b class="langJp">次の強化まで</b class="langJp">
         <b class="langEn">FOR THE NEXT</b class="langEn">
-        <input type="number" value="0" class="input" onfocus="this.select();">
+        <input type="number" value="0" class="input" id="nextVal" onfocus="this.select();">
       </div>
     </form>
     <div class="results">
       <div class="expResult">
-        <span class="langJp">必要経験値</span>
-        <span class="langEn">Required EXP</span>
-        <b>10000000</b>
+        <span>
+          <span class="langJp">必要経験値</span>
+          <span class="langEn">Required EXP</span>
+          <span id="expResultParam"></span>
+        </span>
+        <b id="resultExp"></b>
       </div>
-      <form action="" class="formExpItems">
+      <form action="" class="formExpItems" id="formExpItems">
         <div class="expItems relLv">
           <div>
-            <label for=""><i class="icon">I</i>Lv強化の書 I<span>300EXP</span></label><input type="number" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <label for="">
+              <i class="icon">I</i>
+              <span>Lv強化の書 I</span>
+              <small class="expItem1">300EXP</small>
+            </label>
+            <input type="number" name="itemLv" value="0" min="0" max="999" class="input" onfocus="this.select();">
           </div>
           <div>
-            <label for=""><i class="icon">II</i>Lv強化の書 II<span>3000EXP</span></label><input type="number" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <label for="">
+              <i class="icon">II</i>
+              <span>Lv強化の書 II</span>
+              <small class="expItem2">3000EXP</small>
+            </label>
+            <input type="number" name="itemLv" value="0" min="0" max="999" class="input" onfocus="this.select();">
           </div>
           <div>
-            <label for=""><i class="icon">III</i>Lv強化の書 III<span>15000EXP</span></label><input type="number" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <label for="">
+              <i class="icon">III</i>
+              <span>Lv強化の書 III</span>
+              <small class="expItem3">15000EXP</small>
+            </label>
+            <input type="number" name="itemLv" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+        </div>
+        <div class="expItems relHp">
+          <div>
+            <label for="">
+              <i class="icon">I</i>
+              <span>HP強化の書 I</span>
+              <small class="expItem1">100EXP</small>
+            </label>
+            <input type="number" name="itemHp" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">II</i>
+              <span>HP強化の書 II</span>
+              <small class="expItem2">1000EXP</small>
+            </label>
+            <input type="number" name="itemHp" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">III</i>
+              <span>HP強化の書 III</span>
+              <small class="expItem3">5000EXP</small>
+            </label>
+            <input type="number" name="itemHp" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+        </div>
+        <div class="expItems relPa">
+          <div>
+            <label for="">
+              <i class="icon">I</i>
+              <span>物攻強化の書 I</span>
+              <small class="expItem1">5EXP</small>
+            </label>
+            <input type="number" name="itemPa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">II</i>
+              <span>物攻強化の書 II</span>
+              <small class="expItem2">50EXP</small>
+            </label>
+            <input type="number" name="itemPa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">III</i>
+              <span>物攻強化の書 III</span>
+              <small class="expItem3">250EXP</small>
+            </label>
+            <input type="number" name="itemPa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+        </div>
+        <div class="expItems relPd">
+          <div>
+            <label for="">
+              <i class="icon">I</i>
+              <span>物防強化の書 I</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">II</i>
+              <span>物防強化の書 II</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">III</i>
+              <span>物防強化の書 III</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">IV</i>
+              <span>物防強化の書 IV</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+        </div>
+        <div class="expItems relMa">
+          <div>
+            <label for="">
+              <i class="icon">I</i>
+              <span>魔攻強化の書 I</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemMa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">II</i>
+              <span>魔攻強化の書 II</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemMa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">III</i>
+              <span>魔攻強化の書 III</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemMa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+        </div>
+        <div class="expItems relMd">
+          <div>
+            <label for="">
+              <i class="icon">I</i>
+              <span>魔防強化の書 I</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">II</i>
+              <span>魔防強化の書 II</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">III</i>
+              <span>魔防強化の書 III</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+          </div>
+          <div>
+            <label for="">
+              <i class="icon">IV</i>
+              <span>魔防強化の書 IV</span>
+              <small class="expItem1"></small>
+            </label>
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
           </div>
         </div>
       </form>
@@ -105,5 +289,6 @@
       </p>
     </div>
   </main>
+  <script src="explist.js"></script>
   <script src="wwxcalculator.js"></script>
 </body>
