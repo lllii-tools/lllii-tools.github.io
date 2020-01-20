@@ -15,6 +15,8 @@ $clDark:rgb(30,34,52);
 $clWhite: rgb(254,254,254);
 $clClear: rgba(0,0,0,0);
 
+$pixel:1px;
+
 @mixin centerXY{display:flex;justify-content: center;align-items: center;}
 @mixin centerY{display:flex;align-items: center;}
 
@@ -45,7 +47,7 @@ header{display:flex;justify-content: center;align-items: center;height: 50px;pad
   &On{color:$clWhite;background: $clKeyGrad;border:none;
     &:hover{color:$clWhite;}
   }
-  &Off{color:clDark(0.36);border:1px solid clDark(0.24);
+  &Off{color:clDark(0.36);border:$pixel solid clDark(0.24);
     &:hover{color:clDark(0.6);border-color:clDark(0.6);}
   }
   &Reset{width: 80px;}
@@ -134,8 +136,19 @@ select{display: flex;justify-content: center;align-items: center;width: 80px;hei
 }
 
 .lang{
-  &Jp{display:none !important;}
-  &En{}
+  &Ja{}
+  &En{display:none !important;}
 }
 
 
+@media screen and (max-width:750px){
+  $pixel:0.5px;
+  .btn{
+    &Off{border-width:$pixel;}
+  }
+  .input,
+  select{border-width:$pixel;}
+  .results{
+    .expResult{border-bottom-width:$pixel;}
+  }
+}

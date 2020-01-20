@@ -199,7 +199,7 @@ function selectParam(){
   } else if(pHp.checked){
     clearRel();
     paramFilter('relHp');
-    setClassStyle('relNotLv', 'display', 'block');
+    setClassStyle('relNotLv', 'display', 'none');
     calc();
   } else if(pPa.checked){
     clearRel();
@@ -231,7 +231,7 @@ function selectParam(){
     const maxValLvOptions = maxValLv.options;
     const maxValLvSelected = maxValLv.selectedIndex;
     const result = maxValLvOptions[maxValLvSelected].value - 1;
-    console.log(result);
+    //console.log(result);
     return result;
   }
 
@@ -260,9 +260,19 @@ function calc(){
     expResultParam.innerText = '(' + x + ')';
     // フォーム入力値取得
     const currentLv:number = (<HTMLFormElement>document.getElementById('currentValLv')).value - 1;
+    const currentHp:number = (<HTMLFormElement>document.getElementById('currentValHp')).value;
     const currentParam:number = (<HTMLFormElement>document.getElementById('currentValParam')).value;
+    const maxHp:number = (<HTMLFormElement>document.getElementById('maxValHp')).value;
     const max:number = (<HTMLFormElement>document.getElementById('maxVal')).value;
     const next:number = (<HTMLFormElement>document.getElementById('nextVal')).value;
+    // 各パラメータのx番目までの合計経験値
+    function hpTotal(x:number){
+      let sum = 0;
+      for(let i=0; i<x; i++){
+        sum += hpNextList[i];
+      }
+      return sum;
+    }
     // 合計値の条件分岐
     function total(){
       if(y == 'R4'){
@@ -287,7 +297,8 @@ function calc(){
           return '<small>' + total + '</small>';
         }
       } else if(y == 'Hp'){
-        const total = paramTotalList[max] - paramTotalList[currentParam] - next - itemHpTotal;
+        const total = hpTotal(maxHp/10) - hpTotal(currentHp/10) + hpNextList[maxHp/10] - next - itemHpTotal;
+        console.log(hpNextList[maxHp/10]);
         if (total >= 0){
           return total;
         } else if(total < 0){

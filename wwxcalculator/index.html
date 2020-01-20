@@ -51,6 +51,7 @@
             <b class="langEn">CURRENT</b class="langEn">
           </lable>
           <input type="number" value="1" min="1" max="99" class="input relLv" id="currentValLv" onfocus="this.select();">
+          <input type="number" value="0" min="0" max="99999" step="10" class="input relHp" id="currentValHp" onfocus="this.select();">
           <input type="number" value="0" min="0" max="99" class="input relNotLv" id="currentValParam" onfocus="this.select();">
         </div>
         <div class="expMax relLv">
@@ -83,8 +84,14 @@
             <option value="25">25</option>
           </select>
         </div>
+        <div class="expMax relHp">
+          <lable class="langJa"><b>目標値</b></lable>
+          <lable class="langEn"><b>Goal</b></lable>
+          <input type="number" value="10" min="10" max="20000" step="10" class="input" id="maxValHp" onfocus="this.select();">
+        </div>
         <div class="expMax relNotLv">
-          <lable><b>目標値</b></lable>
+          <lable class="langJa"><b>目標値</b></lable>
+          <lable class="langEn"><b>Goal</b></lable>
           <input type="number" value="1" min="1" max="999" class="input" id="maxVal" onfocus="this.select();">
         </div>
       </div>
