@@ -26,12 +26,12 @@ $clClear: rgba(0,0,0,0);
 *{box-sizing: border-box;}
 body{min-width: 375px;margin:0;padding:0;font-size: 12px;font-family: sans-serif;color:$clDark;background: $clBase;}
 main{padding:20px;}
-b{font-weight: normal;}
+b{/*font-weight: normal;*/}
 button{height:36px;padding:0 10px;background: white;border:none;border-radius:4px;box-shadow:0 2px 3px 0 clDark(0.1);}
 header{display:flex;justify-content: center;align-items: center;height: 50px;padding:0 12px;border-bottom:3px solid clDark(0.06);
   h1{width: 100%;font-size: 14px;font-weight: normal;
     b{display:block;font-size: 14px;font-weight: normal;letter-spacing: 0.2em;
-      i::after{content:'＊';}
+      i::after{content:'＊';font-style: normal;}
       &.langEn{letter-spacing: 0.1em;}
     }
   }
@@ -41,7 +41,7 @@ header{display:flex;justify-content: center;align-items: center;height: 50px;pad
   select{display:none;width: 40px;height: 24px;font-size: 14px;font-weight: normal;border:none;}
 }
 
-.btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 72px;border-radius:4px;cursor: pointer;user-select: none;
+.btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 80px;border-radius:4px;cursor: pointer;user-select: none;
   &On{color:$clWhite;background: $clKeyGrad;border:none;
     &:hover{color:$clWhite;}
   }
@@ -55,7 +55,7 @@ header{display:flex;justify-content: center;align-items: center;height: 50px;pad
   & + label{@extend .btn,.btnOff;margin-right:8px;}
 }
 .input,
-select{display: flex;justify-content: center;align-items: center;width: 60px;height: 36px;font-size: 18px;font-weight: bold;background:none;border:none;border-bottom:1px solid clDark(0.16);
+select{display: flex;justify-content: center;align-items: center;width: 80px;height: 36px;font-size: 18px;font-weight: bold;background:none;border:none;border-bottom:1px solid clDark(0.16);
   &:focus{color:$clKey;border-color:$clKey;outline:none;}
   &::selection{color: $clKey;}
 }
@@ -63,7 +63,7 @@ select{display: flex;justify-content: center;align-items: center;width: 60px;hei
 .formBase{
   & > div{margin-bottom:20px;
     & > div{display: flex;}
-    b{display:block;margin-bottom:5px;}
+    b{display:block;margin-bottom:3px;}
   }
   .param{
     .radioBtn{
@@ -74,7 +74,7 @@ select{display: flex;justify-content: center;align-items: center;width: 60px;hei
   .exps{display: flex;
     & > div{display: block;}
     .expCurrent{position:relative;margin-right:60px;
-      &::after{content:'';display:block;position: absolute;bottom:0;left:92px;width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
+      &::after{content:'';display:block;position: absolute;bottom:0;left:112px;width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
     }
     .expMax{}
   }
@@ -134,8 +134,8 @@ select{display: flex;justify-content: center;align-items: center;width: 60px;hei
 }
 
 .lang{
-  &Jp{}
-  &En{display:none !important;}
+  &Jp{display:none !important;}
+  &En{}
 }
 
 
