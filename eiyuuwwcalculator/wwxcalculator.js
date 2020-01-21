@@ -222,6 +222,9 @@ function calc() {
     const itemHpTotal = (itemHp[0].value * 100)
         + (itemHp[1].value * 1000)
         + (itemHp[2].value * 5000);
+    const itemPaTotal = (itemPa[0].value * 100)
+        + (itemPa[1].value * 1000)
+        + (itemPa[2].value * 5000);
     // 選択されたパラメータによって計算
     // 引数 x は表示上のパラメータ名[Lv,HP,物攻,物防,魔攻,魔防]
     // 引数 y は数式上のパラメータ名[R4,R3,R2,Hp,Pa,Pd,Ma,Md]

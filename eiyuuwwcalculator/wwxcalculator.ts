@@ -250,6 +250,9 @@ function calc(){
   const itemHpTotal = ((itemHp[0] as HTMLFormElement).value * 100)
     + ((itemHp[1] as HTMLFormElement).value * 1000)
     + ((itemHp[2] as HTMLFormElement).value * 5000);
+  const itemPaTotal = ((itemPa[0] as HTMLFormElement).value * 100)
+  + ((itemPa[1] as HTMLFormElement).value * 1000)
+  + ((itemPa[2] as HTMLFormElement).value * 5000);
 
   // 選択されたパラメータによって計算
   // 引数 x は表示上のパラメータ名[Lv,HP,物攻,物防,魔攻,魔防]
