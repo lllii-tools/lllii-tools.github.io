@@ -2525,11 +2525,10 @@ const hpNextList = [
   454,
   454//20000
 ];
-const paramNextList = [
+const atkNextList = [
   20
 ];
-const paramTotalList = [
-  0,
+const defNextList = [
   20,
   2000,
   4000

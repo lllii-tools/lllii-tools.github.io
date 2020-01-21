@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>英雄戦姫WW 経験値計算機</title>
+  <title>英雄戦姫WW 経験値計算機 | Eiyuu Senki WW EXP Calculator</title>
   <meta name="description" content="英雄戦姫WWの経験値計算機。">
   <script src="https://kit.fontawesome.com/188d4ed550.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/style.css">
@@ -52,7 +52,10 @@
           </lable>
           <input type="number" value="1" min="1" max="99" class="input relLv" id="currentValLv" onfocus="this.select();">
           <input type="number" value="0" min="0" max="99999" step="10" class="input relHp" id="currentValHp" onfocus="this.select();">
-          <input type="number" value="0" min="0" max="99" class="input relNotLv" id="currentValParam" onfocus="this.select();">
+          <input type="number" value="0" min="0" max="99" class="input relPa" id="currentValPa" onfocus="this.select();">
+          <input type="number" value="0" min="0" max="99" class="input relPd" id="currentValPd" onfocus="this.select();">
+          <input type="number" value="0" min="0" max="99" class="input relMa" id="currentValMa" onfocus="this.select();">
+          <input type="number" value="0" min="0" max="99" class="input relMd" id="currentValMd" onfocus="this.select();">
         </div>
         <div class="expMax relLv">
           <b>
@@ -78,6 +81,7 @@
           </select>
           <select name="" id="maxValLvR2" class="relR2" onchange="calc();">
             <option value="100">100</option>
+            <option value="85">85</option>
             <option value="70">70</option>
             <option value="55">55</option>
             <option value="40">40</option>
@@ -85,14 +89,29 @@
           </select>
         </div>
         <div class="expMax relHp">
-          <lable class="langJa"><b>目標値</b></lable>
-          <lable class="langEn"><b>Goal</b></lable>
-          <input type="number" value="10" min="10" max="20000" step="10" class="input" id="maxValHp" onfocus="this.select();">
+          <lable class="langJa"><b>目標値 (HP)</b></lable>
+          <lable class="langEn"><b>Goal (HP)</b></lable>
+          <input type="number" value="10" min="10" max="99999" step="10" class="input" id="maxValHp" onfocus="this.select();">
         </div>
-        <div class="expMax relNotLv">
-          <lable class="langJa"><b>目標値</b></lable>
-          <lable class="langEn"><b>Goal</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input" id="maxVal" onfocus="this.select();">
+        <div class="expMax relPa">
+          <lable class="langJa"><b>目標値 (物攻)</b></lable>
+          <lable class="langEn"><b>Goal (物攻)</b></lable>
+          <input type="number" value="1" min="1" max="999" class="input" id="maxValPa" onfocus="this.select();">
+        </div>
+        <div class="expMax relPd">
+          <lable class="langJa"><b>目標値 (物防)</b></lable>
+          <lable class="langEn"><b>Goal (物防)</b></lable>
+          <input type="number" value="1" min="1" max="999" class="input" id="maxValPd" onfocus="this.select();">
+        </div>
+        <div class="expMax relMa">
+          <lable class="langJa"><b>目標値 (魔攻)</b></lable>
+          <lable class="langEn"><b>Goal (魔攻)</b></lable>
+          <input type="number" value="1" min="1" max="999" class="input" id="maxValMa" onfocus="this.select();">
+        </div>
+        <div class="expMax relMd">
+          <lable class="langJa"><b>目標値 (物防)</b></lable>
+          <lable class="langEn"><b>Goal (物防)</b></lable>
+          <input type="number" value="1" min="1" max="999" class="input" id="maxValMd" onfocus="this.select();">
         </div>
       </div>
       <div class="expNext">
@@ -297,5 +316,5 @@
     </div>
   </main>
   <script src="explist.js"></script>
-  <script src="wwxcalculator.js"></script>
+  <script src="eiyuuwwcalculator.js"></script>
 </body>

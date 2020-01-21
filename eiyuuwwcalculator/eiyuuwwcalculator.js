@@ -156,7 +156,6 @@ function selectParam() {
         setClassStyle('relR4', 'display', 'none');
         setClassStyle('relR3', 'display', 'block');
         setClassStyle('relR2', 'display', 'none');
-        setClassStyle('relNotLv', 'display', 'none');
         calc();
     }
     else if (pLv.checked && r2.checked) {
@@ -165,37 +164,31 @@ function selectParam() {
         setClassStyle('relR4', 'display', 'none');
         setClassStyle('relR3', 'display', 'none');
         setClassStyle('relR2', 'display', 'block');
-        setClassStyle('relNotLv', 'display', 'none');
         calc();
     }
     else if (pHp.checked) {
         clearRel();
         paramFilter('relHp');
-        setClassStyle('relNotLv', 'display', 'none');
         calc();
     }
     else if (pPa.checked) {
         clearRel();
         paramFilter('relPa');
-        setClassStyle('relNotLv', 'display', 'block');
         calc();
     }
     else if (pPd.checked) {
         clearRel();
         paramFilter('relPd');
-        setClassStyle('relNotLv', 'display', 'block');
         calc();
     }
     else if (pMa.checked) {
         clearRel();
         paramFilter('relMa');
-        setClassStyle('relNotLv', 'display', 'block');
         calc();
     }
     else if (pMd.checked) {
         clearRel();
         paramFilter('relMd');
-        setClassStyle('relNotLv', 'display', 'block');
         calc();
     }
 }
@@ -222,9 +215,20 @@ function calc() {
     const itemHpTotal = (itemHp[0].value * 100)
         + (itemHp[1].value * 1000)
         + (itemHp[2].value * 5000);
-    const itemPaTotal = (itemPa[0].value * 100)
-        + (itemPa[1].value * 1000)
-        + (itemPa[2].value * 5000);
+    const itemPaTotal = (itemPa[0].value * 5)
+        + (itemPa[1].value * 50)
+        + (itemPa[2].value * 250);
+    const itemPdTotal = (itemPd[0].value * 5)
+        + (itemPd[1].value * 50)
+        + (itemPd[2].value * 250)
+        + (itemPd[2].value * 1250);
+    const itemMaTotal = (itemMa[0].value * 5)
+        + (itemPa[1].value * 50)
+        + (itemPa[2].value * 250);
+    const itemMdTotal = (itemMd[0].value * 5)
+        + (itemPd[1].value * 50)
+        + (itemPd[2].value * 250)
+        + (itemPd[2].value * 1250);
     // 選択されたパラメータによって計算
     // 引数 x は表示上のパラメータ名[Lv,HP,物攻,物防,魔攻,魔防]
     // 引数 y は数式上のパラメータ名[R4,R3,R2,Hp,Pa,Pd,Ma,Md]
@@ -235,64 +239,134 @@ function calc() {
         // フォーム入力値取得
         const currentLv = document.getElementById('currentValLv').value - 1;
         const currentHp = document.getElementById('currentValHp').value;
-        const currentParam = document.getElementById('currentValParam').value;
+        const currentPa = document.getElementById('currentValPa').value;
+        const currentPd = document.getElementById('currentValPd').value;
+        const currentMa = document.getElementById('currentValMa').value;
+        const currentMd = document.getElementById('currentValMd').value;
         const maxHp = document.getElementById('maxValHp').value;
-        const max = document.getElementById('maxVal').value;
+        const maxPa = document.getElementById('maxValPa').value;
+        const maxPd = document.getElementById('maxValPd').value;
+        const maxMa = document.getElementById('maxValMa').value;
+        const maxMd = document.getElementById('maxValMd').value;
         const next = document.getElementById('nextVal').value;
         // 各パラメータのx番目までの合計経験値
-        function hpTotal(x) {
+        function expTotal(x, y) {
+            ;
+            const param = {
+                r4: r4NextList,
+                r3: r3NextList,
+                r2: r2NextList,
+                hp: hpNextList,
+                atk: atkNextList,
+                def: defNextList
+            };
             let sum = 0;
-            for (let i = 0; i < x; i++) {
-                sum += hpNextList[i];
+            for (let i = 0; i < y; i++) {
+                sum += param[x][i];
             }
             return sum;
         }
         // 合計値の条件分岐
         function total() {
+            /*
+            if (z >= 0){return z;}
+            else if(z < 0){return '<small>' + z + '</small>';}
+            else{console.log('無効な数値です');}
+            */
             if (y == 'R4') {
-                const total = r4TotalList[getSelect(y)] - r4TotalList[currentLv] + r4NextList[currentLv] - next - itemLvTotal;
-                if (total >= 0) {
-                    return total;
+                const z = r4TotalList[getSelect(y)] - r4TotalList[currentLv] + r4NextList[currentLv] - next - itemLvTotal;
+                if (z >= 0) {
+                    return z;
                 }
-                else if (total < 0) {
-                    return '<small>' + total + '</small>';
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
                 }
             }
             else if (y == 'R3') {
-                const total = r3TotalList[getSelect(y)] - r3TotalList[currentLv] + r3NextList[currentLv] - next - itemLvTotal;
-                if (total >= 0) {
-                    return total;
+                const z = r3TotalList[getSelect(y)] - r3TotalList[currentLv] + r3NextList[currentLv] - next - itemLvTotal;
+                if (z >= 0) {
+                    return z;
                 }
-                else if (total < 0) {
-                    return '<small>' + total + '</small>';
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
                 }
             }
             else if (y == 'R2') {
-                const total = r2TotalList[getSelect(y)] - r2TotalList[currentLv] + r2NextList[currentLv] - next - itemLvTotal;
-                if (total >= 0) {
-                    return total;
+                const z = r2TotalList[getSelect(y)] - r2TotalList[currentLv] + r2NextList[currentLv] - next - itemLvTotal;
+                if (z >= 0) {
+                    return z;
                 }
-                else if (total < 0) {
-                    return '<small>' + total + '</small>';
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
                 }
             }
             else if (y == 'Hp') {
-                const total = hpTotal(maxHp / 10) - hpTotal(currentHp / 10) + hpNextList[maxHp / 10] - next - itemHpTotal;
-                console.log(hpNextList[maxHp / 10]);
-                if (total >= 0) {
-                    return total;
+                const z = expTotal('hp', maxHp / 10) - expTotal('hp', currentHp / 10) + hpNextList[maxHp / 10] - next - itemHpTotal;
+                if (z >= 0) {
+                    return z;
                 }
-                else if (total < 0) {
-                    return '<small>' + total + '</small>';
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
                 }
             }
-            else if (y == 'Pa' || y == 'Pd' || y == 'Ma' || y == 'Md') {
-                const total = paramTotalList[max] - paramTotalList[currentParam] - next;
-                if (total >= 0) {
-                    return total;
+            else if (y == 'Pa') {
+                const z = expTotal('atk', maxPa) - expTotal('atk', currentPa) - next - itemPaTotal;
+                if (z >= 0) {
+                    return z;
                 }
-                else if (total < 0) {
-                    return '<small>' + total + '</small>';
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
+                }
+            }
+            else if (y == 'Pd') {
+                const z = expTotal('def', maxPd) - expTotal('def', currentPd) - next - itemPdTotal;
+                if (z >= 0) {
+                    return z;
+                }
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
+                }
+            }
+            else if (y == 'Ma') {
+                const z = expTotal('atk', maxMa) - expTotal('atk', currentMa) - next - itemMaTotal;
+                if (z >= 0) {
+                    return z;
+                }
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
+                }
+            }
+            else if (y == 'Md') {
+                const z = expTotal('def', maxMd) - expTotal('def', currentMd) - next - itemMdTotal;
+                if (z >= 0) {
+                    return z;
+                }
+                else if (z < 0) {
+                    return '<small>' + z + '</small>';
+                }
+                else {
+                    console.log('無効な数値です');
                 }
             }
         }

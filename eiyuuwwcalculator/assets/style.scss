@@ -38,10 +38,13 @@ header{display:flex;justify-content: center;align-items: center;height: 50px;pad
     }
   }
   .home{@include animeOp;line-height: 0;
-    img{width: 25px;}
+    img{width: 20px;}
   }
   select{display:none;width: 40px;height: 24px;font-size: 14px;font-weight: normal;border:none;}
 }
+a,
+input,
+label{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 .btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 80px;border-radius:4px;cursor: pointer;user-select: none;
   &On{color:$clWhite;background: $clKeyGrad;border:none;
