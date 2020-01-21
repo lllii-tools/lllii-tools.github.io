@@ -249,14 +249,14 @@ function calc(){
   const itemPdTotal = ((itemPd[0] as HTMLFormElement).value * 5)
   + ((itemPd[1] as HTMLFormElement).value * 50)
   + ((itemPd[2] as HTMLFormElement).value * 250)
-  + ((itemPd[2] as HTMLFormElement).value * 1250);
+  + ((itemPd[3] as HTMLFormElement).value * 1250);
   const itemMaTotal = ((itemMa[0] as HTMLFormElement).value * 5)
-  + ((itemPa[1] as HTMLFormElement).value * 50)
-  + ((itemPa[2] as HTMLFormElement).value * 250);
+  + ((itemMa[1] as HTMLFormElement).value * 50)
+  + ((itemMa[2] as HTMLFormElement).value * 250);
   const itemMdTotal = ((itemMd[0] as HTMLFormElement).value * 5)
-  + ((itemPd[1] as HTMLFormElement).value * 50)
-  + ((itemPd[2] as HTMLFormElement).value * 250)
-  + ((itemPd[2] as HTMLFormElement).value * 1250);
+  + ((itemMd[1] as HTMLFormElement).value * 50)
+  + ((itemMd[2] as HTMLFormElement).value * 250)
+  + ((itemMd[3] as HTMLFormElement).value * 1250);
 
   // 選択されたパラメータによって計算
   // 引数 x は表示上のパラメータ名[Lv,HP,物攻,物防,魔攻,魔防]
@@ -326,7 +326,7 @@ function calc(){
         else if(z < 0){return '<small>' + z + '</small>';}
         else{console.log('無効な数値です');}
       } else if(y == 'Hp'){
-        const z = expTotal('hp',maxHp/10) - expTotal('hp',currentHp/10) + hpNextList[maxHp/10] - next - itemHpTotal;
+        const z = expTotal('hp',maxHp/10) - expTotal('hp',currentHp/10) - next - itemHpTotal;
         if (z >= 0){return z;}
         else if(z < 0){return '<small>' + z + '</small>';}
         else{console.log('無効な数値です');}

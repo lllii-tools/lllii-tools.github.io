@@ -47,12 +47,8 @@ input,
 label{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 .btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 80px;border-radius:4px;cursor: pointer;user-select: none;
-  &On{color:$clWhite;background: $clKeyGrad;border:none;
-    &:hover{color:$clWhite;}
-  }
-  &Off{color:clDark(0.36);border:$pixel solid clDark(0.24);
-    &:hover{color:clDark(0.6);border-color:clDark(0.6);}
-  }
+  &On{color:$clWhite;background: $clKeyGrad;border:none;}
+  &Off{color:clDark(0.36);border:$pixel solid clDark(0.24);}
   &Reset{width: 80px;}
 }
 .radioBtn{display:none;
@@ -143,8 +139,9 @@ select{display: flex;justify-content: center;align-items: center;width: 80px;hei
   &En{display:none !important;}
 }
 
-/*
+
 @media screen and (max-width:750px){
+  /*
   $pixel:0.5px;
   .btn{
     &Off{border-width:$pixel;}
@@ -154,5 +151,15 @@ select{display: flex;justify-content: center;align-items: center;width: 80px;hei
   .results{
     .expResult{border-bottom-width:$pixel;}
   }
+  */
 }
-*/
+@media screen and (min-width:750px){
+  .btn{
+    &On{
+      &:hover{color:$clWhite;}
+    }
+    &Off{
+      &:hover{color:clDark(0.6);border-color:clDark(0.6);}
+    }
+  }
+}

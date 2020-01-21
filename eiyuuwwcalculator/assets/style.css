@@ -99,16 +99,9 @@ label {
   background: linear-gradient(90deg, #db5876, #e67959);
   border: none;
 }
-.btnOn:hover, .radioBtn:checked + label:hover {
-  color: #fefefe;
-}
 .btnOff, .radioBtn + label {
   color: rgba(30, 34, 52, 0.36);
   border: 1px solid rgba(30, 34, 52, 0.24);
-}
-.btnOff:hover, .radioBtn + label:hover {
-  color: rgba(30, 34, 52, 0.6);
-  border-color: rgba(30, 34, 52, 0.6);
 }
 .btnReset {
   width: 80px;
@@ -285,8 +278,8 @@ select::selection {
   display: none !important;
 }
 
-/*
-@media screen and (max-width:750px){
+@media screen and (max-width: 750px) {
+  /*
   $pixel:0.5px;
   .btn{
     &Off{border-width:$pixel;}
@@ -296,5 +289,14 @@ select::selection {
   .results{
     .expResult{border-bottom-width:$pixel;}
   }
+  */
 }
-*/
+@media screen and (min-width: 750px) {
+  .btnOn:hover, .radioBtn:checked + label:hover {
+    color: #fefefe;
+  }
+  .btnOff:hover, .radioBtn + label:hover {
+    color: rgba(30, 34, 52, 0.6);
+    border-color: rgba(30, 34, 52, 0.6);
+  }
+}
