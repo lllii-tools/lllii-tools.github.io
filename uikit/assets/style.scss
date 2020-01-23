@@ -17,8 +17,14 @@ button{user-select: none;background:white;border:none;}
   &-minus{grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;border-right:1px solid black;}
   input,
   button{height: 32px;}
-  input{grid-column-start: 2;grid-column-end: 2;width: 100%;padding:0 10px;text-align: right;border:none;
-    //ブラウザ標準のスピンボタン非表示
-  }
+  input{grid-column-start: 2;grid-column-end: 2;width: 100%;padding:0 10px;text-align: right;border:none;}
   button{width: 32px;}
+}
+@media screen and (min-width:750px){
+  // PCブラウザ標準のスピンボタン非表示
+  input{
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+    &[type="number"] {-moz-appearance:textfield;}
+  }
 }
