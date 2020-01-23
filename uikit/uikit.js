@@ -34,12 +34,18 @@ function end() {
     clearTimeout(delay);
     clearInterval(timer);
 }
+// クリック
 plusBtn[0].addEventListener('mousedown', () => start(plus));
 plusBtn[0].addEventListener('mouseup', end);
 plusBtn[0].addEventListener('mouseout', end);
 minusBtn[0].addEventListener('mousedown', () => start(minus));
 minusBtn[0].addEventListener('mouseup', end);
 minusBtn[0].addEventListener('mouseout', end);
+// タップ
+plusBtn[0].addEventListener('touchstart', () => start(plus));
+plusBtn[0].addEventListener('touchend', end);
+minusBtn[0].addEventListener('touchstart', () => start(minus));
+minusBtn[0].addEventListener('touchend', end);
 function numberInput() {
     const target = document.getElementsByClassName('number-input');
     function targets() {
