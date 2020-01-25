@@ -28,6 +28,28 @@ const relNotLv = document.getElementsByClassName('relNotLv');
 //const paramList = ['Lv','Hp','Pa','Pd','Ma','Md'];
 const relParamList = ['relLv','relHp','relPa','relPd','relMa','relMd']
 
+// イベントリスナー
+const rarityRadio = document.getElementsByName('rarity');
+for(let i=0; i<rarityRadio.length; i++){
+  rarityRadio[i].addEventListener('change',selectRarity)
+}
+const paramRadio = document.getElementsByName('param');
+for(let i=0; i<paramRadio.length; i++){
+  paramRadio[i].addEventListener('change',selectParam)
+}
+const doCalc = document.getElementsByClassName('calc');
+for(let i=0; i<doCalc.length; i++){
+  doCalc[i].addEventListener('change',calc)
+}
+const doReset = document.getElementsByClassName('btnReset');
+for(let i=0; i<doReset.length; i++){
+  doReset[i].addEventListener('click',reset)
+}
+const selectAll = document.getElementsByClassName('selectAll');
+for(let i=0; i<selectAll.length; i++){
+  selectAll[i].addEventListener('focus',() => (selectAll[i] as HTMLInputElement).select())
+}
+
 
 // 初期状態
 new Promise(function(resolve){
@@ -85,6 +107,9 @@ function clearRel() {
 
 
 // 指定したclass名が付与された要素のスタイルを操作
+// x クラス名
+// y CSSプロパティ名
+// z CSSプロパティ値
 function setClassStyle(x:string, y:string, z:string){
   const targetClass = document.getElementsByClassName(x) as HTMLCollectionOf<HTMLElement>;
   function fn(){
@@ -272,6 +297,9 @@ function calc(){
     const currentPd:number = (<HTMLFormElement>document.getElementById('currentValPd')).value;
     const currentMa:number = (<HTMLFormElement>document.getElementById('currentValMa')).value;
     const currentMd:number = (<HTMLFormElement>document.getElementById('currentValMd')).value;
+    const maxLvR4:number = (<HTMLFormElement>document.getElementById('maxValLvR4')).value - 1;
+    const maxLvR3:number = (<HTMLFormElement>document.getElementById('maxValLvR3')).value - 1;
+    const maxLvR2:number = (<HTMLFormElement>document.getElementById('maxValLvR2')).value - 1;
     const maxHp:number = (<HTMLFormElement>document.getElementById('maxValHp')).value;
     const maxPa:number = (<HTMLFormElement>document.getElementById('maxValPa')).value;
     const maxPd:number = (<HTMLFormElement>document.getElementById('maxValPd')).value;
@@ -279,6 +307,8 @@ function calc(){
     const maxMd:number = (<HTMLFormElement>document.getElementById('maxValMd')).value;
     const next:number = (<HTMLFormElement>document.getElementById('nextVal')).value;
     // 各パラメータのx番目までの合計経験値
+    // x パラメータ名
+    // y 最大値
     function expTotal(x:string,y:number){
       interface paramInterface{
         r4: any;
@@ -311,17 +341,17 @@ function calc(){
       else{console.log('無効な数値です');}
       */
       if(y == 'R4'){
-        const z = r4TotalList[getSelect(y)] - r4TotalList[currentLv] + r4NextList[currentLv] - next - itemLvTotal;
+        const z = expTotal('r4',maxLvR4) - expTotal('r4',currentLv) - next - itemLvTotal;
         if (z >= 0){return z;}
         else if(z < 0){return '<small>' + z + '</small>';}
         else{console.log('無効な数値です');}
       } else if(y == 'R3'){
-        const z = r3TotalList[getSelect(y)] - r3TotalList[currentLv] + r3NextList[currentLv] - next - itemLvTotal;
+        const z = expTotal('r3',maxLvR3) - expTotal('r3',currentLv) - next - itemLvTotal;
         if (z >= 0){return z;}
         else if(z < 0){return '<small>' + z + '</small>';}
         else{console.log('無効な数値です');}
       } else if(y == 'R2'){
-        const z = r2TotalList[getSelect(y)] - r2TotalList[currentLv] + r2NextList[currentLv] - next - itemLvTotal;
+        const z = expTotal('r2',maxLvR2) - expTotal('r2',currentLv) - next - itemLvTotal;
         if (z >= 0){return z;}
         else if(z < 0){return '<small>' + z + '</small>';}
         else{console.log('無効な数値です');}

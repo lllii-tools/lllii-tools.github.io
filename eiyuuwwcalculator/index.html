@@ -27,21 +27,21 @@
         <b class="langJp">レアリティ</b>
         <b class="langEn">RARITY</b>
         <div class="radioGroup">
-          <input type="radio" value="rare4" name="rarity" id="rarity4" class="radioBtn" onchange="selectRarity();"><label for="rarity4">★4</label>
-          <input type="radio" value="rare3" name="rarity" id="rarity3" class="radioBtn" onchange="selectRarity();"><label for="rarity3">★3</label>
-          <input type="radio" value="rare2" name="rarity" id="rarity2" class="radioBtn" onchange="selectRarity();"><label for="rarity2">★2</label>
+          <input type="radio" value="rare4" name="rarity" id="rarity4" class="radioBtn"><label for="rarity4">★4</label>
+          <input type="radio" value="rare3" name="rarity" id="rarity3" class="radioBtn"><label for="rarity3">★3</label>
+          <input type="radio" value="rare2" name="rarity" id="rarity2" class="radioBtn"><label for="rarity2">★2</label>
         </div>
       </div>
       <div class="param">
         <b class="langJp">パラメータ</b class="langJp">
         <b class="langEn">PARAMETER</b>
         <div>
-          <input type="radio" value="Lv" name="param" id="paramLv" class="radioBtn" onchange="selectParam();"><label for="paramLv">Lv</label>
-          <input type="radio" value="HP" name="param" id="paramHp" class="radioBtn" onchange="selectParam();"><label for="paramHp">HP</label>
-          <input type="radio" value="PA" name="param" id="paramPa" class="radioBtn" onchange="selectParam();"><label for="paramPa">物攻</label>
-          <input type="radio" value="PD" name="param" id="paramPd" class="radioBtn" onchange="selectParam();"><label for="paramPd">物防</label>
-          <input type="radio" value="MA" name="param" id="paramMa" class="radioBtn" onchange="selectParam();"><label for="paramMa">魔攻</label>
-          <input type="radio" value="MD" name="param" id="paramMd" class="radioBtn" onchange="selectParam();"><label for="paramMd">魔防</label>
+          <input type="radio" value="Lv" name="param" id="paramLv" class="radioBtn"><label for="paramLv">Lv</label>
+          <input type="radio" value="HP" name="param" id="paramHp" class="radioBtn"><label for="paramHp">HP</label>
+          <input type="radio" value="PA" name="param" id="paramPa" class="radioBtn"><label for="paramPa">物攻</label>
+          <input type="radio" value="PD" name="param" id="paramPd" class="radioBtn"><label for="paramPd">物防</label>
+          <input type="radio" value="MA" name="param" id="paramMa" class="radioBtn"><label for="paramMa">魔攻</label>
+          <input type="radio" value="MD" name="param" id="paramMd" class="radioBtn"><label for="paramMd">魔防</label>
         </div>
       </div>
       <div class="exps">
@@ -50,12 +50,12 @@
             <b class="langJp">現在値</b class="langJp">
             <b class="langEn">CURRENT</b class="langEn">
           </lable>
-          <input type="number" value="1" min="1" max="99" class="input relLv" id="currentValLv" onfocus="this.select();">
-          <input type="number" value="0" min="0" max="99999" step="10" class="input relHp" id="currentValHp" onfocus="this.select();">
-          <input type="number" value="0" min="0" max="99" class="input relPa" id="currentValPa" onfocus="this.select();">
-          <input type="number" value="0" min="0" max="99" class="input relPd" id="currentValPd" onfocus="this.select();">
-          <input type="number" value="0" min="0" max="99" class="input relMa" id="currentValMa" onfocus="this.select();">
-          <input type="number" value="0" min="0" max="99" class="input relMd" id="currentValMd" onfocus="this.select();">
+          <input type="number" value="1" min="1" max="99" class="input selectAll relLv" id="currentValLv">
+          <input type="number" value="0" min="0" max="99999" step="10" class="input relHp" id="currentValHp">
+          <input type="number" value="0" min="0" max="99" class="input selectAll relPa" id="currentValPa">
+          <input type="number" value="0" min="0" max="99" class="input selectAll relPd" id="currentValPd">
+          <input type="number" value="0" min="0" max="99" class="input selectAll relMa" id="currentValMa">
+          <input type="number" value="0" min="0" max="99" class="input selectAll relMd" id="currentValMd">
         </div>
         <div class="expMax relLv">
           <b>
@@ -63,7 +63,7 @@
             <span class="langEn">MAX</span>
             <span id="expMaxR"></span>
           </b class="langJp">
-          <select name="" id="maxValLvR4" class="relR4" onchange="calc();">
+          <select name="" id="maxValLvR4" class="relR4 calc">
             <option value="100">100</option>
             <option value="85">85</option>
             <option value="70">70</option>
@@ -71,7 +71,7 @@
             <option value="50">50</option>
             <option value="30">30</option>
           </select>
-          <select name="" id="maxValLvR3" class="relR3" onchange="calc();">
+          <select name="" id="maxValLvR3" class="relR3 calc">
             <option value="100">100</option>
             <option value="85">85</option>
             <option value="70">70</option>
@@ -79,7 +79,7 @@
             <option value="50">45</option>
             <option value="30">30</option>
           </select>
-          <select name="" id="maxValLvR2" class="relR2" onchange="calc();">
+          <select name="" id="maxValLvR2" class="relR2 calc">
             <option value="100">100</option>
             <option value="85">85</option>
             <option value="70">70</option>
@@ -91,33 +91,33 @@
         <div class="expMax relHp">
           <lable class="langJa"><b>目標値 (HP)</b></lable>
           <lable class="langEn"><b>Goal (HP)</b></lable>
-          <input type="number" value="10" min="10" max="99999" step="10" class="input" id="maxValHp" onfocus="this.select();">
+          <input type="number" value="10" min="10" max="99999" step="10" class="input selectAll" id="maxValHp">
         </div>
         <div class="expMax relPa">
           <lable class="langJa"><b>目標値 (物攻)</b></lable>
           <lable class="langEn"><b>Goal (物攻)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input" id="maxValPa" onfocus="this.select();">
+          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValPa">
         </div>
         <div class="expMax relPd">
           <lable class="langJa"><b>目標値 (物防)</b></lable>
           <lable class="langEn"><b>Goal (物防)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input" id="maxValPd" onfocus="this.select();">
+          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValPd">
         </div>
         <div class="expMax relMa">
           <lable class="langJa"><b>目標値 (魔攻)</b></lable>
           <lable class="langEn"><b>Goal (魔攻)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input" id="maxValMa" onfocus="this.select();">
+          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValMa">
         </div>
         <div class="expMax relMd">
           <lable class="langJa"><b>目標値 (物防)</b></lable>
           <lable class="langEn"><b>Goal (物防)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input" id="maxValMd" onfocus="this.select();">
+          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValMd">
         </div>
       </div>
       <div class="expNext">
         <b class="langJp">次の強化まで</b class="langJp">
         <b class="langEn">FOR THE NEXT</b class="langEn">
-        <input type="number" value="0" class="input" id="nextVal" onfocus="this.select();">
+        <input type="number" value="0" class="input selectAll" id="nextVal">
       </div>
     </form>
     <div class="results">
@@ -137,7 +137,7 @@
               <span>Lv強化の書 I</span>
               <small class="expItem1">300EXP</small>
             </label>
-            <input type="number" name="itemLv" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemLv" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -145,7 +145,7 @@
               <span>Lv強化の書 II</span>
               <small class="expItem2">3000EXP</small>
             </label>
-            <input type="number" name="itemLv" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemLv" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -153,7 +153,7 @@
               <span>Lv強化の書 III</span>
               <small class="expItem3">15000EXP</small>
             </label>
-            <input type="number" name="itemLv" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemLv" value="0" min="0" max="999" class="input selectAll">
           </div>
         </div>
         <div class="expItems relHp">
@@ -163,7 +163,7 @@
               <span>HP強化の書 I</span>
               <small class="expItem1">100EXP</small>
             </label>
-            <input type="number" name="itemHp" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemHp" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -171,7 +171,7 @@
               <span>HP強化の書 II</span>
               <small class="expItem2">1000EXP</small>
             </label>
-            <input type="number" name="itemHp" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemHp" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -179,7 +179,7 @@
               <span>HP強化の書 III</span>
               <small class="expItem3">5000EXP</small>
             </label>
-            <input type="number" name="itemHp" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemHp" value="0" min="0" max="999" class="input selectAll">
           </div>
         </div>
         <div class="expItems relPa">
@@ -189,7 +189,7 @@
               <span>物攻強化の書 I</span>
               <small class="expItem1">5EXP</small>
             </label>
-            <input type="number" name="itemPa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemPa" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -197,7 +197,7 @@
               <span>物攻強化の書 II</span>
               <small class="expItem2">50EXP</small>
             </label>
-            <input type="number" name="itemPa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemPa" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -205,7 +205,7 @@
               <span>物攻強化の書 III</span>
               <small class="expItem3">250EXP</small>
             </label>
-            <input type="number" name="itemPa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemPa" value="0" min="0" max="999" class="input selectAll">
           </div>
         </div>
         <div class="expItems relPd">
@@ -215,7 +215,7 @@
               <span>物防強化の書 I</span>
               <small class="expItem1">5EXP</small>
             </label>
-            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -223,7 +223,7 @@
               <span>物防強化の書 II</span>
               <small class="expItem2">50EXP</small>
             </label>
-            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -231,7 +231,7 @@
               <span>物防強化の書 III</span>
               <small class="expItem3">250EXP</small>
             </label>
-            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -239,7 +239,7 @@
               <span>物防強化の書 IV</span>
               <small class="expItem4">1250EXP</small>
             </label>
-            <input type="number" name="itemPd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemPd" value="0" min="0" max="999" class="input selectAll">
           </div>
         </div>
         <div class="expItems relMa">
@@ -249,7 +249,7 @@
               <span>魔攻強化の書 I</span>
               <small class="expItem1">5EXP</small>
             </label>
-            <input type="number" name="itemMa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemMa" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -257,7 +257,7 @@
               <span>魔攻強化の書 II</span>
               <small class="expItem2">50EXP</small>
             </label>
-            <input type="number" name="itemMa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemMa" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -265,7 +265,7 @@
               <span>魔攻強化の書 III</span>
               <small class="expItem3">250EXP</small>
             </label>
-            <input type="number" name="itemMa" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemMa" value="0" min="0" max="999" class="input selectAll">
           </div>
         </div>
         <div class="expItems relMd">
@@ -275,7 +275,7 @@
               <span>魔防強化の書 I</span>
               <small class="expItem1">5EXP</small>
             </label>
-            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -283,7 +283,7 @@
               <span>魔防強化の書 II</span>
               <small class="expItem2">50EXP</small>
             </label>
-            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -291,7 +291,7 @@
               <span>魔防強化の書 III</span>
               <small class="expItem3">250EXP</small>
             </label>
-            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input selectAll">
           </div>
           <div>
             <label for="">
@@ -299,13 +299,13 @@
               <span>魔防強化の書 IV</span>
               <small class="expItem4">1250EXP</small>
             </label>
-            <input type="number" name="itemMd" value="0" min="0" max="999" class="input" onfocus="this.select();">
+            <input type="number" name="itemMd" value="0" min="0" max="999" class="input selectAll">
           </div>
         </div>
       </form>
     </div>
     <div class="bottoms">
-      <button class="btn btnReset" onclick="reset();">
+      <button class="btn btnReset">
         <span class="langJp">リセット</span>
         <span class="langEn">Reset</span>
       </button>
