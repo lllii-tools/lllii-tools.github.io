@@ -303,7 +303,7 @@ function calc() {
             else{console.log('無効な数値です');}
             */
             if (y == 'R4') {
-                const z = expTotal('r4', maxLvR4) - expTotal('r4', currentLv) - next - itemLvTotal;
+                const z = expTotal('r4', maxLvR4) - expTotal('r4', currentLv) - (r4NextList[currentLv] - next) - itemLvTotal;
                 if (z >= 0) {
                     return z;
                 }
@@ -315,7 +315,7 @@ function calc() {
                 }
             }
             else if (y == 'R3') {
-                const z = expTotal('r3', maxLvR3) - expTotal('r3', currentLv) - next - itemLvTotal;
+                const z = expTotal('r3', maxLvR3) - expTotal('r3', currentLv) - (r3NextList[currentLv] - next) - itemLvTotal;
                 if (z >= 0) {
                     return z;
                 }
@@ -327,7 +327,7 @@ function calc() {
                 }
             }
             else if (y == 'R2') {
-                const z = expTotal('r2', maxLvR2) - expTotal('r2', currentLv) - next - itemLvTotal;
+                const z = expTotal('r2', maxLvR2) - expTotal('r2', currentLv) - (r2NextList[currentLv] - next) - itemLvTotal;
                 if (z >= 0) {
                     return z;
                 }
@@ -339,7 +339,7 @@ function calc() {
                 }
             }
             else if (y == 'Hp') {
-                const z = expTotal('hp', maxHp / 10) - expTotal('hp', currentHp / 10) - next - itemHpTotal;
+                const z = expTotal('hp', maxHp / 10) - expTotal('hp', currentHp / 10) - (hpNextList[currentHp / 10] - next) - itemHpTotal;
                 if (z >= 0) {
                     return z;
                 }
@@ -351,7 +351,7 @@ function calc() {
                 }
             }
             else if (y == 'Pa') {
-                const z = expTotal('atk', maxPa) - expTotal('atk', currentPa) - next - itemPaTotal;
+                const z = expTotal('atk', maxPa) - expTotal('atk', currentPa) - (atkNextList[currentPa] - next) - itemPaTotal;
                 if (z >= 0) {
                     return z;
                 }
@@ -363,7 +363,7 @@ function calc() {
                 }
             }
             else if (y == 'Pd') {
-                const z = expTotal('def', maxPd) - expTotal('def', currentPd) - next - itemPdTotal;
+                const z = expTotal('def', maxPd) - expTotal('def', currentPd) - (defNextList[currentPd] - next) - itemPdTotal;
                 if (z >= 0) {
                     return z;
                 }
@@ -375,7 +375,7 @@ function calc() {
                 }
             }
             else if (y == 'Ma') {
-                const z = expTotal('atk', maxMa) - expTotal('atk', currentMa) - next - itemMaTotal;
+                const z = expTotal('atk', maxMa) - expTotal('atk', currentMa) - (atkNextList[currentMa] - next) - itemMaTotal;
                 if (z >= 0) {
                     return z;
                 }
@@ -387,7 +387,7 @@ function calc() {
                 }
             }
             else if (y == 'Md') {
-                const z = expTotal('def', maxMd) - expTotal('def', currentMd) - next - itemMdTotal;
+                const z = expTotal('def', maxMd) - expTotal('def', currentMd) - (defNextList[currentMd] - next) - itemMdTotal;
                 if (z >= 0) {
                     return z;
                 }
