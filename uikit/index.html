@@ -24,24 +24,27 @@
         <input type="radio" name="radio" id="radioE"><label for="radioE">Label</label>
         <input type="radio" name="radio" id="radioF"><label for="radioF">Label</label>
       </div>
-    </section>
-    <section>
-      <h2>Spin button</h2>
-      <div class="spin">
-        <input name="numInput" value="0" type="number">
-        <button name="numInput" value="1" class="spin-plus">+</button>
-        <button name="numInput" value="1" class="spin-minus">-</button>
+      <div class="radio-group">
+        <input type="radio" name="radio" id="radioA3" checked><label for="radioA3">Label</label>
+        <input type="radio" name="radio" id="radioB3"><label for="radioB3">Label</label>
+        <input type="radio" name="radio" id="radioC3"><label for="radioC3">Label</label>
       </div>
     </section>
     <section>
-      TEST
+      <h2>Spin button (複数設置可)</h2>
       <div class="spin">
-        <input type="number" name="test" value="1" class="test">
-        <button name="test" value="1" class="spinBtn plus spin-plus">+</button>
-        <button name="test" value="1" class="spinBtn minus spin-minus">-</button>
+        <input type="number" value="23" class="spin-input selectAll" id="numberSpinId">
+        <button value="1" class="spin-plus">+</button>
+        <button value="1" class="spin-minus">-</button>
+      </div>
+      <div class="spin">
+        <input type="number" value="123" class="spin-input selectAll" id="numberSpinId2">
+        <button value="1" class="spin-plus">+</button>
+        <button value="1" class="spin-minus">-</button>
       </div>
     </section>
   </main>
+
   <script src="uikit.js"></script>
 </body>
 </html>
