@@ -1,3 +1,8 @@
+@import "../../assets/core";
+@import "../../uikit/assets/uikit";
+
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap');
+
 $yellow:rgb(239,211,9);
 $lightblue:rgb(100,190,230);
 $red:rgb(234,130,130);
@@ -5,14 +10,17 @@ $blue:rgb(108,148,237);
 $pink:rgb(230,143,210);
 $violet:rgb(176,133,235);
 
-$clBase:rgb(241,242,243);
+$clBase:rgb(242,243,245);
 $clKey:rgb(219,88,118);
 $clKeyGrad:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));
-$clDark:rgb(30,34,52);
+$clDark:rgb(30,33,56);
 @function clDark($op:1) {
-  @return rgba(30,34,52,$op);
+  @return rgba(30,33,56,$op);
 }
 $clWhite: rgb(254,254,254);
+@function clWhite($op:1) {
+  @return rgba(254,254,254,$op);
+}
 $clClear: rgba(0,0,0,0);
 
 $pixel:1px;
@@ -25,26 +33,49 @@ $pixel:1px;
   &:hover{opacity:0.72;}
 }
 
+// UIKIT.CSCC OVERWRITE
+.radio-group{display:flex;overflow:hidden;width: 335px;background: $clWhite;border:none;border-radius:4px;
+  input[type="radio"]{display:none;
+    & + label{display:flex;justify-content: center;align-items: center;width: 100%;height:36px;border-right:none;}
+    &:last-of-type + label{border:none;}
+    &:checked + label{color:$clWhite;background: $clKeyGrad;}
+  }
+}
+.spin{grid-template-columns: 30px calc(140px - 60px) 30px;align-items: center;width:140px;border:none;
+  &-plus{grid-column-start: 3;grid-column-end: 4;grid-row-start: 1;border-left:1px solid black;}
+  &-minus{grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;border-right:1px solid black;}
+  input,
+  button{height:36px;background: none;}
+  input{width: 60px;margin:0 10px;padding:0 5px;border-bottom:1px solid clDark(0.2);}
+  button{@include centerXY;@include anime;width: 30px;height: 30px;font-size: 24px;border:none;box-shadow:none;
+    &:hover{background:$clWhite;}
+  }
+}
+
+
+// ORIGINAL
 *{box-sizing: border-box;}
-body{min-width: 375px;margin:0;padding:0;font-size: 12px;font-family: sans-serif;color:$clDark;background: $clBase;}
-main{padding:20px;}
-b{/*font-weight: normal;*/}
+body{min-width: 375px;margin:0;padding:0;font-size: 14px;font-family: sans-serif;color:$clDark;background: $clBase;}
+main{width: 375px;margin: 0 auto;padding:5px 0 20px 0;}
+b{font-weight: normal;}
 button{height:36px;padding:0 10px;background: white;border:none;border-radius:4px;box-shadow:0 2px 3px 0 clDark(0.1);}
-header{display:flex;justify-content: center;align-items: center;height: 50px;padding:0 12px;border-bottom:3px solid clDark(0.06);
-  h1{width: 100%;font-size: 14px;font-weight: normal;
-    b{display:block;font-size: 14px;font-weight: normal;letter-spacing: 0.2em;
+header{display:flex;justify-content: center;height: 110px;padding:20px 12px 0;align-items: center;line-height: 1.4;
+  h1{width: 100%;text-align: center;
+    b{display:block;font-size: 20px;font-weight: bold;letter-spacing: 0.2em;
       i::after{content:'＊';font-style: normal;}
       &.langEn{letter-spacing: 0.1em;}
+      small{display:block;font-size: 11px;font-weight: normal;text-align: center;font-family: 'Didact Gothic', sans-serif;}
     }
   }
-  .home{@include animeOp;line-height: 0;
+  .home{@include animeOp;display:none;line-height: 0;
     img{width: 20px;}
   }
   select{display:none;width: 40px;height: 24px;font-size: 14px;font-weight: normal;border:none;}
 }
 a,
 input,
-label{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+label,
+button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 .btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 80px;border-radius:4px;cursor: pointer;user-select: none;
   &On{color:$clWhite;background: $clKeyGrad;border:none;}
@@ -52,58 +83,51 @@ label{-webkit-tap-highlight-color:rgba(0,0,0,0);}
   &Reset{width: 80px;}
 }
 .radioBtn{display:none;
-  &:checked + label{@extend .btn,.btnOn;}
-  & + label{@extend .btn,.btnOff;margin-right:8px;}
+  &:checked + label{@extend .btnOn;}
+  & + label{@extend .btnOff;border:none;cursor: pointer;}
 }
 .input,
 select{display: flex;justify-content: center;align-items: center;width: 80px;height: 36px;font-size: 18px;font-weight: bold;background:none;border:none;border-bottom:1px solid clDark(0.16);
   &:focus{color:$clKey;border-color:$clKey;outline:none;}
   &::selection{color: $clKey;}
 }
+input{padding:0 5px;text-align: right;}
+select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:none;}
 
-.formBase{
-  & > div{margin-bottom:20px;
+.formBase{padding:0 20px;
+  & > div{margin-bottom:30px;
     & > div{display: flex;}
-    b{display:block;margin-bottom:3px;}
+    b{display:block;margin-bottom:6px;}
   }
-  .param{
-    .radioBtn{
-      &:checked + label,
-      & + label{@extend .btn;width: 36px;}
-    }
-  }
-  .exps{display: flex;
+  .exps{display: flex;position: relative;
     & > div{display: block;}
-    .expCurrent{position:relative;margin-right:60px;
-      &::after{content:'';display:block;position: absolute;bottom:0;left:112px;width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
-    }
-    .expMax{}
-  }
-  .expNext{
-    input{width: 80px;}
+    .expCurrent{position:relative;margin-right:55px;}
+    .expMax{flex-wrap:wrap;width: 100%;}
+    .slash{display:block;position: absolute;bottom:0;left:167px;width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
   }
 }
 
 
-.results{background: $clWhite;margin-bottom:20px;
-  .expResult{@include centerY;height: 72px;padding:0 20px;border-bottom: 1px solid clDark(0.1);
+.results{overflow:hidden;margin:0 auto 20px;width: 355px;color:$clWhite;background: rgb(40,45,85);border-radius:8px;
+  .expResult{@include centerY;justify-content: space-between;height: 72px;padding:0 20px;background: $clDark;
     & > span{display:inline-block;margin-right: 12px;}
     b{font-size: 30px;font-weight: normal;
-      small{color: clDark(0.2);}
+      small{color: clWhite(0.4);}
     }
   }
   .formExpItems{
     & > div{
       & > div{@include centerY;justify-content: space-between;margin:5px 0;
         label{@include centerY;
-          span{width: 100px;}
-          small{font-size: 11px;color:clDark(0.4);}
+          span{width: 100px;font-size: 12px;}
+          small{font-size: 11px;color:clWhite(0.4);}
         }
-        input[type="number"]{width: 60px;}
+        input[type="number"]{width: 60px;color:$clWhite;border-bottom-color:clWhite(0.16);}
       }
     }
-    .expItems{padding:10px 15px;
-      .icon{@include centerXY;width: 18px;height: 18px;margin-right: 8px;font-size: 10px;font-style: normal;color:$clWhite;border-radius:99px;}
+    .expItems{flex-wrap:wrap;width: 100%;padding:10px 15px;
+      & > div{width: 100%;}
+      .icon{@include centerXY;width: 18px;height: 18px;margin-right: 8px;font-size: 10px;font-weight: bold;font-style: normal;color:rgb(40,45,85);border-radius:99px;}
       &.relLv{
         .icon{background: $yellow;}
       }
@@ -127,7 +151,7 @@ select{display: flex;justify-content: center;align-items: center;width: 80px;hei
 }
 
 
-.bottoms{@include centerY;justify-content: space-between;
+.bottoms{@include centerY;justify-content: space-between;padding:0 20px;
   p span{opacity:0.4;display:inline-block;margin-right: 4px;font-size: 11px;}
 }
 .fa-twitter {transition:all 0.1s linear;opacity:0.4;font-size: 16px;color:rgb(30,34,52);
@@ -141,6 +165,7 @@ select{display: flex;justify-content: center;align-items: center;width: 80px;hei
 
 
 @media screen and (max-width:750px){
+  .radio-group{width: calc(100vw - 40px);}
   /*
   $pixel:0.5px;
   .btn{

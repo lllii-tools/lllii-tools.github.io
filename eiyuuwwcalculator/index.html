@@ -12,7 +12,7 @@
 <body>
   <header>
     <h1>
-      <b class="langJp">英雄<i></i>戦姫WW 経験値計算機 α</b>
+      <b class="langJp">英雄<i></i>戦姫WW<small>EXP CALCULATOR</small></b>
       <b class="langEn">Eiyuu Senki WW EXP Calculator</b>
     </h1>
     <a href="../" class="home"><img src="../src/logo.png" alt="lllii-tools"></a>
@@ -26,7 +26,7 @@
       <div class="rarity">
         <b class="langJp">レアリティ</b>
         <b class="langEn">RARITY</b>
-        <div class="radioGroup">
+        <div class="radio-group">
           <input type="radio" value="rare4" name="rarity" id="rarity4" class="radioBtn"><label for="rarity4">★4</label>
           <input type="radio" value="rare3" name="rarity" id="rarity3" class="radioBtn"><label for="rarity3">★3</label>
           <input type="radio" value="rare2" name="rarity" id="rarity2" class="radioBtn"><label for="rarity2">★2</label>
@@ -35,7 +35,7 @@
       <div class="param">
         <b class="langJp">パラメータ</b class="langJp">
         <b class="langEn">PARAMETER</b>
-        <div>
+        <div class="radio-group">
           <input type="radio" value="Lv" name="param" id="paramLv" class="radioBtn"><label for="paramLv">Lv</label>
           <input type="radio" value="HP" name="param" id="paramHp" class="radioBtn"><label for="paramHp">HP</label>
           <input type="radio" value="PA" name="param" id="paramPa" class="radioBtn"><label for="paramPa">物攻</label>
@@ -50,13 +50,38 @@
             <b class="langJp">現在値</b class="langJp">
             <b class="langEn">CURRENT</b class="langEn">
           </lable>
-          <input type="number" value="1" min="1" max="99" class="input selectAll relLv" id="currentValLv">
-          <input type="number" value="0" min="0" max="99999" step="10" class="input selectAll relHp" id="currentValHp">
-          <input type="number" value="0" min="0" max="99" class="input selectAll relPa" id="currentValPa">
-          <input type="number" value="0" min="0" max="99" class="input selectAll relPd" id="currentValPd">
-          <input type="number" value="0" min="0" max="99" class="input selectAll relMa" id="currentValMa">
-          <input type="number" value="0" min="0" max="99" class="input selectAll relMd" id="currentValMd">
+          <div class="spin relLv">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="1" min="1" max="99" class="input spin-input selectAll" id="currentValLv">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
+          <div class="spin relHp">
+            <button type="button" value="10" class="spin-minus">-</button>
+            <input type="number" value="0" min="0" max="99999" step="10" class="input spin-input selectAll" id="currentValHp">
+            <button type="button" value="10" class="spin-plus">+</button>
+          </div>
+          <div class="spin relPa">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="0" min="0" max="99" class="input spin-input selectAll" id="currentValPa">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
+          <div class="spin relPd">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="0" min="0" max="99" class="input spin-input selectAll" id="currentValPd">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
+          <div class="spin relMa">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="0" min="0" max="99" class="input spin-input selectAll" id="currentValMa">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
+          <div class="spin relMd">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="0" min="0" max="99" class="input spin-input selectAll" id="currentValMd">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
         </div>
+        <span class="slash"></span>
         <div class="expMax relLv">
           <b>
             <span class="langJp">最大値</span>
@@ -91,33 +116,57 @@
         <div class="expMax relHp">
           <lable class="langJa"><b>目標値 (HP)</b></lable>
           <lable class="langEn"><b>Goal (HP)</b></lable>
-          <input type="number" value="10" min="10" max="99999" step="10" class="input selectAll" id="maxValHp">
+          <div class="spin">
+            <button type="button" value="10" class="spin-minus">-</button>
+            <input type="number" value="10" min="10" max="99999" step="10" class="input spin-input selectAll" id="maxValHp">
+            <button type="button" value="10" class="spin-plus">+</button>
+          </div>
         </div>
         <div class="expMax relPa">
           <lable class="langJa"><b>目標値 (物攻)</b></lable>
           <lable class="langEn"><b>Goal (物攻)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValPa">
+          <div class="spin">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="1" min="1" max="999" class="input spin-input selectAll" id="maxValPa">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
         </div>
         <div class="expMax relPd">
           <lable class="langJa"><b>目標値 (物防)</b></lable>
           <lable class="langEn"><b>Goal (物防)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValPd">
+          <div class="spin">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="1" min="1" max="999" class="input spin-input selectAll" id="maxValPd">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
         </div>
         <div class="expMax relMa">
           <lable class="langJa"><b>目標値 (魔攻)</b></lable>
           <lable class="langEn"><b>Goal (魔攻)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValMa">
+          <div class="spin">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="1" min="1" max="999" class="input spin-input selectAll" id="maxValMa">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
         </div>
         <div class="expMax relMd">
           <lable class="langJa"><b>目標値 (物防)</b></lable>
           <lable class="langEn"><b>Goal (物防)</b></lable>
-          <input type="number" value="1" min="1" max="999" class="input selectAll" id="maxValMd">
+          <div class="spin">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="1" min="1" max="999" class="input spin-input selectAll" id="maxValMd">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
         </div>
       </div>
       <div class="expNext">
         <b class="langJp">次の強化まで</b class="langJp">
         <b class="langEn">FOR THE NEXT</b class="langEn">
-        <input type="number" value="0" class="input selectAll" id="nextVal">
+        <div class="spin">
+          <button type="button" value="1" class="spin-minus">-</button>
+          <input type="number" value="0" class="input spin-input selectAll" id="nextVal">
+          <button type="button" value="1" class="spin-plus">+</button>
+        </div>
       </div>
     </form>
     <div class="results">
@@ -315,6 +364,7 @@
       </p>
     </div>
   </main>
+  <script src="../uikit/uikit.js"></script>
   <script src="explist.js"></script>
   <script src="eiyuuwwcalculator.js"></script>
 </body>

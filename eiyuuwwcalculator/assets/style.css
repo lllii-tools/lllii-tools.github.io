@@ -1,4 +1,173 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: lightgray;
+}
+
+button {
+  -webkit-user-select: none;
+          user-select: none;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.radio-group {
+  display: flex;
+  overflow: hidden;
+  width: 360px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+.radio-group input[type=radio] {
+  display: none;
+}
+.radio-group input[type=radio] + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.radio-group input[type=radio]:last-of-type + label {
+  border: none;
+}
+.radio-group input[type=radio]:checked + label {
+  color: white;
+  background: black;
+}
+
+.spin {
+  display: grid;
+  grid-template-columns: 32px calc(160px - 64px - 2px) 32px;
+  grid-row-start: 1;
+  overflow: hidden;
+  width: 160px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+.spin-plus {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  border-left: 1px solid black;
+}
+.spin-minus {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  border-right: 1px solid black;
+}
+.spin input,
+.spin button {
+  height: 32px;
+}
+.spin input {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  width: 100%;
+  padding: 0 10px;
+  text-align: right;
+  border: none;
+}
+.spin button {
+  opacity: 0.2;
+  width: 32px;
+}
+.spin button:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 750px) {
+  input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .spin-plus,
+.spin-minus {
+    -webkit-touch-callout: none;
+  }
+}
+.radio-group {
+  display: flex;
+  overflow: hidden;
+  width: 335px;
+  background: #fefefe;
+  border: none;
+  border-radius: 4px;
+}
+.radio-group input[type=radio] {
+  display: none;
+}
+.radio-group input[type=radio] + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  border-right: none;
+}
+.radio-group input[type=radio]:last-of-type + label {
+  border: none;
+}
+.radio-group input[type=radio]:checked + label {
+  color: #fefefe;
+  background: linear-gradient(90deg, #db5876, #e67959);
+}
+
+.spin {
+  grid-template-columns: 30px calc(140px - 60px) 30px;
+  align-items: center;
+  width: 140px;
+  border: none;
+}
+.spin-plus {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  border-left: 1px solid black;
+}
+.spin-minus {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  border-right: 1px solid black;
+}
+.spin input,
+.spin button {
+  height: 36px;
+  background: none;
+}
+.spin input {
+  width: 60px;
+  margin: 0 10px;
+  padding: 0 5px;
+  border-bottom: 1px solid rgba(30, 33, 56, 0.2);
+}
+.spin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s linear;
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  border: none;
+  box-shadow: none;
+}
+.spin button:hover {
+  background: #fefefe;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,18 +176,20 @@ body {
   min-width: 375px;
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-family: sans-serif;
-  color: #1e2234;
-  background: #f1f2f3;
+  color: #1e2138;
+  background: #f2f3f5;
 }
 
 main {
-  padding: 20px;
+  width: 375px;
+  margin: 0 auto;
+  padding: 5px 0 20px 0;
 }
 
 b {
-  /*font-weight: normal;*/
+  font-weight: normal;
 }
 
 button {
@@ -27,26 +198,25 @@ button {
   background: white;
   border: none;
   border-radius: 4px;
-  box-shadow: 0 2px 3px 0 rgba(30, 34, 52, 0.1);
+  box-shadow: 0 2px 3px 0 rgba(30, 33, 56, 0.1);
 }
 
 header {
   display: flex;
   justify-content: center;
+  height: 110px;
+  padding: 20px 12px 0;
   align-items: center;
-  height: 50px;
-  padding: 0 12px;
-  border-bottom: 3px solid rgba(30, 34, 52, 0.06);
+  line-height: 1.4;
 }
 header h1 {
   width: 100%;
-  font-size: 14px;
-  font-weight: normal;
+  text-align: center;
 }
 header h1 b {
   display: block;
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 20px;
+  font-weight: bold;
   letter-spacing: 0.2em;
 }
 header h1 b i::after {
@@ -56,9 +226,17 @@ header h1 b i::after {
 header h1 b.langEn {
   letter-spacing: 0.1em;
 }
+header h1 b small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  text-align: center;
+  font-family: "Didact Gothic", sans-serif;
+}
 header .home {
   transition: all 0.1s linear;
   opacity: 1;
+  display: none;
   line-height: 0;
 }
 header .home:hover {
@@ -78,11 +256,12 @@ header select {
 
 a,
 input,
-label {
+label,
+button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.btn, .formBase .param .radioBtn:checked + label, .formBase .param .radioBtn + label, .radioBtn + label, .radioBtn:checked + label {
+.btn {
   transition: all 0.1s linear;
   display: flex;
   justify-content: center;
@@ -100,8 +279,8 @@ label {
   border: none;
 }
 .btnOff, .radioBtn + label {
-  color: rgba(30, 34, 52, 0.36);
-  border: 1px solid rgba(30, 34, 52, 0.24);
+  color: rgba(30, 33, 56, 0.36);
+  border: 1px solid rgba(30, 33, 56, 0.24);
 }
 .btnReset {
   width: 80px;
@@ -111,7 +290,8 @@ label {
   display: none;
 }
 .radioBtn + label {
-  margin-right: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .input,
@@ -125,7 +305,7 @@ select {
   font-weight: bold;
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(30, 34, 52, 0.16);
+  border-bottom: 1px solid rgba(30, 33, 56, 0.16);
 }
 .input:focus,
 select:focus {
@@ -138,54 +318,73 @@ select::selection {
   color: #db5876;
 }
 
+input {
+  padding: 0 5px;
+  text-align: right;
+}
+
+select {
+  width: 140px;
+  padding: 0 8px;
+  text-align: right;
+  background: #fefefe;
+  border: none;
+}
+
+.formBase {
+  padding: 0 20px;
+}
 .formBase > div {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .formBase > div > div {
   display: flex;
 }
 .formBase > div b {
   display: block;
-  margin-bottom: 3px;
-}
-.formBase .param .radioBtn:checked + label, .formBase .param .radioBtn + label {
-  width: 36px;
+  margin-bottom: 6px;
 }
 .formBase .exps {
   display: flex;
+  position: relative;
 }
 .formBase .exps > div {
   display: block;
 }
 .formBase .exps .expCurrent {
   position: relative;
-  margin-right: 60px;
+  margin-right: 55px;
 }
-.formBase .exps .expCurrent::after {
-  content: "";
+.formBase .exps .expMax {
+  flex-wrap: wrap;
+  width: 100%;
+}
+.formBase .exps .slash {
   display: block;
   position: absolute;
   bottom: 0;
-  left: 112px;
+  left: 167px;
   width: 1px;
   height: 36px;
-  background: #1e2234;
+  background: #1e2138;
   transform: rotate(30deg);
-}
-.formBase .expNext input {
-  width: 80px;
 }
 
 .results {
-  background: #fefefe;
-  margin-bottom: 20px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  width: 355px;
+  color: #fefefe;
+  background: #282d55;
+  border-radius: 8px;
 }
 .results .expResult {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 72px;
   padding: 0 20px;
-  border-bottom: 1px solid rgba(30, 34, 52, 0.1);
+  background: #1e2138;
 }
 .results .expResult > span {
   display: inline-block;
@@ -196,7 +395,7 @@ select::selection {
   font-weight: normal;
 }
 .results .expResult b small {
-  color: rgba(30, 34, 52, 0.2);
+  color: rgba(254, 254, 254, 0.4);
 }
 .results .formExpItems > div > div {
   display: flex;
@@ -210,16 +409,24 @@ select::selection {
 }
 .results .formExpItems > div > div label span {
   width: 100px;
+  font-size: 12px;
 }
 .results .formExpItems > div > div label small {
   font-size: 11px;
-  color: rgba(30, 34, 52, 0.4);
+  color: rgba(254, 254, 254, 0.4);
 }
 .results .formExpItems > div > div input[type=number] {
   width: 60px;
+  color: #fefefe;
+  border-bottom-color: rgba(254, 254, 254, 0.16);
 }
 .results .formExpItems .expItems {
+  flex-wrap: wrap;
+  width: 100%;
   padding: 10px 15px;
+}
+.results .formExpItems .expItems > div {
+  width: 100%;
 }
 .results .formExpItems .expItems .icon {
   display: flex;
@@ -229,8 +436,9 @@ select::selection {
   height: 18px;
   margin-right: 8px;
   font-size: 10px;
+  font-weight: bold;
   font-style: normal;
-  color: #fefefe;
+  color: #282d55;
   border-radius: 99px;
 }
 .results .formExpItems .expItems.relLv .icon {
@@ -256,6 +464,7 @@ select::selection {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
 }
 .bottoms p span {
   opacity: 0.4;
@@ -279,6 +488,10 @@ select::selection {
 }
 
 @media screen and (max-width: 750px) {
+  .radio-group {
+    width: calc(100vw - 40px);
+  }
+
   /*
   $pixel:0.5px;
   .btn{
@@ -296,7 +509,7 @@ select::selection {
     color: #fefefe;
   }
   .btnOff:hover, .radioBtn + label:hover {
-    color: rgba(30, 34, 52, 0.6);
-    border-color: rgba(30, 34, 52, 0.6);
+    color: rgba(30, 33, 56, 0.6);
+    border-color: rgba(30, 33, 56, 0.6);
   }
 }

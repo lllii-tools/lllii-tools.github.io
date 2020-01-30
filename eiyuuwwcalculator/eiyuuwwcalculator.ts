@@ -45,9 +45,13 @@ const doReset = document.getElementsByClassName('btnReset');
 for(let i=0; i<doReset.length; i++){
   doReset[i].addEventListener('click',reset)
 }
-const selectAll = document.getElementsByClassName('selectAll');
-for(let i=0; i<selectAll.length; i++){
-  selectAll[i].addEventListener('focus',() => (selectAll[i] as HTMLInputElement).select())
+const doPlus = document.getElementsByClassName('spin-plus');
+for(let i=0; i<doPlus.length; i++){
+  doPlus[i].addEventListener('click',calc)
+}
+const doMinus = document.getElementsByClassName('spin-minus');
+for(let i=0; i<doMinus.length; i++){
+  doMinus[i].addEventListener('click',calc)
 }
 
 
@@ -180,7 +184,7 @@ function paramFilter(x:string){
       }
     )
     // matchで返されたclass名にスタイル付与
-    setClassStyle(match[0], 'display', 'block')
+    setClassStyle(match[0], 'display', 'flex')
     // 引数と不一致の配列の値を返す
     const matchNot = relParamList.filter(
       function(y){
