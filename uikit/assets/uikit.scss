@@ -2,7 +2,7 @@
 
 *{box-sizing: border-box;}
 body{background: lightgray;}
-button{user-select: none;background:white;border:none;}
+button{user-select: none;background:white;border:none;cursor:pointer;}
 
 // Radio button group
 .radio-group{display:flex;overflow:hidden;width: 360px;border:1px solid black;border-radius:4px;
@@ -20,7 +20,9 @@ button{user-select: none;background:white;border:none;}
   input,
   button{height: 32px;}
   input{grid-column-start: 2;grid-column-end: 2;width: 100%;padding:0 10px;text-align: right;border:none;}
-  button{width: 32px;}
+  button{opacity:0.2;width: 32px;
+    &:hover{opacity:1;}
+  }
 }
 @media screen and (min-width:750px){
   // PCブラウザ標準のスピンボタン非表示
