@@ -9,7 +9,7 @@ $blue:rgb(108,148,237);
 $pink:rgb(230,143,210);
 $violet:rgb(176,133,235);
 
-$clBase:rgb(242,243,245);
+$clBase:rgb(240,241,243);
 $clKey:rgb(219,88,118);
 $clKeyGrad:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));
 $clDark:rgb(30,35,51);
@@ -103,7 +103,7 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
     & > div{display: block;}
     .expCurrent{position:relative;}
     .expMax{flex-wrap:wrap;width: 140px;}
-    .slash{display:block;position: absolute;bottom:0;left:calc(140px + ((100% / 2 - 130px) / 2) + 10px);width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
+    .slash{display:block;position: absolute;bottom:0;left:calc(50% + 0.5px);width: 1px;height: 40px;background: $clDark;transform: rotate(30deg);}
   }
 }
 

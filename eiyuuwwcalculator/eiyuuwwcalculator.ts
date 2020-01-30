@@ -48,10 +48,12 @@ for(let i=0; i<doReset.length; i++){
 const doPlus = document.getElementsByClassName('spin-plus');
 for(let i=0; i<doPlus.length; i++){
   doPlus[i].addEventListener('click',calc)
+  doPlus[i].addEventListener('touchend',calc)
 }
 const doMinus = document.getElementsByClassName('spin-minus');
 for(let i=0; i<doMinus.length; i++){
   doMinus[i].addEventListener('click',calc)
+  doMinus[i].addEventListener('touchend',calc)
 }
 
 
