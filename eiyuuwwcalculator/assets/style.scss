@@ -1,5 +1,4 @@
 @import "../../assets/core";
-@import "../../uikit/assets/uikit";
 
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap');
 
@@ -13,9 +12,9 @@ $violet:rgb(176,133,235);
 $clBase:rgb(242,243,245);
 $clKey:rgb(219,88,118);
 $clKeyGrad:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));
-$clDark:rgb(30,33,56);
+$clDark:rgb(30,35,51);
 @function clDark($op:1) {
-  @return rgba(30,33,56,$op);
+  @return rgba(30,35,51,$op);
 }
 $clWhite: rgb(254,254,254);
 @function clWhite($op:1) {
@@ -36,19 +35,19 @@ $pixel:1px;
 // UIKIT.CSCC OVERWRITE
 .radio-group{display:flex;overflow:hidden;width: 100%;max-width:335px;background: $clWhite;border:none;border-radius:4px;
   input[type="radio"]{display:none;
-    & + label{display:flex;justify-content: center;align-items: center;width: 100%;height:36px;border-right:none;}
+    & + label{display:flex;justify-content: center;align-items: center;width: 100%;height:40px;border-right:none;}
     &:last-of-type + label{border:none;}
     &:checked + label{color:$clWhite;background: $clKeyGrad;}
   }
 }
-.spin{grid-template-columns: 30px calc(140px - 60px) 30px;align-items: center;width:140px;border:none;
+.spin{display:grid;grid-template-columns: 30px calc(140px - 60px) 30px;align-items: center;width:140px;background: $clWhite;border:none;border-radius:4px;
   &-plus{grid-column-start: 3;grid-column-end: 4;grid-row-start: 1;border-left:1px solid black;}
   &-minus{grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;border-right:1px solid black;}
   input,
   button{height:36px;background: none;}
-  input{width: 60px;margin:0 10px;padding:0 5px;border-bottom:1px solid clDark(0.2);}
-  button{@include centerXY;@include anime;width: 30px;height: 30px;font-size: 24px;border:none;box-shadow:none;
-    &:hover{background:$clWhite;}
+  input{width: 80px;height: 40px;padding:0 10px;border-left:1px solid clDark(0.06);border-right:1px solid clDark(0.06);}
+  button{@include centerXY;@include anime;width: 30px;height: 40px;font-size: 20px;border:none;box-shadow:none;
+    &:hover{}
   }
 }
 
@@ -75,7 +74,7 @@ header{display:flex;justify-content: center;height: 110px;padding:20px 12px 0;al
 a,
 input,
 label,
-button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+button{-webkit-tap-highlight-color:rgba(0,0,0,0);outline:none;}
 
 .btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 80px;border-radius:4px;cursor: pointer;user-select: none;
   &On{color:$clWhite;background: $clKeyGrad;border:none;}
@@ -87,28 +86,29 @@ button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
   & + label{@extend .btnOff;border:none;cursor: pointer;}
 }
 .input,
-select{display: flex;justify-content: center;align-items: center;width: 80px;height: 36px;font-size: 18px;font-weight: bold;background:none;border:none;border-bottom:1px solid clDark(0.16);
-  &:focus{color:$clKey;border-color:$clKey;outline:none;}
+select{display: flex;justify-content: center;align-items: center;width: 80px;height: 40px;font-size: 18px;border:none;
+  &:focus{color:$clKey;}
   &::selection{color: $clKey;}
 }
 input{padding:0 5px;text-align: right;}
-select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:none;}
+select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:none;border-radius:4px;}
 
 .formBase{padding:0 20px;
-  & > div{margin-bottom:30px;
+  & > div{margin-bottom:22px;
+    &:last-of-type{margin-bottom: 30px;}
     & > div{display: flex;}
-    b{display:block;margin-bottom:6px;}
+    b{display:block;margin-bottom:4px;}
   }
   .exps{display: flex;justify-content: space-between;position: relative;
     & > div{display: block;}
     .expCurrent{position:relative;}
     .expMax{flex-wrap:wrap;width: 140px;}
-    .slash{display:block;position: absolute;bottom:0;left:calc(140px + ((100% / 2 - 140px) / 2) + 10px);width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
+    .slash{display:block;position: absolute;bottom:0;left:calc(140px + ((100% / 2 - 130px) / 2) + 10px);width: 1px;height: 36px;background: $clDark;transform: rotate(30deg);}
   }
 }
 
 
-.results{overflow:hidden;margin:0 auto 20px;width: 355px;color:$clWhite;background: rgb(40,45,85);border-radius:8px;
+.results{overflow:hidden;margin:0 auto 20px;width: 355px;color:$clWhite;background: rgb(43,46,69);border-radius:6px;
   .expResult{@include centerY;justify-content: space-between;height: 72px;padding:0 20px;background: $clDark;
     & > span{display:inline-block;margin-right: 12px;}
     b{font-size: 30px;font-weight: normal;
@@ -122,12 +122,18 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
           span{width: 100px;font-size: 12px;}
           small{font-size: 11px;color:clWhite(0.4);}
         }
-        input[type="number"]{width: 60px;color:$clWhite;border-bottom-color:clWhite(0.16);}
+        input[type="number"]{width: 60px;color:$clWhite;border-bottom-color:clWhite(0.16);
+          &:hover{border-bottom-color:$clKey;}
+        }
+        .spin{grid-template-columns: 24px calc(112px - 48px) 24px;width: 112px;background: clWhite(0.06);
+          input{width: 64px;height:32px;padding:0 8px;border-left:1px solid clDark(0.5);border-right:1px solid clDark(0.5);}
+          button{width: 24px;height: 32px;color:clWhite(1);}
+        }
       }
     }
     .expItems{flex-wrap:wrap;width: 100%;padding:10px 15px;
       & > div{width: 100%;}
-      .icon{@include centerXY;width: 18px;height: 18px;margin-right: 8px;font-size: 10px;font-weight: bold;font-style: normal;color:rgb(40,45,85);border-radius:99px;}
+      .icon{@include centerXY;width: 18px;height: 18px;margin-right: 8px;font-size: 10px;font-weight: bold;font-style: normal;color:rgb(43,46,69);border-radius:99px;}
       &.relLv{
         .icon{background: $yellow;}
       }
@@ -182,6 +188,15 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 
 //PC
 @media screen and (min-width:750px){
+  // PCブラウザ標準のスピンボタン非表示
+  input{
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+    &[type="number"] {-moz-appearance:textfield;}
+  }
+  // 長押し時のメニュー非表示
+  .spin-plus,
+  .spin-minus{-webkit-touch-callout:none;}
   main{width: 375px;}
   .btn{
     &On{

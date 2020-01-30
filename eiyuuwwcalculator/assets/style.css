@@ -1,102 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap");
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: lightgray;
-}
-
-button {
-  -webkit-user-select: none;
-          user-select: none;
-  background: white;
-  border: none;
-  cursor: pointer;
-}
-
-.radio-group {
-  display: flex;
-  overflow: hidden;
-  width: 360px;
-  border: 1px solid black;
-  border-radius: 4px;
-}
-.radio-group input[type=radio] {
-  display: none;
-}
-.radio-group input[type=radio] + label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 36px;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-.radio-group input[type=radio]:last-of-type + label {
-  border: none;
-}
-.radio-group input[type=radio]:checked + label {
-  color: white;
-  background: black;
-}
-
-.spin {
-  display: grid;
-  grid-template-columns: 32px calc(160px - 64px - 2px) 32px;
-  grid-row-start: 1;
-  overflow: hidden;
-  width: 160px;
-  border: 1px solid black;
-  border-radius: 4px;
-}
-.spin-plus {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  border-left: 1px solid black;
-}
-.spin-minus {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  border-right: 1px solid black;
-}
-.spin input,
-.spin button {
-  height: 32px;
-}
-.spin input {
-  grid-column-start: 2;
-  grid-column-end: 2;
-  width: 100%;
-  padding: 0 10px;
-  text-align: right;
-  border: none;
-}
-.spin button {
-  opacity: 0.2;
-  width: 32px;
-}
-.spin button:hover {
-  opacity: 1;
-}
-
-@media screen and (min-width: 750px) {
-  input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
-
-  .spin-plus,
-.spin-minus {
-    -webkit-touch-callout: none;
-  }
-}
 .radio-group {
   display: flex;
   overflow: hidden;
@@ -114,7 +17,7 @@ button {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 36px;
+  height: 40px;
   border-right: none;
 }
 .radio-group input[type=radio]:last-of-type + label {
@@ -126,10 +29,13 @@ button {
 }
 
 .spin {
+  display: grid;
   grid-template-columns: 30px calc(140px - 60px) 30px;
   align-items: center;
   width: 140px;
+  background: #fefefe;
   border: none;
+  border-radius: 4px;
 }
 .spin-plus {
   grid-column-start: 3;
@@ -149,10 +55,11 @@ button {
   background: none;
 }
 .spin input {
-  width: 60px;
-  margin: 0 10px;
-  padding: 0 5px;
-  border-bottom: 1px solid rgba(30, 33, 56, 0.2);
+  width: 80px;
+  height: 40px;
+  padding: 0 10px;
+  border-left: 1px solid rgba(30, 35, 51, 0.06);
+  border-right: 1px solid rgba(30, 35, 51, 0.06);
 }
 .spin button {
   display: flex;
@@ -160,15 +67,11 @@ button {
   align-items: center;
   transition: all 0.1s linear;
   width: 30px;
-  height: 30px;
-  font-size: 24px;
+  height: 40px;
+  font-size: 20px;
   border: none;
   box-shadow: none;
 }
-.spin button:hover {
-  background: #fefefe;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -179,7 +82,7 @@ body {
   padding: 0;
   font-size: 14px;
   font-family: sans-serif;
-  color: #1e2138;
+  color: #1e2333;
   background: #f2f3f5;
 }
 
@@ -199,7 +102,7 @@ button {
   background: white;
   border: none;
   border-radius: 4px;
-  box-shadow: 0 2px 3px 0 rgba(30, 33, 56, 0.1);
+  box-shadow: 0 2px 3px 0 rgba(30, 35, 51, 0.1);
 }
 
 header {
@@ -260,6 +163,7 @@ input,
 label,
 button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
 }
 
 .btn {
@@ -280,8 +184,8 @@ button {
   border: none;
 }
 .btnOff, .radioBtn + label {
-  color: rgba(30, 33, 56, 0.36);
-  border: 1px solid rgba(30, 33, 56, 0.24);
+  color: rgba(30, 35, 51, 0.36);
+  border: 1px solid rgba(30, 35, 51, 0.24);
 }
 .btnReset {
   width: 80px;
@@ -301,18 +205,13 @@ select {
   justify-content: center;
   align-items: center;
   width: 80px;
-  height: 36px;
+  height: 40px;
   font-size: 18px;
-  font-weight: bold;
-  background: none;
   border: none;
-  border-bottom: 1px solid rgba(30, 33, 56, 0.16);
 }
 .input:focus,
 select:focus {
   color: #db5876;
-  border-color: #db5876;
-  outline: none;
 }
 .input::selection,
 select::selection {
@@ -330,12 +229,16 @@ select {
   text-align: right;
   background: #fefefe;
   border: none;
+  border-radius: 4px;
 }
 
 .formBase {
   padding: 0 20px;
 }
 .formBase > div {
+  margin-bottom: 22px;
+}
+.formBase > div:last-of-type {
   margin-bottom: 30px;
 }
 .formBase > div > div {
@@ -343,7 +246,7 @@ select {
 }
 .formBase > div b {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .formBase .exps {
   display: flex;
@@ -364,10 +267,10 @@ select {
   display: block;
   position: absolute;
   bottom: 0;
-  left: calc(140px + ((100% / 2 - 140px) / 2) + 10px);
+  left: calc(140px + ((100% / 2 - 130px) / 2) + 10px);
   width: 1px;
   height: 36px;
-  background: #1e2138;
+  background: #1e2333;
   transform: rotate(30deg);
 }
 
@@ -376,8 +279,8 @@ select {
   margin: 0 auto 20px;
   width: 355px;
   color: #fefefe;
-  background: #282d55;
-  border-radius: 8px;
+  background: #2b2e45;
+  border-radius: 6px;
 }
 .results .expResult {
   display: flex;
@@ -385,7 +288,7 @@ select {
   justify-content: space-between;
   height: 72px;
   padding: 0 20px;
-  background: #1e2138;
+  background: #1e2333;
 }
 .results .expResult > span {
   display: inline-block;
@@ -421,6 +324,26 @@ select {
   color: #fefefe;
   border-bottom-color: rgba(254, 254, 254, 0.16);
 }
+.results .formExpItems > div > div input[type=number]:hover {
+  border-bottom-color: #db5876;
+}
+.results .formExpItems > div > div .spin {
+  grid-template-columns: 24px calc(112px - 48px) 24px;
+  width: 112px;
+  background: rgba(254, 254, 254, 0.06);
+}
+.results .formExpItems > div > div .spin input {
+  width: 64px;
+  height: 32px;
+  padding: 0 8px;
+  border-left: 1px solid rgba(30, 35, 51, 0.5);
+  border-right: 1px solid rgba(30, 35, 51, 0.5);
+}
+.results .formExpItems > div > div .spin button {
+  width: 24px;
+  height: 32px;
+  color: #fefefe;
+}
 .results .formExpItems .expItems {
   flex-wrap: wrap;
   width: 100%;
@@ -439,7 +362,7 @@ select {
   font-size: 10px;
   font-weight: bold;
   font-style: normal;
-  color: #282d55;
+  color: #2b2e45;
   border-radius: 99px;
 }
 .results .formExpItems .expItems.relLv .icon {
@@ -511,6 +434,19 @@ select {
   */
 }
 @media screen and (min-width: 750px) {
+  input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .spin-plus,
+.spin-minus {
+    -webkit-touch-callout: none;
+  }
+
   main {
     width: 375px;
   }
@@ -519,8 +455,8 @@ select {
     color: #fefefe;
   }
   .btnOff:hover, .radioBtn + label:hover {
-    color: rgba(30, 33, 56, 0.6);
-    border-color: rgba(30, 33, 56, 0.6);
+    color: rgba(30, 35, 51, 0.6);
+    border-color: rgba(30, 35, 51, 0.6);
   }
 
   .formBase .exps .slash {
