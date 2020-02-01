@@ -73,7 +73,6 @@
   box-shadow: none;
 }
 .spin button:hover {
-  color: #db5876;
   cursor: pointer;
 }
 
@@ -366,7 +365,6 @@ select {
   color: #fefefe;
 }
 .results .formExpItems > div > div .spin button:hover {
-  color: #db5876;
   cursor: pointer;
 }
 .results .formExpItems .expItems {
@@ -441,12 +439,24 @@ select {
     width: calc(100vw - 40px);
   }
 
+  .spin button:active {
+    color: #db5876;
+  }
+
   main {
     width: 100vw;
     max-width: 375px;
   }
+
+  .results .formExpItems > div > div .spin button:active {
+    color: #db5876;
+  }
 }
 @media screen and (min-width: 750px) {
+  .spin button:hover {
+    color: #db5876;
+  }
+
   input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
@@ -474,5 +484,9 @@ select {
 
   .formBase .exps .slash {
     left: 167.5px;
+  }
+
+  .results .formExpItems > div > div .spin button:hover {
+    color: #db5876;
   }
 }

@@ -48,7 +48,7 @@ $pixel:1px;
   button{height:36px;background: none;}
   input{width: 80px;height: 40px;padding:0 10px;border-left:1px solid clDark(0.06);border-right:1px solid clDark(0.06);}
   button{@include centerXY;@include anime;width: 30px;height: 40px;font-size: 20px;border:none;box-shadow:none;
-    &:hover{color:$clKey;cursor:pointer;}
+    &:hover{cursor:pointer;}
   }
 }
 
@@ -135,7 +135,7 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
         .spin{grid-template-columns: 24px calc(112px - 48px) 24px;width: 112px;background: clWhite(0.06);
           input{width: 64px;height:32px;padding:0 8px;border-left:1px solid clDark(0.5);border-right:1px solid clDark(0.5);}
           button{width: 24px;height: 32px;color:clWhite(1);
-            &:hover{color:$clKey;cursor:pointer;}
+            &:hover{cursor:pointer;}
           }
         }
       }
@@ -181,20 +181,41 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 // SP
 @media screen and (max-width:750px){
   .radio-group{width: calc(100vw - 40px);}
+  .spin{
+    button{
+      &:active{color:$clKey;}
+    }
+  }
   main{width: 100vw;max-width:375px;}
+  .results{
+    .formExpItems{
+      & > div{
+        & > div{
+          .spin{
+            button{
+              &:active{color:$clKey;}
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 //PC
 @media screen and (min-width:750px){
-  // PCブラウザ標準のスピンボタン非表示
+  .spin{
+    button{
+      &:hover{color:$clKey;}
+    }
+  }
   input{
     &[type="number"]::-webkit-outer-spin-button,
     &[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
     &[type="number"] {-moz-appearance:textfield;}
-  }
-  // 長押し時のメニュー非表示
+  }// PCブラウザ標準のスピンボタン非表示
   .spin-plus,
-  .spin-minus{-webkit-touch-callout:none;}
+  .spin-minus{-webkit-touch-callout:none;}// 長押し時のメニュー非表示
   main{width: 375px;}
   .btn{
     &On{
@@ -207,6 +228,19 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
   .formBase{
     .exps{
       .slash{left:167.5px;}
+    }
+  }
+  .results{
+    .formExpItems{
+      & > div{
+        & > div{
+          .spin{
+            button{
+              &:hover{color:$clKey;}
+            }
+          }
+        }
+      }
     }
   }
 }
