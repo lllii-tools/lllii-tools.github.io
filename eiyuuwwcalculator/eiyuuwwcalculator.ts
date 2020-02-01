@@ -413,6 +413,17 @@ function selectItem(){
   const grade4 = 300;
 }
 
-
-
+// 確認最大値
+const hpMax = document.getElementsByClassName('hpMax') as HTMLCollectionOf<HTMLElement>;
+for(let i=0; i<hpMax.length; i++){
+  hpMax[i].innerText = String((hpNextList.length - 1) * 10);
+}
+const atkMax = document.getElementsByClassName('atkMax') as HTMLCollectionOf<HTMLElement>;
+for(let i=0; i<atkMax.length; i++){
+  atkMax[i].innerText = String(atkNextList.length - 1);
+}
+const defMax = document.getElementsByClassName('defMax') as HTMLCollectionOf<HTMLElement>;
+for(let i=0; i<atkMax.length; i++){
+  defMax[i].innerText = String(defNextList.length - 1);
+}
 

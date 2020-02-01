@@ -5,19 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>lllii tools</title>
+  <style>
+    body{background:rgb(241,242,243);}
+    a{text-decoration: none;cursor:pointer;}
+    a:hover{opacity:0.8;}
+    header{display:flex;justify-content: center;align-items: center;height: 200px;}
+    h1{}
+    h1 img{width: 100px;}
+    h1 span{display:block;font-size: 14px;font-weight: normal;text-align: center;letter-spacing: 0.24em;}
+    h1 span::before{content:'';width: 0.24em;}
+    .card{display:block;width: 200px;padding:16px;border:1px solid rgba(30,34,52,0.2);}
+    .cardTitle{font-size:16px;font-weight: normal;}
+    .cardDescription{font-size:12px;line-height: 1.8;color:rgba(30,34,52,0.6);}
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>lllii tools</h1>
+    <h1>
+      <img src="src/logo.png" alt="lllii tools">
+      <span>lllii tools</span>
+    </h1>
   </header>
 
   <main>
-    <nav>
-      <ul>
-        <li><a href="./aigiscalculator">千年戦争アイギス経験値計算機 Min</a></li>
-      </ul>
-    </nav>
+    <a href="aigiscalculator/index.html" class="card">
+      <h2 class="cardTitle">千年戦争アイギス 経験値計算機 Min</h2>
+      <p class="cardDescription">よく使うレアリティ（ブラック、プラチナ、ゴールド、シルバー）の最大レベルまでに必要な経験値が計算できます。</p>
+    </a>
+    <a href="eiyuuwwcalculator/index.html" class="card">
+      <h2 class="cardTitle">英雄戦姫WW 経験値計算機（α版）</h2>
+      <p class="cardDescription">レベルや各パラメータアップに必要な経験値が計算できます。</p>
+    </a>
   </main>
 
 </body>

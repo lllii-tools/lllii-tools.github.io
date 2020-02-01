@@ -72,6 +72,11 @@
   border: none;
   box-shadow: none;
 }
+.spin button:hover {
+  color: #db5876;
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -230,6 +235,7 @@ select {
   background: #fefefe;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .formBase {
@@ -262,6 +268,21 @@ select {
 .formBase .exps .expMax {
   flex-wrap: wrap;
   width: 140px;
+}
+.formBase .exps .expMax > label {
+  position: relative;
+}
+.formBase .exps .expMax > label small {
+  display: inline-block;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 140px;
+  font-size: 11px;
+  color: #f84040;
+}
+.formBase .exps .expMax > label small i {
+  margin-right: 3px;
 }
 .formBase .exps .slash {
   display: block;
@@ -344,6 +365,10 @@ select {
   height: 32px;
   color: #fefefe;
 }
+.results .formExpItems > div > div .spin button:hover {
+  color: #db5876;
+  cursor: pointer;
+}
 .results .formExpItems .expItems {
   flex-wrap: wrap;
   width: 100%;
@@ -420,18 +445,6 @@ select {
     width: 100vw;
     max-width: 375px;
   }
-
-  /*
-  $pixel:0.5px;
-  .btn{
-    &Off{border-width:$pixel;}
-  }
-  .input,
-  select{border-width:$pixel;}
-  .results{
-    .expResult{border-bottom-width:$pixel;}
-  }
-  */
 }
 @media screen and (min-width: 750px) {
   input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {

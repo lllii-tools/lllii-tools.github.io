@@ -20,6 +20,7 @@ $clWhite: rgb(254,254,254);
 @function clWhite($op:1) {
   @return rgba(254,254,254,$op);
 }
+$clCaution: rgb(248,64,64);
 $clClear: rgba(0,0,0,0);
 
 $pixel:1px;
@@ -47,7 +48,7 @@ $pixel:1px;
   button{height:36px;background: none;}
   input{width: 80px;height: 40px;padding:0 10px;border-left:1px solid clDark(0.06);border-right:1px solid clDark(0.06);}
   button{@include centerXY;@include anime;width: 30px;height: 40px;font-size: 20px;border:none;box-shadow:none;
-    &:hover{}
+    &:hover{color:$clKey;cursor:pointer;}
   }
 }
 
@@ -91,7 +92,7 @@ select{display: flex;justify-content: center;align-items: center;width: 80px;hei
   &::selection{color: $clKey;}
 }
 input{padding:0 5px;text-align: right;}
-select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:none;border-radius:4px;}
+select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:none;border-radius:4px;cursor:pointer;}
 
 .formBase{padding:0 20px;
   & > div{margin-bottom:22px;
@@ -102,7 +103,13 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
   .exps{display: flex;justify-content: space-between;position: relative;
     & > div{display: block;}
     .expCurrent{position:relative;}
-    .expMax{flex-wrap:wrap;width: 140px;}
+    .expMax{flex-wrap:wrap;width: 140px;
+      & > label{position: relative;
+        small{display:inline-block;position:absolute;top:70px;left:0;width: 140px;font-size: 11px;color:$clCaution;
+          i{margin-right: 3px;}
+        }
+      }
+    }
     .slash{display:block;position: absolute;bottom:0;left:calc(50% + 0.5px);width: 1px;height: 40px;background: $clDark;transform: rotate(30deg);}
   }
 }
@@ -127,7 +134,9 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
         }
         .spin{grid-template-columns: 24px calc(112px - 48px) 24px;width: 112px;background: clWhite(0.06);
           input{width: 64px;height:32px;padding:0 8px;border-left:1px solid clDark(0.5);border-right:1px solid clDark(0.5);}
-          button{width: 24px;height: 32px;color:clWhite(1);}
+          button{width: 24px;height: 32px;color:clWhite(1);
+            &:hover{color:$clKey;cursor:pointer;}
+          }
         }
       }
     }
@@ -173,17 +182,6 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 @media screen and (max-width:750px){
   .radio-group{width: calc(100vw - 40px);}
   main{width: 100vw;max-width:375px;}
-  /*
-  $pixel:0.5px;
-  .btn{
-    &Off{border-width:$pixel;}
-  }
-  .input,
-  select{border-width:$pixel;}
-  .results{
-    .expResult{border-bottom-width:$pixel;}
-  }
-  */
 }
 
 //PC

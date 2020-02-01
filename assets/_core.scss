@@ -1,0 +1,7 @@
+@mixin centerXY{display:flex;justify-content: center;align-items: center;}
+@mixin centerY{display:flex;align-items: center;}
+
+@mixin anime{transition:all 0.1s linear;}
+@mixin animeOp{@include anime;opacity:1;
+  &:hover{opacity:0.72;}
+}

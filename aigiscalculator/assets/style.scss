@@ -1,3 +1,46 @@
+@import "../../assets/core";
+
+$clBase:rgb(240,241,243);
+$clKey:rgb(219,88,118);
+$clKeyGrad:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));
+$clDark:rgb(30,35,51);
+@function clDark($op:1) {
+  @return rgba(30,35,51,$op);
+}
+$clWhite: rgb(254,254,254);
+@function clWhite($op:1) {
+  @return rgba(254,254,254,$op);
+}
+$clClear: rgba(0,0,0,0);
+
+@mixin centerXY{display:flex;justify-content: center;align-items: center;}
+@mixin centerY{display:flex;align-items: center;}
+
+@mixin anime{transition:all 0.1s linear;}
+@mixin animeOp{@include anime;opacity:1;
+  &:hover{opacity:0.72;}
+}
+
+// UIKIT.CSCC OVERWRITE
+.radio-group{display:flex;overflow:hidden;width: 100%;max-width:335px;background: $clWhite;border:none;border-radius:4px;
+  input[type="radio"]{display:none;
+    & + label{display:flex;justify-content: center;align-items: center;width: 100%;height:40px;border-right:none;}
+    &:last-of-type + label{border:none;}
+    &:checked + label{color:$clWhite;background: $clKeyGrad;}
+  }
+}
+.spin{display:grid;grid-template-columns: 30px calc(140px - 60px) 30px;align-items: center;width:140px;background: $clWhite;border:none;border-radius:4px;
+  &-plus{grid-column-start: 3;grid-column-end: 4;grid-row-start: 1;border-left:1px solid black;}
+  &-minus{grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;border-right:1px solid black;}
+  input,
+  button{height:36px;background: none;}
+  input{width: 80px;height: 40px;padding:0 10px;border-left:1px solid clDark(0.06);border-right:1px solid clDark(0.06);}
+  button{@include centerXY;@include anime;width: 30px;height: 40px;font-size: 20px;border:none;box-shadow:none;
+    &:hover{}
+  }
+}
+
+// ORIGINAL
 body{min-width: 375px;margin:0;padding:0;font-size: 12px;font-family: sans-serif;color:rgb(30,34,52);background: rgb(241,242,243);}
 main{padding:20px;}
 input,
