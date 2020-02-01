@@ -1,3 +1,5 @@
+/// <reference path='explist.ts'/>
+
 /*
 略称
 Bk = Black
@@ -185,374 +187,11 @@ function expCalculate() {
     uPrazer.value*10000*sarri()/10
   )
 
-
-
   let rareBk = <HTMLInputElement> document.getElementById('rarityBlack');
   let rarePt = <HTMLInputElement> document.getElementById('rarityPlatinum');
   let rareGl = <HTMLInputElement> document.getElementById('rarityGold');
   let rareSl = <HTMLInputElement> document.getElementById('raritySilver');
 
-  // 必要経験値リスト
-  const totalBlackExp = [
-    0,
-    48,
-    98,
-    150,
-    203,
-    258,
-    317,
-    375,
-    437,
-    500,//10
-    627,
-    759,
-    897,
-    1040,
-    1187,
-    1340,
-    1497,
-    1659,
-    1827,
-    2000,//20
-    2255,
-    2519,
-    2793,
-    3078,
-    3374,
-    3478,
-    3993,
-    4319,
-    4655,
-    5000,//30
-    5424,
-    5865,
-    6323,
-    6797,
-    7289,
-    7797,
-    8322,
-    8865,
-    9423,
-    10001,//40
-    10848,
-    11729,
-    12644,
-    13593,
-    14577,
-    15593,
-    16644,
-    17729,
-    18848,
-    20000,//50
-    21272,
-    22593,
-    23966,
-    25391,
-    26865,
-    28391,
-    29966,
-    31593,
-    33272,
-    35000,//60
-    36695,
-    38457,
-    40289,
-    42186,
-    44153,
-    46187,
-    48288,
-    50457,
-    52695,
-    55001,//70
-    57119,
-    59322,
-    61610,
-    63983,
-    66441,
-    68984,
-    71610,
-    74322,
-    77118,
-    80000,//80
-    82967,
-    86051,
-    89255,
-    92577,
-    96017,
-    99576,
-    103254,
-    107051,
-    110966,
-    115001,//90
-    117966,
-    121052,
-    124254,
-    127577,
-    131018,
-    134577,
-    138254,
-    142052,
-    145967//99
-  ];
-  const totalPlatinumExp = [
-    0,
-    45,
-    91,
-    140,
-    189,
-    241,
-    295,
-    350,
-    407,
-    466,//10
-    585,
-    708,
-    837,
-    970,
-    1107,
-    1250,
-    1397,
-    1548,
-    1705,
-    1866,//20
-    2104,
-    2351,
-    2607,
-    2873,
-    3149,
-    3433,
-    3727,
-    4031,
-    4344,
-    4666,//30
-    5062,
-    5474,
-    5901,
-    6343,
-    6803,
-    7277,
-    7767,
-    8274,
-    8795,
-    9334,//40
-    10125,
-    10947,
-    11801,
-    12687,
-    13605,
-    14553,
-    15534,
-    16547,
-    17591,
-    18666,//50
-    19853,
-    21087,
-    22368,
-    23698,
-    25074,
-    26498,
-    27968,
-    29487,
-    31053,
-    32666,//60
-    34248,
-    35893,
-    37603,
-    39374,
-    41209,
-    43107,
-    45069,
-    47093,
-    49182,
-    51334,//70
-    53311,
-    55367,
-    57502,
-    59717,
-    62012,
-    64385,
-    66836,
-    69367,
-    71977,
-    74666,//80
-    77435,
-    80314,
-    83304,
-    86405,
-    89615,
-    92938,
-    96370,
-    99914,
-    103568,
-    107334,//90
-    110102,
-    112981,
-    115970,
-    119071,
-    122283,
-    125605,
-    129037,
-    132581,
-    136235//99
-  ];
-  const totalGoldExp = [
-    0,
-    42,
-    85,
-    130,
-    176,
-    224,
-    274,
-    325,
-    378,
-    433,//10
-    543,
-    658,
-    777,
-    901,
-    1028,
-    1161,
-    1297,
-    1438,
-    1583,
-    1733,//20
-    1954,
-    2183,
-    2421,
-    2668,
-    2924,
-    3188,
-    3461,
-    3743,
-    4034,
-    4333,//30
-    4701,
-    5083,
-    5480,
-    5890,
-    6317,
-    6757,
-    7212,
-    7683,
-    8167,
-    8667,//40
-    9402,
-    10165,
-    10958,
-    11781,
-    12633,
-    13514,
-    14425,
-    15365,
-    16335,
-    17333,//50
-    18435,
-    19581,
-    20770,
-    22005,
-    23283,
-    24605,
-    25970,
-    27381,
-    28835,
-    30333,//60
-    31802,
-    33329,
-    34917,
-    36561,
-    38266,
-    40028,
-    41850,
-    43729,
-    45669,
-    47667,//70
-    49503,
-    51412,
-    53395,
-    55452,
-    57582,
-    59786,
-    62062,
-    64412,
-    66836,
-    69333,//80
-    71904,
-    74577,
-    77354,
-    80233,
-    83214,
-    86299,
-    89487,
-    92777,
-    96170,
-    99667,//90
-    102237,
-    104911,
-    107687,
-    110566,
-    113549,
-    116633,
-    119820,
-    123111,
-    126504//99
-  ];
-  const totalSilverExp = [
-    0,
-    38,
-    78,
-    120,
-    162,
-    206,
-    253,
-    300,
-    349,
-    400,//10
-    502,
-    607,
-    718,
-    832,
-    949,
-    1072,
-    1198,
-    1327,
-    1462,
-    1600,//20
-    1804,
-    2015,
-    2234,
-    2462,
-    2699,
-    2942,
-    3194,
-    3455,
-    3724,
-    4000,//30
-    4339,
-    4692,
-    5058,
-    5437,
-    5831,
-    6238,
-    6658,
-    7092,
-    7538,
-    8000,//40
-    8678,
-    9383,
-    10115,
-    10874,
-    11662,
-    12474,
-    13315,
-    14183,
-    15078,
-    16000,//50
-    17017,
-    18074,
-    19172,
-    20312,
-    21492//55
-  ];
 
   const maxBlackLevel = [50, 80, 99];
   const maxBlackExp = [20000, 80000, 145967];
@@ -566,10 +205,10 @@ function expCalculate() {
   // ラジオボタンのvalueはデフォルトだとString型として扱われているようなのでNumber型指定をする。
   const selectedMax = Number(max);
 
-  function reqExp(maxLevel, maxExp, totalExp) {
+  function reqExp(maxLevel, maxExp, totalExp, nextExp) {
     // indexOfで検索されるデータはデフォルトだとString型として扱われているようなのでNumber型指定をする。型指定が適切でないと「-1」を返す。
     const x = maxLevel.indexOf(Number(max));
-    let requiredExp: number = (maxExp[x] - (totalExp[current]) - (next));
+    let requiredExp: number = (maxExp[x] - (totalExp[current]) - (nextExp[current] - next));
     if(!(requiredExp)) {
       expResult.innerHTML = '必要経験値　' + '<span>無効な数値が入力されています</span>';
     } else {
@@ -578,13 +217,13 @@ function expCalculate() {
   }
 
   if(rareBk.checked) {
-    reqExp(maxBlackLevel, maxBlackExp, totalBlackExp);
+    reqExp(maxBlackLevel, maxBlackExp, totalBlackExp, nextBlackExp);
   } else if(rarePt.checked) {
-    reqExp(maxPlatinumLevel, maxPlatinumExp, totalPlatinumExp);
+    reqExp(maxPlatinumLevel, maxPlatinumExp, totalPlatinumExp, nextPlatinumExp);
   } else if(rareGl.checked) {
-    reqExp(maxGoldLevel, maxGoldExp, totalGoldExp);
+    reqExp(maxGoldLevel, maxGoldExp, totalGoldExp, nextGoldExp);
   } else if(rareSl.checked) {
-    reqExp(maxSilverLevel, maxSilverExp, totalSilverExp);
+    reqExp(maxSilverLevel, maxSilverExp, totalSilverExp, nextSilverExp);
   }
 }
 
