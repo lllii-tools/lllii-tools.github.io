@@ -80,6 +80,12 @@ input,
 label,
 button{-webkit-tap-highlight-color:rgba(0,0,0,0);outline:none;}
 
+input{
+  &[type="number"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+  &[type="number"] {-moz-appearance:textfield;}
+}// PCブラウザ標準のスピンボタン非表示
+
 .btn{@include anime;display:flex;justify-content: center;align-items: center;height: 36px;width: 80px;border-radius:4px;cursor: pointer;user-select: none;
   &On{color:$clWhite;background: $clKeyGrad;border:none;}
   &Off{color:clDark(0.36);border:$pixel solid clDark(0.24);}
@@ -212,11 +218,6 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
       &:hover{color:$clKey;}
     }
   }
-  input{
-    &[type="number"]::-webkit-outer-spin-button,
-    &[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
-    &[type="number"] {-moz-appearance:textfield;}
-  }// PCブラウザ標準のスピンボタン非表示
   .spin-plus,
   .spin-minus{-webkit-touch-callout:none;}// 長押し時のメニュー非表示
   main{width: 375px;}

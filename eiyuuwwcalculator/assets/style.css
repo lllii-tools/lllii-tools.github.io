@@ -180,6 +180,14 @@ button {
   outline: none;
 }
 
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .btn {
   transition: all 0.1s linear;
   display: flex;
@@ -465,14 +473,6 @@ select {
 @media screen and (min-width: 750px) {
   .spin button:hover {
     color: #db5876;
-  }
-
-  input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type=number] {
-    -moz-appearance: textfield;
   }
 
   .spin-plus,

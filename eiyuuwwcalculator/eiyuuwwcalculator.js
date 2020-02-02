@@ -430,13 +430,16 @@ function selectItem() {
 // 確認最大値
 const hpMax = document.getElementsByClassName('hpMax');
 for (let i = 0; i < hpMax.length; i++) {
-    hpMax[i].innerText = String((hpNextList.length - 1) * 10);
+    //hpMax[i].innerText = String((hpNextList.length - 1) * 10);
+    hpMax[i].innerText = '14950';
 }
 const atkMax = document.getElementsByClassName('atkMax');
 for (let i = 0; i < atkMax.length; i++) {
-    atkMax[i].innerText = String(atkNextList.length - 1);
+    //atkMax[i].innerText = String(atkNextList.length - 1);
+    atkMax[i].innerText = '190';
 }
 const defMax = document.getElementsByClassName('defMax');
 for (let i = 0; i < atkMax.length; i++) {
-    defMax[i].innerText = String(defNextList.length - 1);
+    //defMax[i].innerText = String(defNextList.length - 1);
+    defMax[i].innerText = '114';
 }
