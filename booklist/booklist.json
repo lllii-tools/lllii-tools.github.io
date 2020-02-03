@@ -1,7 +1,7 @@
 {
   "books" :[
     {
-      "name"        :"sample",
+      "title"        :"sample",
       "author"      :"someone",
       "genre"       :[
         "科学"
@@ -9,7 +9,7 @@
       "description" :"説明文が入ります。"
     },
     {
-      "name"        :"アダム・スミス",
+      "title"        :"アダム・スミス",
       "author"      :"堂目卓生",
       "genre"       :[
         "社会",
