@@ -104,6 +104,12 @@
       "shelf":"A4L"
     },
     {
+      "title":"若者を殺すのは誰か？",
+      "author":"城 繁幸",
+      "category":["社会"],
+      "shelf":"A4L"
+    },
+    {
       "title":"お金持ちの教科書",
       "author":"加谷 珪一",
       "category":[""],
@@ -135,15 +141,159 @@
     },
     {
       "title":"実践 デザイン・シンキング",
-      "author":"",
-      "category":[""],
+      "author":"-",
+      "category":["デザイン"],
       "shelf":"A4L"
     },
     {
       "title":"I Am a Cat",
       "author":"夏目漱石",
-      "category":[""],
+      "category":["小説"],
       "shelf":"A4L"
+    },
+    {
+      "title":"ゴッホ展",
+      "author":"",
+      "category":["図録"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"MONET",
+      "author":"",
+      "category":["図録"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"モーリス・ド・ヴラマンク展",
+      "author":"",
+      "category":["図録"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"ミイラと古代エジプト展",
+      "author":"",
+      "category":["図録"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"佐伯祐三展",
+      "author":"",
+      "category":["図録"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"国宝 土偶展",
+      "author":"",
+      "category":["図録"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"黄金の都シカン SICAN",
+      "author":"",
+      "category":["図録"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"SALVADOR DALI",
+      "author":"Gilles Néret",
+      "category":["美術書"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"レンブラント",
+      "author":"ミヒャエル・ボッケミュール",
+      "category":["美術書"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"マグリット",
+      "author":"マルセル・パケ",
+      "category":["美術書"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"ムンク",
+      "author":"ウルリヒ・ビショフ",
+      "category":["美術書"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"FRANCIS BACON",
+      "author":"Luigi Ficacci",
+      "category":["美術書"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"ターナー",
+      "author":"ミヒャエル・ボッケミュール",
+      "category":["美術書"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"auction 18 van sabben poster auctions",
+      "author":"-",
+      "category":["カタログ","デザイン"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"auction 19 van sabben poster auctions",
+      "author":"-",
+      "category":["カタログ","デザイン"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"auction 20 van sabben auctions",
+      "author":"-",
+      "category":["カタログ","デザイン"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"アルフォンス・ミュシャ",
+      "author":"-",
+      "category":["画集"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"アルフォンス・ミュシャ作品集",
+      "author":"-",
+      "category":["画集"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"Antonio López",
+      "author":"",
+      "category":["画集"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"J.C. LEYENDECKER",
+      "author":"-",
+      "category":["画集"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"画狂人ホルスト・ヤンセン",
+      "author":"-",
+      "category":["画集"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"エゴン・シーレ",
+      "author":"-",
+      "category":["画集"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"double memory",
+      "author":"Rick Berry, Phil Hale",
+      "category":["画集"],
+      "shelf":"B1L"
+    },
+    {
+      "title":"THE FANTASTIC ART OF BEKSINSKI",
+      "author":"-",
+      "category":["画集"],
+      "shelf":"B1L"
     }
   ]
 }
