@@ -1,21 +1,152 @@
 {
   "books" :[
     {
-      "title"        :"sample",
-      "author"      :"someone",
-      "genre"       :[
-        "科学"
-      ],
-      "description" :"説明文が入ります。"
+      "title":"",
+      "author":"",
+      "category":[""],
+      "description":"",
+      "shelf":""
     },
     {
-      "title"        :"アダム・スミス",
-      "author"      :"堂目卓生",
-      "genre"       :[
+      "title":"sample",
+      "author":"someone",
+      "category":[
+        "科学"
+      ],
+      "description" :"説明文が入ります。",
+      "shelf":""
+    },
+    {
+      "title":"アダム・スミス",
+      "author":"堂目卓生",
+      "category":[
         "社会",
         "思想"
       ],
-      "description" :"「見えざる手」の真実"
+      "shelf":""
+    },
+    {
+      "title":"ミミズの話",
+      "author":"エイミィ・スチュワート",
+      "category":["生物"],
+      "shelf":""
+    },
+    {
+      "_comment":"A4L"
+    },
+    {
+      "title":"暇と退屈の倫理学",
+      "author":"國分 功一郎",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"寝ながら学べる構造学",
+      "author":"内田 樹",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"キャプテン・アメリカはなぜ死んだか",
+      "author":"町山 智浩",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"ユダヤ人の頭脳活性法",
+      "author":"手島 佑郎",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"仏陀 その生涯と思想",
+      "author":"増谷 文雄",
+      "category":["宗教,人物"],
+      "shelf":"A4L"
+    },
+    {
+      "title":"神待ち少女",
+      "author":"黒羽 幸宏",
+      "category":["社会"],
+      "shelf":"A4L"
+    },
+    {
+      "title":"事件現場清掃人が行く",
+      "author":"高江 洲敦",
+      "category":["社会"],
+      "shelf":"A4L"
+    },
+    {
+      "title":"ファスト＆スロー（上）",
+      "author":"ダニエル・カーネマン",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"ファスト＆スロー（下）",
+      "author":"ダニエル・カーネマン",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"申し訳ない、御社をつぶしたのは私です。",
+      "author":"カレン・フェラン",
+      "category":["社会"],
+      "shelf":"A4L"
+    },
+    {
+      "title":"日本人の知らないユダヤ人",
+      "author":"石角 完爾",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"岡本太郎の仕事術",
+      "author":"平野 暁臣",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"お金持ちの教科書",
+      "author":"加谷 珪一",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"オックスフォードの教え方",
+      "author":"岡田 昭人",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"ブラック・スワン（上）",
+      "author":"ナシーム・ニコラス・タレブ",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"ブラック・スワン（下）",
+      "author":"ナシーム・ニコラス・タレブ",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"デザインするな",
+      "author":"宮田 識",
+      "category":["デザイン"],
+      "shelf":"A4L"
+    },
+    {
+      "title":"実践 デザイン・シンキング",
+      "author":"",
+      "category":[""],
+      "shelf":"A4L"
+    },
+    {
+      "title":"I Am a Cat",
+      "author":"夏目漱石",
+      "category":[""],
+      "shelf":"A4L"
     }
   ]
 }
