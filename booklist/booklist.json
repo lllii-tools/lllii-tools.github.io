@@ -1,20 +1,21 @@
-booklist.json
-[
-  {
-    "name"        :"sample",
-    "author"      :"someone",
-    "genre"       :[
-      "科学"
-    ],
-    "description" :"説明文が入ります。"
-  },
-  {
-    "name"        :"アダム・スミス",
-    "author"      :"堂目卓生",
-    "genre"       :[
-      "社会",
-      "思想"
-    ],
-    "description" :"「見えざる手」の真実"
-  },
-]
+{
+  "books" :[
+    {
+      "name"        :"sample",
+      "author"      :"someone",
+      "genre"       :[
+        "科学"
+      ],
+      "description" :"説明文が入ります。"
+    },
+    {
+      "name"        :"アダム・スミス",
+      "author"      :"堂目卓生",
+      "genre"       :[
+        "社会",
+        "思想"
+      ],
+      "description" :"「見えざる手」の真実"
+    }
+  ]
+}
