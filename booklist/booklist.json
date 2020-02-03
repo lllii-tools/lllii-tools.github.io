@@ -1,28 +1,19 @@
 {
   "books" :[
     {
-      "title":"sample",
-      "author":"someone",
-      "category":[
-        "科学"
-      ],
-      "description" :"説明文が入ります。",
-      "shelf":""
-    },
-    {
       "title":"アダム・スミス",
       "author":"堂目卓生",
       "category":[
         "社会",
         "思想"
       ],
-      "shelf":""
+      "shelf":"A4R"
     },
     {
       "title":"ミミズの話",
       "author":"エイミィ・スチュワート",
       "category":["生物"],
-      "shelf":""
+      "shelf":"A3L"
     },
     {
       "title":"暇と退屈の倫理学",
@@ -287,6 +278,32 @@
       "author":"-",
       "category":["画集"],
       "shelf":"B1L"
+    },
+    {
+      "title":"THE BONE HOUSE",
+      "author":"Joel-Peter Witkin",
+      "category":["写真集"],
+      "description":"奇妙な被写体を扱った作品集",
+      "shelf":"B1R"
+    },
+    {
+      "title":"CHAMBER of CURIOUSITIES",
+      "author":"-",
+      "category":["写真集"],
+      "description":"標本の写真集",
+      "shelf":"B1R"
+    },
+    {
+      "title":"NAKED",
+      "author":"更井真理",
+      "category":["写真集"],
+      "shelf":"B1R"
+    },
+    {
+      "title":"SMALL TRADES",
+      "author":"Irving Penn",
+      "category":["写真集"],
+      "shelf":"B1R"
     }
   ]
 }
