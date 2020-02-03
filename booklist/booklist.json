@@ -1,13 +1,6 @@
 {
   "books" :[
     {
-      "title":"",
-      "author":"",
-      "category":[""],
-      "description":"",
-      "shelf":""
-    },
-    {
       "title":"sample",
       "author":"someone",
       "category":[
@@ -58,7 +51,7 @@
     {
       "title":"仏陀 その生涯と思想",
       "author":"増谷 文雄",
-      "category":["宗教,人物"],
+      "category":["宗教","人物"],
       "shelf":"A4L"
     },
     {
@@ -153,43 +146,43 @@
     },
     {
       "title":"ゴッホ展",
-      "author":"",
+      "author":"-",
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"MONET",
-      "author":"",
+      "author":"-",
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"モーリス・ド・ヴラマンク展",
-      "author":"",
+      "author":"-",
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"ミイラと古代エジプト展",
-      "author":"",
+      "author":"-",
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"佐伯祐三展",
-      "author":"",
+      "author":"-",
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"国宝 土偶展",
-      "author":"",
+      "author":"-",
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"黄金の都シカン SICAN",
-      "author":"",
+      "author":"-",
       "category":["図録"],
       "shelf":"B1L"
     },
@@ -261,7 +254,7 @@
     },
     {
       "title":"Antonio López",
-      "author":"",
+      "author":"-",
       "category":["画集"],
       "shelf":"B1L"
     },
