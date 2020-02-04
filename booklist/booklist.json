@@ -190,6 +190,96 @@
       "shelf":"A4R"
     },
     {
+      "title":"ごく平凡な記憶力の私が１年で全米記憶チャンピオンになれた理由",
+      "author":["ジョシュア・フォア"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"50歳を超えても30代に見える生き方",
+      "author":["南雲 吉則"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"アメリカン・スーパー・ダイエット",
+      "author":["柳田 由紀子"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"切ってはいけません！",
+      "author":["石川 英二"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"人殺し医療",
+      "author":["ベンジャミン・フルフォート"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"医者が患者をだますとき",
+      "author":["ロバート・メンデルソン"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"操作される脳",
+      "author":["ジョナサン・D・モレノ"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"利己的な遺伝子",
+      "author":["リチャード・ドーキンス"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"ビックリするほどiPS細胞がわかる本",
+      "author":["北条 元治"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"iPS細胞はいつ患者に届くのか",
+      "author":["塚崎 朝子"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"ウイルス・プラネット",
+      "author":["カール・ジンマー"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"植物はなぜ5000年も生きるのか",
+      "author":["鈴木 英治"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"イカはしゃべるし、空も飛ぶ",
+      "author":["奥谷 喬司"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"サルなりに思い出す事など",
+      "author":["R・M・サポルスキー"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"魚は痛みを感じるか？",
+      "author":["ヴィクトリア・ブレイスウェイト"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
       "title":"ミミズの話",
       "author":["エイミィ・スチュワート"],
       "category":["生物"],
@@ -449,7 +539,7 @@
     },
     {
       "title":"double memory",
-      "author":["Rick Berry, Phil Hale"],
+      "author":["Rick Berry","Phil Hale"],
       "category":["画集"],
       "shelf":"B1L"
     },
