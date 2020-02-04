@@ -208,6 +208,18 @@
       "shelf":"A3L"
     },
     {
+      "title":"加速する肥満",
+      "author":["ディードリ・バレット"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
+      "title":"炭水化物が人類を滅ぼす",
+      "author":["夏井 睦"],
+      "category":[""],
+      "shelf":"A3L"
+    },
+    {
       "title":"切ってはいけません！",
       "author":["石川 英二"],
       "category":[""],
@@ -574,6 +586,182 @@
       "author":["Irving Penn"],
       "category":["写真集","ファッション"],
       "shelf":"B1R"
+    },
+    {
+      "title":"TIM WALKER PICTURES",
+      "author":["Tim Walker"],
+      "category":["写真集","ファッション"],
+      "shelf":"D0"
+    },
+    {
+      "title":"PUSSyCat! KiLL! KiLL! KiLL!",
+      "author":["空山 基","Rockin' Jelly Bean","寺田 克也"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"The Birth of Rockin' Jelly Bean.",
+      "author":["Rockin' Jelly Bean."],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"THE RABBITS",
+      "author":["John Marsden","Shaun Tan"],
+      "category":["画集","絵本"],
+      "shelf":"D1"
+    },
+    {
+      "title":"The ARRIVAL",
+      "author":["Shaun Tan"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"CONCEPTIONS II",
+      "author":["Luis Royo"],
+      "category":[""],
+      "shelf":"D1"
+    },
+    {
+      "title":"POPBOT 8",
+      "author":["Ashley Wood"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"tre tarino",
+      "author":["Ashley Wood"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"THE PAINTINGS OF MACHINE SABBATH",
+      "author":["Ashley Wood"],
+      "category":["画集"],
+      "description":"表紙、背表紙にタイトルなし、裏表紙にタイトル。",
+      "shelf":"D1"
+    },
+    {
+      "title":"WORLD WAR ROBOT ILLUSTRATED NUMBER ONE",
+      "author":["Ashley Wood"],
+      "category":["画集"],
+      "description":"表紙、背表紙にタイトルなし。",
+      "shelf":"D1"
+    },
+    {
+      "title":"ZOMBIES VS ROBOTS VS AMAZONS",
+      "author":["Ashley Wood"],
+      "category":[""],
+      "shelf":"D1"
+    },
+    {
+      "title":"HELLSPAWN",
+      "author":[""],
+      "category":[""],
+      "shelf":"D1"
+    },
+    {
+      "title":"アート オブ アリス マッドネス リターンズ",
+      "author":[""],
+      "category":["設定資料集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"DARK WERKS",
+      "author":["Brom"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"Monstruo",
+      "author":["Carlos Huante"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"LEGEND OF MONSTERS OFFICIAL ART BOOK",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"THE ART OF BRAVELY 2010-2013",
+      "author":[""],
+      "category":["設定資料集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"THE ART OF BRAVELY 2013-2015",
+      "author":[""],
+      "category":["設定資料集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SENCILLA FINALE ARTWORKS 2000 - 2006",
+      "author":["Ashley Wood"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"GRANDE FINALE ARTWORKS 2000 - 2006",
+      "author":["Ashley Wood"],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 9",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 13",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 14",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 15",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 16",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 17",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 18",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"SPECTRUM 19",
+      "author":[""],
+      "category":["画集"],
+      "shelf":"D1"
+    },
+    {
+      "title":"L ~ T",
+      "author":["J S"],
+      "category":["写真集"],
+      "shelf":"D1"
     }
   ]
 }
