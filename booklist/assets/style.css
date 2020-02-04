@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 6.25%;
+}
+
+body {
+  min-width: 960rem;
+  padding: 20px;
+  font-size: 14rem;
+  color: #fbfcfd;
+  font-family: "Noto Sans JP", sans-serif;
+  background: #16181d;
+}
+
+main {
+  background: #1f212b;
+}
+main > header, main > div {
+  display: grid;
+  grid-template-columns: 40% 15% 15% 25% 5%;
+  align-items: center;
+  height: 40rem;
+  padding: 0 10px;
+}
+main > header {
+  color: #5b5e6b;
+  background: #16181d;
+}
+main > header p {
+  padding: 0 10px;
+  font-size: 11rem;
+}
+main > div:nth-of-type(2n) {
+  background: #23252f;
+}
+
+.bookTitle, .bookAuthor, .bookCategory, .bookDescription, .bookShelf {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+.bookTitle {
+  font-size: 14rem;
+  font-weight: normal;
+}
+.bookAuthor, .bookCategory {
+  display: flex;
+}
+.bookAuthor li, .bookCategory li {
+  list-style-type: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 20rem;
+  margin-right: 1em;
+}

@@ -1,0 +1,52 @@
+@import "../../assets/core";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300&display=swap');
+
+// Variables
+$clBody:rgb(22,24,29);
+$clBase:rgb(31,33,43);
+$clBase2:rgb(35,37,47);
+$clKey:rgb(0, 74, 221);
+$clFont:rgb(251,252,253);
+$clFont2:rgb(214,216,224);
+$clFont3:rgb(91,94,107);
+$clBorder:rgb(50,51,57);
+
+$fzS:11rem;
+$fzM:14rem;
+$fzL:20rem;
+
+$wTitle:40%;
+$wAuthor:15%;
+$wGenre:15%;
+$wDescription:25%;
+$wShelf:5%;
+
+//
+*{margin:0;padding:0;}
+html{font-size:6.25%;}
+body{min-width:960rem;padding:20px;font-size:$fzM;color: $clFont;font-family: 'Noto Sans JP', sans-serif;background: $clBody;}
+main{background: $clBase;
+  & > header,
+  & > div{display: grid;grid-template-columns:$wTitle $wAuthor $wGenre $wDescription $wShelf;align-items: center;height: 40rem;padding: 0 10px;}
+  & > header{color:$clFont3;background: $clBody;//border-bottom:1px solid $clBorder;
+    p{padding:0 10px;font-size: $fzS;}
+  }
+  & > div{
+    &:nth-of-type(2n){background: $clBase2;}
+  }
+}
+
+.book{
+  &Title,
+  &Author,
+  &Category,
+  &Description,
+  &Shelf{overflow:hidden;text-overflow: ellipsis;white-space: nowrap;padding:0 10px;}
+  &Info{}
+  &Title{font-size: $fzM;font-weight: normal;}
+  &Author,
+  &Category{display:flex;
+    li{list-style-type: none;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;height:20rem;margin-right: 1em;}
+  }
+  &Description{}
+}
