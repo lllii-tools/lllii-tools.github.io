@@ -50,73 +50,133 @@
     },
     {
       "title":"シュレディンガーの哲学する猫",
-      "author":["竹内 薫"],
+      "author":["竹内 薫","竹内 さなみ"],
       "category":[""],
       "shelf":"A1R"
     },
     {
-      "title":"",
+      "title":"「イギリス社会」入門",
+      "author":["コリン・ジョイス"],
+      "category":["社会"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"生物学的文明論",
+      "author":["本川 達雄"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"暴力団",
+      "author":["溝口 敦"],
+      "category":["社会"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"資本主義卒業試験",
+      "author":["山田 玲司"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"「人間嫌い」の言い分",
+      "author":["長山 靖生"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"ひとを愛することができない",
+      "author":["中島 義道"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"戦前の猟奇残虐事件簿",
+      "author":["志村 有弘"],
+      "category":["社会"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"知識人99人の死に方",
+      "author":["荒俣 宏"],
+      "category":["社会"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"帰りたくない",
+      "author":["河合 香織"],
+      "category":["ノンフィクション"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"家のない少女たち",
+      "author":["鈴木 大介"],
+      "category":["社会"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"スローカーブを、もう一球",
+      "author":["山際 淳司"],
+      "category":["ノンフィクション"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"ご冗談でしょう、ファインマンさん（上）",
+      "author":["リチャード.P.ファインマン"],
+      "category":["ノンフィクション"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"ご冗談でしょう、ファインマンさん（下）",
+      "author":["リチャード.P.ファインマン"],
+      "category":["ノンフィクション"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"信仰の現場",
+      "author":["ナンシー関"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"記憶スケッチアカデミー",
+      "author":["ナンシー関"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"記憶スケッチアカデミーII",
+      "author":["ナンシー関"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"コワ～い不動産の話２",
       "author":[""],
       "category":[""],
       "shelf":"A1R"
     },
     {
-      "title":"",
-      "author":[""],
+      "title":"良心をもたない人たち",
+      "author":["マーサ・スタウト"],
       "category":[""],
       "shelf":"A1R"
     },
     {
-      "title":"",
-      "author":[""],
+      "title":"平気でうそをつく人たち",
+      "author":["M・スコット・ペック"],
       "category":[""],
       "shelf":"A1R"
     },
     {
-      "title":"",
-      "author":[""],
+      "title":"診断名サイコパス",
+      "author":["ロバート・D・ヘア"],
       "category":[""],
       "shelf":"A1R"
     },
     {
-      "title":"",
-      "author":[""],
-      "category":[""],
-      "shelf":"A1R"
-    },
-    {
-      "title":"",
-      "author":[""],
-      "category":[""],
-      "shelf":"A1R"
-    },
-    {
-      "title":"",
-      "author":[""],
-      "category":[""],
-      "shelf":"A1R"
-    },
-    {
-      "title":"",
-      "author":[""],
-      "category":[""],
-      "shelf":"A1R"
-    },
-    {
-      "title":"",
-      "author":[""],
-      "category":[""],
-      "shelf":"A1R"
-    },
-    {
-      "title":"",
-      "author":[""],
-      "category":[""],
-      "shelf":"A1R"
-    },
-    {
-      "title":"",
-      "author":[""],
+      "title":"FBI心理分析官",
+      "author":["ロバート・K・レスラー","トム・シャットマン"],
       "category":[""],
       "shelf":"A1R"
     },
