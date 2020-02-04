@@ -1,8 +1,128 @@
 {
   "books" :[
     {
+      "title":"漢字語源の筋違い",
+      "author":["高島 俊男"],
+      "category":["言語"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"孫子",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"君主論",
+      "author":["マキアヴェリ"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"古典落語",
+      "author":[""],
+      "category":["娯楽"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"読む数学",
+      "author":["瀬山 士郎"],
+      "category":["数学"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"フェルマーの最終定理",
+      "author":["サイモン・シン"],
+      "category":["ノンフィクション","数学"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"暗号解読（上）",
+      "author":["サイモン・シン"],
+      "category":["ノンフィクション","数学"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"暗号解読（下）",
+      "author":["サイモン・シン"],
+      "category":["ノンフィクション","数学"],
+      "shelf":"A1R"
+    },
+    {
+      "title":"シュレディンガーの哲学する猫",
+      "author":["竹内 薫"],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
+      "title":"",
+      "author":[""],
+      "category":[""],
+      "shelf":"A1R"
+    },
+    {
       "title":"アダム・スミス",
-      "author":"堂目卓生",
+      "author":["堂目卓生"],
       "category":[
         "社会",
         "思想"
@@ -11,298 +131,298 @@
     },
     {
       "title":"ミミズの話",
-      "author":"エイミィ・スチュワート",
+      "author":["エイミィ・スチュワート"],
       "category":["生物"],
       "shelf":"A3L"
     },
     {
       "title":"暇と退屈の倫理学",
-      "author":"國分 功一郎",
+      "author":["國分 功一郎"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"寝ながら学べる構造学",
-      "author":"内田 樹",
+      "author":["内田 樹"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"キャプテン・アメリカはなぜ死んだか",
-      "author":"町山 智浩",
+      "author":["町山 智浩"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"ユダヤ人の頭脳活性法",
-      "author":"手島 佑郎",
+      "author":["手島 佑郎"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"仏陀 その生涯と思想",
-      "author":"増谷 文雄",
+      "author":["増谷 文雄"],
       "category":["宗教","人物"],
       "shelf":"A4L"
     },
     {
       "title":"神待ち少女",
-      "author":"黒羽 幸宏",
+      "author":["黒羽 幸宏"],
       "category":["社会"],
       "shelf":"A4L"
     },
     {
       "title":"事件現場清掃人が行く",
-      "author":"高江 洲敦",
+      "author":["高江 洲敦"],
       "category":["社会"],
       "shelf":"A4L"
     },
     {
       "title":"ファスト＆スロー（上）",
-      "author":"ダニエル・カーネマン",
+      "author":["ダニエル・カーネマン"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"ファスト＆スロー（下）",
-      "author":"ダニエル・カーネマン",
+      "author":["ダニエル・カーネマン"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"申し訳ない、御社をつぶしたのは私です。",
-      "author":"カレン・フェラン",
+      "author":["カレン・フェラン"],
       "category":["社会"],
       "shelf":"A4L"
     },
     {
       "title":"日本人の知らないユダヤ人",
-      "author":"石角 完爾",
+      "author":["石角 完爾"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"岡本太郎の仕事術",
-      "author":"平野 暁臣",
+      "author":["平野 暁臣"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"若者を殺すのは誰か？",
-      "author":"城 繁幸",
+      "author":["城 繁幸"],
       "category":["社会"],
       "shelf":"A4L"
     },
     {
       "title":"お金持ちの教科書",
-      "author":"加谷 珪一",
+      "author":["加谷 珪一"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"オックスフォードの教え方",
-      "author":"岡田 昭人",
+      "author":["岡田 昭人"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"ブラック・スワン（上）",
-      "author":"ナシーム・ニコラス・タレブ",
+      "author":["ナシーム・ニコラス・タレブ"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"ブラック・スワン（下）",
-      "author":"ナシーム・ニコラス・タレブ",
+      "author":["ナシーム・ニコラス・タレブ"],
       "category":[""],
       "shelf":"A4L"
     },
     {
       "title":"デザインするな",
-      "author":"宮田 識",
+      "author":["宮田 識"],
       "category":["デザイン"],
       "shelf":"A4L"
     },
     {
       "title":"実践 デザイン・シンキング",
-      "author":"-",
+      "author":["-"],
       "category":["デザイン"],
       "shelf":"A4L"
     },
     {
       "title":"I Am a Cat",
-      "author":"夏目漱石",
+      "author":["夏目漱石"],
       "category":["小説"],
       "shelf":"A4L"
     },
     {
       "title":"ゴッホ展",
-      "author":"-",
+      "author":["-"],
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"MONET",
-      "author":"-",
+      "author":["-"],
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"モーリス・ド・ヴラマンク展",
-      "author":"-",
+      "author":["-"],
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"ミイラと古代エジプト展",
-      "author":"-",
+      "author":["-"],
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"佐伯祐三展",
-      "author":"-",
+      "author":["-"],
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"国宝 土偶展",
-      "author":"-",
+      "author":["-"],
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"黄金の都シカン SICAN",
-      "author":"-",
+      "author":["-"],
       "category":["図録"],
       "shelf":"B1L"
     },
     {
       "title":"SALVADOR DALI",
-      "author":"Gilles Néret",
+      "author":["Gilles Néret"],
       "category":["美術書"],
       "shelf":"B1L"
     },
     {
       "title":"レンブラント",
-      "author":"ミヒャエル・ボッケミュール",
+      "author":["ミヒャエル・ボッケミュール"],
       "category":["美術書"],
       "shelf":"B1L"
     },
     {
       "title":"マグリット",
-      "author":"マルセル・パケ",
+      "author":["マルセル・パケ"],
       "category":["美術書"],
       "shelf":"B1L"
     },
     {
       "title":"ムンク",
-      "author":"ウルリヒ・ビショフ",
+      "author":["ウルリヒ・ビショフ"],
       "category":["美術書"],
       "shelf":"B1L"
     },
     {
       "title":"FRANCIS BACON",
-      "author":"Luigi Ficacci",
+      "author":["Luigi Ficacci"],
       "category":["美術書"],
       "shelf":"B1L"
     },
     {
       "title":"ターナー",
-      "author":"ミヒャエル・ボッケミュール",
+      "author":["ミヒャエル・ボッケミュール"],
       "category":["美術書"],
       "shelf":"B1L"
     },
     {
       "title":"auction 18 van sabben poster auctions",
-      "author":"-",
+      "author":["-"],
       "category":["カタログ","デザイン"],
       "shelf":"B1L"
     },
     {
       "title":"auction 19 van sabben poster auctions",
-      "author":"-",
+      "author":["-"],
       "category":["カタログ","デザイン"],
       "shelf":"B1L"
     },
     {
       "title":"auction 20 van sabben auctions",
-      "author":"-",
+      "author":["-"],
       "category":["カタログ","デザイン"],
       "shelf":"B1L"
     },
     {
       "title":"アルフォンス・ミュシャ",
-      "author":"-",
+      "author":["-"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"アルフォンス・ミュシャ作品集",
-      "author":"-",
+      "author":["-"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"Antonio López",
-      "author":"-",
+      "author":["-"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"J.C. LEYENDECKER",
-      "author":"-",
+      "author":["-"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"画狂人ホルスト・ヤンセン",
-      "author":"-",
+      "author":["-"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"エゴン・シーレ",
-      "author":"-",
+      "author":["-"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"double memory",
-      "author":"Rick Berry, Phil Hale",
+      "author":["Rick Berry, Phil Hale"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"THE FANTASTIC ART OF BEKSINSKI",
-      "author":"-",
+      "author":["-"],
       "category":["画集"],
       "shelf":"B1L"
     },
     {
       "title":"THE BONE HOUSE",
-      "author":"Joel-Peter Witkin",
+      "author":["Joel-Peter Witkin"],
       "category":["写真集"],
       "description":"奇妙な被写体を扱った作品集",
       "shelf":"B1R"
     },
     {
       "title":"CHAMBER of CURIOUSITIES",
-      "author":"-",
+      "author":["-"],
       "category":["写真集"],
       "description":"標本の写真集",
       "shelf":"B1R"
     },
     {
       "title":"NAKED",
-      "author":"更井真理",
+      "author":["更井真理"],
       "category":["写真集"],
       "shelf":"B1R"
     },
     {
       "title":"SMALL TRADES",
-      "author":"Irving Penn",
-      "category":["写真集"],
+      "author":["Irving Penn"],
+      "category":["写真集","ファッション"],
       "shelf":"B1R"
     }
   ]
