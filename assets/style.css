@@ -66,11 +66,34 @@ h1 span::before {
 }
 .cardTitle {
   font-size: 18rem;
-  font-weight: normal;
   margin-bottom: 10px;
 }
 .cardDescription {
   color: rgba(32, 34, 35, 0.4);
   font-size: 14rem;
   line-height: 1.4;
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    grid-template-columns: 160rem 160rem;
+    justify-content: space-between;
+    padding: 0 15rem;
+  }
+  main > div {
+    margin-bottom: 10rem;
+    padding: 0;
+  }
+
+  .card {
+    min-height: 160rem;
+    padding: 10px;
+    border: 2px solid rgba(32, 34, 35, 0.06);
+  }
+  .cardTitle {
+    font-size: 14rem;
+  }
+  .cardDescription {
+    font-size: 12rem;
+  }
 }
