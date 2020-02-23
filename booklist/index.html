@@ -10,16 +10,36 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <h1>MY BOOKS</h1>
-  <main>
-    <header>
-      <p>Title</p>
-      <p>Author</p>
-      <p>Category</p>
-      <p>Description</p>
-      <p>Shelf</p>
-    </header>
-  </main>
+  <div class="wrapper">
+    <div class="sidebar">
+      <h1>MY BOOKS</h1>
+      <nav>
+        <div class="accordion">
+          <div><i class="fas fa-book"></i>Shelf</div>
+          <div id="shelfList">
+            <input type="radio" name="shelf" id="shelfAll" checked></input><label for="shelfAll">All</label>
+            <input type="radio" name="shelf" id="shelfA1R"></input><label for="shelfA1R">A1R</label>
+            <input type="radio" name="shelf" id="shelfA4L"></input><label for="shelfA4L">A4L</label>
+            <input type="radio" name="shelf" id="shelfB1L"></input><label for="shelfB1L">B1L</label>
+            <input type="radio" name="shelf" id="shelfB1R"></input><label for="shelfB1R">B1R</label>
+            <input type="radio" name="shelf" id="shelfD0"></input><label for="shelfD0">D0</label>
+            <input type="radio" name="shelf" id="shelfD1"></input><label for="shelfD1">D1</label>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <header>
+        <p>Title</p>
+        <p>Author</p>
+        <p>Category</p>
+        <p>Description</p>
+        <p>Shelf</p>
+      </header>
+      <div id="booklist"></div>
+    </main>
+  </div>
+  <script src="ui_accordion.js"></script>
   <script src="booklist.js"></script>
 </body>
 </html>

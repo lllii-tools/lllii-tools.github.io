@@ -5,33 +5,49 @@
 $clBody:rgb(22,24,29);
 $clBase:rgb(31,33,43);
 $clBase2:rgb(35,37,47);
-$clKey:rgb(0, 74, 221);
+$clKey:rgb(193,51,100);
 $clFont:rgb(251,252,253);
 $clFont2:rgb(214,216,224);
 $clFont3:rgb(91,94,107);
 $clBorder:rgb(50,51,57);
 
 $fzS:11rem;
+$fzR:12rem;
 $fzM:14rem;
-$fzL:20rem;
+$fzL:16rem;
+$fzLL:20rem;
 
-$wTitle:40%;
-$wAuthor:15%;
-$wGenre:15%;
-$wDescription:25%;
-$wShelf:5%;
+// base layout
+$wSidebar:160px;
+$wMain:calc(100% - 200px);
+
+// main layout
+$wTitle:36%;
+$wAuthor:18%;
+$wGenre:16%;
+$wDescription:24%;
+$wShelf:6%;
+
+
 
 //
 *{margin:0;padding:0;}
 html{font-size:6.25%;}
-body{min-width:960rem;padding:20px;font-size:$fzM;color: $clFont;font-family: 'Noto Sans JP', sans-serif;background: $clBody;}
-main{background: $clBase;
+body{min-width:960px;font-size:$fzR;color: $clFont;font-family: 'Noto Sans JP', sans-serif;background: $clBody;}
+
+.wrapper{display:flex;flex-direction: row-reverse;}
+
+.sidebar{position:fixed;left:0;width:$wSidebar;height: 100vh;padding: 0 20px;
+  h1{padding:20px 0;font-size: $fzLL;}
+}
+
+main{position:relative;width: $wMain;min-height: 100vh;background: $clBase;
   & > header,
-  & > div{display: grid;grid-template-columns:$wTitle $wAuthor $wGenre $wDescription $wShelf;align-items: center;height: 40rem;padding: 0 10px;}
-  & > header{color:$clFont3;background: $clBody;//border-bottom:1px solid $clBorder;
+  & > #booklist > div{display: grid;grid-template-columns:$wTitle $wAuthor $wGenre $wDescription $wShelf;align-items: center;height: 40px;padding: 0 10px;}
+  & > header{position:sticky;top:0;color:$clFont3;background: $clBase;border-bottom:1px solid $clBorder;
     p{padding:0 10px;font-size: $fzS;}
   }
-  & > div{
+  & > #booklist > div{
     &:nth-of-type(2n){background: $clBase2;}
   }
 }
@@ -43,10 +59,40 @@ main{background: $clBase;
   &Description,
   &Shelf{overflow:hidden;text-overflow: ellipsis;white-space: nowrap;padding:0 10px;}
   &Info{}
-  &Title{font-size: $fzM;font-weight: normal;}
+  &Title{font-size: $fzR;font-weight: normal;}
   &Author,
   &Category{display:flex;
     li{list-style-type: none;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;height:20rem;margin-right: 1em;}
   }
   &Description{}
+}
+
+
+// Accordion menu
+.accordion{overflow:hidden;
+  & > div{
+    &:first-of-type{display:flex;align-items: center;position:relative;padding:8px 0;font-size: $fzM;cursor: pointer;
+      &::after{content:'';display:block;position:absolute;right:2px;width: 5px;height: 5px;margin-top: 0;border-left:1px solid $clFont;border-bottom:1px solid $clFont;transform:rotate(-225deg);transition:all 0.2s ease;}
+      & > i{width: 20px;}
+    }
+    &:last-of-type{overflow:hidden;
+      & > div{padding:0 0 8px 0;
+        input[type="radio"]{display:none;
+          & + label{transition:all 0.1s linear;display:flex;margin-left: 20px;align-items: center;height: 24px;color:$clFont3;cursor: pointer;
+            &:hover{color:$clFont;}
+          }
+          &:checked{
+            & + label{color:$clFont;}
+          }
+        }
+      }
+    }
+  }
+  &.close{
+    & > div{
+      &:first-of-type{
+        &::after{margin-top: -3px;transform:rotate(-405deg);}
+      }
+    }
+  }
 }
