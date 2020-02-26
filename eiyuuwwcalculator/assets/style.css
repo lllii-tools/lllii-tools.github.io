@@ -329,9 +329,8 @@ select::selection {
     overflow: hidden;
     margin: 0 auto 20px;
     width: 355px;
-    color: #fefefe;
-    background: rgba(30, 35, 51, 0.96);
-    border-radius: 6px;
+    color: #1e2333;
+    background: rgba(254, 254, 254, 0.4);
   }
   .results .expResult {
     display: flex;
@@ -339,7 +338,7 @@ select::selection {
     justify-content: space-between;
     height: 72px;
     padding: 0 20px;
-    background: #1e2333;
+    border-bottom: 1px solid #f0f1f3;
   }
   .results .expResult > span {
     display: inline-block;
@@ -347,7 +346,7 @@ select::selection {
   }
   .results .expResult b {
     font-size: 30px;
-    font-weight: normal;
+    font-weight: bold;
   }
   .results .expResult b small {
     color: rgba(254, 254, 254, 0.4);
@@ -368,11 +367,10 @@ select::selection {
   }
   .results .formExpItems > div > div label small {
     font-size: 11px;
-    color: rgba(254, 254, 254, 0.4);
+    color: rgba(30, 35, 51, 0.3);
   }
   .results .formExpItems > div > div input[type=number] {
     width: 60px;
-    color: #fefefe;
     border-bottom-color: rgba(254, 254, 254, 0.16);
   }
   .results .formExpItems > div > div input[type=number]:hover {
@@ -381,19 +379,15 @@ select::selection {
   .results .formExpItems > div > div .spin {
     grid-template-columns: 24px calc(112px - 48px) 24px;
     width: 112px;
-    background: #1e2333;
   }
   .results .formExpItems > div > div .spin input {
     width: 64px;
     height: 32px;
     padding: 0 8px;
-    border-left: 1px solid rgba(254, 254, 254, 0.06);
-    border-right: 1px solid rgba(254, 254, 254, 0.06);
   }
   .results .formExpItems > div > div .spin button {
     width: 24px;
     height: 32px;
-    color: #fefefe;
   }
   .results .formExpItems > div > div .spin button:hover {
     cursor: pointer;
@@ -842,9 +836,8 @@ select::selection {
     overflow: hidden;
     margin: 0 auto 20px;
     width: 355px;
-    color: #1e2333;
-    background: rgba(232, 234, 243, 0.96);
-    border-radius: 6px;
+    color: #e8eaf3;
+    background: rgba(30, 35, 51, 0.4);
   }
   .results .expResult {
     display: flex;
@@ -852,7 +845,7 @@ select::selection {
     justify-content: space-between;
     height: 72px;
     padding: 0 20px;
-    background: #e8eaf3;
+    border-bottom: 1px solid #0c0e18;
   }
   .results .expResult > span {
     display: inline-block;
@@ -860,7 +853,7 @@ select::selection {
   }
   .results .expResult b {
     font-size: 30px;
-    font-weight: normal;
+    font-weight: bold;
   }
   .results .expResult b small {
     color: rgba(30, 35, 51, 0.4);
@@ -881,11 +874,10 @@ select::selection {
   }
   .results .formExpItems > div > div label small {
     font-size: 11px;
-    color: rgba(30, 35, 51, 0.4);
+    color: rgba(232, 234, 243, 0.3);
   }
   .results .formExpItems > div > div input[type=number] {
     width: 60px;
-    color: #1e2333;
     border-bottom-color: rgba(30, 35, 51, 0.16);
   }
   .results .formExpItems > div > div input[type=number]:hover {
@@ -894,19 +886,15 @@ select::selection {
   .results .formExpItems > div > div .spin {
     grid-template-columns: 24px calc(112px - 48px) 24px;
     width: 112px;
-    background: #e8eaf3;
   }
   .results .formExpItems > div > div .spin input {
     width: 64px;
     height: 32px;
     padding: 0 8px;
-    border-left: 1px solid rgba(30, 35, 51, 0.06);
-    border-right: 1px solid rgba(30, 35, 51, 0.06);
   }
   .results .formExpItems > div > div .spin button {
     width: 24px;
     height: 32px;
-    color: #1e2333;
   }
   .results .formExpItems > div > div .spin button:hover {
     cursor: pointer;

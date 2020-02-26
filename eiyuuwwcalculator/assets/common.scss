@@ -103,10 +103,10 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 }
 
 
-.results{overflow:hidden;margin:0 auto 20px;width: 355px;color:$clWhite;background: clDark(0.96);border-radius:6px;
-  .expResult{@include centerY;justify-content: space-between;height: 72px;padding:0 20px;background: $clDark;
+.results{overflow:hidden;margin:0 auto 20px;width: 355px;color:$clDark;background: clWhite(0.4);
+  .expResult{@include centerY;justify-content: space-between;height: 72px;padding:0 20px;border-bottom:1px solid $clBase;
     & > span{display:inline-block;margin-right: 12px;}
-    b{font-size: 30px;font-weight: normal;
+    b{font-size: 30px;font-weight: bold;
       small{color: clWhite(0.4);}
     }
   }
@@ -115,14 +115,14 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
       & > div{@include centerY;justify-content: space-between;margin:5px 0;
         label{@include centerY;
           span{width: 100px;font-size: 12px;}
-          small{font-size: 11px;color:clWhite(0.4);}
+          small{font-size: 11px;color:clDark(0.3);}
         }
-        input[type="number"]{width: 60px;color:$clWhite;border-bottom-color:clWhite(0.16);
+        input[type="number"]{width: 60px;border-bottom-color:clWhite(0.16);
           &:hover{border-bottom-color:$clKey;}
         }
-        .spin{grid-template-columns: 24px calc(112px - 48px) 24px;width: 112px;background: $clDark;
-          input{width: 64px;height:32px;padding:0 8px;border-left:1px solid clWhite(0.06);border-right:1px solid clWhite(0.06);}
-          button{width: 24px;height: 32px;color:clWhite(1);
+        .spin{grid-template-columns: 24px calc(112px - 48px) 24px;width: 112px;
+          input{width: 64px;height:32px;padding:0 8px;}
+          button{width: 24px;height: 32px;
             &:hover{cursor:pointer;}
           }
         }
