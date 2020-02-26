@@ -603,7 +603,7 @@ select::selection {
     font-size: 14px;
     font-family: sans-serif;
     color: #e8eaf3;
-    background: #060810;
+    background: #0c0e18;
   }
 
   main {
@@ -933,22 +933,22 @@ select::selection {
     border-radius: 99px;
   }
   .results .formExpItems .expItems.relLv .icon {
-    background: #efd309;
+    background: #e4c900;
   }
   .results .formExpItems .expItems.relHp .icon {
-    background: #64bee6;
+    background: #35ade0;
   }
   .results .formExpItems .expItems.relPa .icon {
-    background: #ea8282;
+    background: #e46a6a;
   }
   .results .formExpItems .expItems.relPd .icon {
-    background: #6c94ed;
+    background: #4b79db;
   }
   .results .formExpItems .expItems.relMa .icon {
-    background: #e68fd2;
+    background: #ee79d3;
   }
   .results .formExpItems .expItems.relMd .icon {
-    background: #b085eb;
+    background: #9c6ae2;
   }
 
   .bottoms {

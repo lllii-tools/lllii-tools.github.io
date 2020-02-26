@@ -30,14 +30,14 @@
 
 //ダークモード
 @media (prefers-color-scheme: dark) {
-  $yellow:rgb(239,211,9);
-  $lightblue:rgb(100,190,230);
-  $red:rgb(234,130,130);
-  $blue:rgb(108,148,237);
-  $pink:rgb(230,143,210);
-  $violet:rgb(176,133,235);
+  $yellow:rgb(228, 201, 0);
+  $lightblue:rgb(53, 173, 224);
+  $red:rgb(228, 106, 106);
+  $blue:rgb(75, 121, 219);
+  $pink:rgb(238, 121, 211);
+  $violet:rgb(156, 106, 226);
 
-  $clBase:rgb(6,8,16);
+  $clBase:rgb(12,14,24);
   $clKey:rgb(219,88,118);
   $clKeyGrad:linear-gradient(90deg,rgb(219,88,118),rgb(230,121,89));
   $clDark:rgb(232,234,243);
