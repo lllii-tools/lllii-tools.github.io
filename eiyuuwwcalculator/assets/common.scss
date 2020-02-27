@@ -202,6 +202,11 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
       }
     }
   }
+
+  // Affiliate
+  .affiliate{
+    &Bottom{width: 100vw;}
+  }
 }
 
 //PC
@@ -237,5 +242,10 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
         }
       }
     }
+  }
+
+  // Affiliate
+  .affiliate{
+    &Bottom{width: 375px;margin: 0 auto;}
   }
 }
