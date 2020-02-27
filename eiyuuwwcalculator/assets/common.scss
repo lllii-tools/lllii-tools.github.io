@@ -32,8 +32,8 @@ $pixel:1px;
 
 // ORIGINAL
 *{box-sizing: border-box;}
-body{min-width: 375px;margin:0;padding:0;font-size: 14px;font-family: sans-serif;color:$clDark;background: $clBase;}
-main{margin: 0 auto;padding:5px 0 20px 0;margin:0 auto;}
+body{min-width: 100vw;margin:0;padding:0;font-size: 14px;font-family: sans-serif;color:$clDark;background: $clBase;}
+main{position:relative;width: 100vw;margin: 0 auto;padding:5px 0 20px 0;}
 b{font-weight: normal;}
 button{height:36px;padding:0 10px;background: white;border:none;border-radius:4px;box-shadow:0 2px 3px 0 clwhite(0.1);}
 header{display:flex;justify-content: center;height: 110px;padding:20px 12px 0;align-items: center;line-height: 1.4;
@@ -103,7 +103,7 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 }
 
 
-.results{overflow:hidden;margin:0 auto 20px;width: 355px;color:$clDark;background: clWhite(0.4);
+.results{overflow:hidden;margin:0 auto 20px;width: calc(100vw - 20px);max-width:375px;color:$clDark;background: clWhite(0.4);
   .expResult{@include centerY;justify-content: space-between;height: 72px;padding:0 20px;border-bottom:1px solid $clBase;
     & > span{display:inline-block;margin-right: 12px;}
     b{font-size: 30px;font-weight: bold;
@@ -164,6 +164,11 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 .lang{
   &Ja{}
   &En{display:none !important;}
+}
+
+// Affiliate
+.affiliate{
+  &Bottom{position: sticky;bottom:0;}
 }
 
 // SP
