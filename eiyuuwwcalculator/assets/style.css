@@ -84,7 +84,6 @@
   }
 
   body {
-    min-width: 100vw;
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -466,6 +465,14 @@ select::selection {
     position: sticky;
     bottom: 0;
   }
+
+  ins.widget-banner a {
+    display: flex;
+  }
+  ins.widget-banner a img {
+    object-fit: contain;
+    height: auto;
+  }
 }
 @media screen and (prefers-color-scheme: light) and (max-width: 750px) {
   .input,
@@ -494,14 +501,20 @@ label {
     color: #db5876;
   }
 
-  ins.widget-banner a {
-    width: 100vw;
+  .affiliateBottom {
+    height: 60px;
+    background: gray;
   }
+
   ins.widget-banner a img {
-    object-fit: contain;
+    width: 100vw;
   }
 }
 @media screen and (prefers-color-scheme: light) and (min-width: 750px) {
+  body {
+    min-width: 375px;
+  }
+
   .spin button:hover {
     color: #db5876;
   }
@@ -529,6 +542,10 @@ label {
   .affiliateBottom {
     width: 375px;
     margin: 0 auto;
+  }
+
+  ins.widget-banner a img {
+    width: 375px;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -615,7 +632,6 @@ label {
   }
 
   body {
-    min-width: 100vw;
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -997,6 +1013,14 @@ select::selection {
     position: sticky;
     bottom: 0;
   }
+
+  ins.widget-banner a {
+    display: flex;
+  }
+  ins.widget-banner a img {
+    object-fit: contain;
+    height: auto;
+  }
 }
 @media screen and (prefers-color-scheme: dark) and (max-width: 750px) {
   .input,
@@ -1025,14 +1049,20 @@ label {
     color: #db5876;
   }
 
-  ins.widget-banner a {
-    width: 100vw;
+  .affiliateBottom {
+    height: 60px;
+    background: gray;
   }
+
   ins.widget-banner a img {
-    object-fit: contain;
+    width: 100vw;
   }
 }
 @media screen and (prefers-color-scheme: dark) and (min-width: 750px) {
+  body {
+    min-width: 375px;
+  }
+
   .spin button:hover {
     color: #db5876;
   }
@@ -1060,5 +1090,9 @@ label {
   .affiliateBottom {
     width: 375px;
     margin: 0 auto;
+  }
+
+  ins.widget-banner a img {
+    width: 375px;
   }
 }

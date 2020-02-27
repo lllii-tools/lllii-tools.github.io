@@ -32,7 +32,7 @@ $pixel:1px;
 
 // ORIGINAL
 *{box-sizing: border-box;}
-body{min-width: 100vw;margin:0;padding:0;font-size: 14px;font-family: sans-serif;color:$clDark;background: $clBase;}
+body{margin:0;padding:0;font-size: 14px;font-family: sans-serif;color:$clDark;background: $clBase;}
 main{position:relative;width: 100vw;margin: 0 auto;padding:5px 0 20px 0;}
 b{font-weight: normal;}
 button{height:36px;padding:0 10px;background: white;border:none;border-radius:4px;box-shadow:0 2px 3px 0 clwhite(0.1);}
@@ -170,6 +170,11 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 .affiliate{
   &Bottom{position: sticky;bottom:0;}
 }
+ins.widget-banner{
+  a{display:flex;
+    img{object-fit:contain;height: auto;}
+  }
+}
 
 // SP
 @media screen and (max-width:750px){
@@ -205,17 +210,18 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 
   // Affiliate
   .affiliate{
-    &Bottom{}
+    &Bottom{height: 60px;background: gray;}
   }
   ins.widget-banner{
-    a{width: 100vw;
-      img{object-fit: contain;}
+    a{
+      img{width: 100vw;}
     }
   }
 }
 
 //PC
 @media screen and (min-width:750px){
+  body{min-width:375px;}
   .spin{
     button{
       &:hover{color:$clKey;}
@@ -252,5 +258,10 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
   // Affiliate
   .affiliate{
     &Bottom{width: 375px;margin: 0 auto;}
+  }
+  ins.widget-banner{
+    a{
+      img{width: 375px;}
+    }
   }
 }
