@@ -499,7 +499,7 @@ label {
   }
 
   ins.widget-banner a img {
-    width: 100vw;
+    object-fit: contain;
   }
 }
 @media screen and (prefers-color-scheme: light) and (min-width: 750px) {
@@ -1031,7 +1031,7 @@ label {
   }
 
   ins.widget-banner a img {
-    width: 100vw;
+    object-fit: contain;
   }
 }
 @media screen and (prefers-color-scheme: dark) and (min-width: 750px) {

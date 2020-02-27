@@ -210,7 +210,7 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
   }
   ins.widget-banner{
     a{
-      img{width: 100vw;}
+      img{object-fit: contain;}
     }
   }
 }
