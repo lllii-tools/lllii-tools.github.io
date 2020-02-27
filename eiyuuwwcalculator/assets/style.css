@@ -460,6 +460,15 @@ select::selection {
   }
 }
 @media screen and (prefers-color-scheme: light) and (max-width: 750px) {
+  .input,
+button {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-touch-callout: none;
+    user-select: none;
+  }
+
   .radio-group {
     width: calc(100vw - 40px);
   }
@@ -480,11 +489,6 @@ select::selection {
 @media screen and (prefers-color-scheme: light) and (min-width: 750px) {
   .spin button:hover {
     color: #db5876;
-  }
-
-  .spin-plus,
-.spin-minus {
-    -webkit-touch-callout: none;
   }
 
   main {
@@ -967,6 +971,15 @@ select::selection {
   }
 }
 @media screen and (prefers-color-scheme: dark) and (max-width: 750px) {
+  .input,
+button {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-touch-callout: none;
+    user-select: none;
+  }
+
   .radio-group {
     width: calc(100vw - 40px);
   }
@@ -987,11 +1000,6 @@ select::selection {
 @media screen and (prefers-color-scheme: dark) and (min-width: 750px) {
   .spin button:hover {
     color: #db5876;
-  }
-
-  .spin-plus,
-.spin-minus {
-    -webkit-touch-callout: none;
   }
 
   main {
