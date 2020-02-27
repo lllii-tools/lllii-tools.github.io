@@ -205,7 +205,13 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 
   // Affiliate
   .affiliate{
-    &Bottom{width: 100vw;}
+    &Bottom{width: 100vw;
+    }
+  }
+  ins.widget-banner{
+    a{
+      img{width: 100vw;}
+    }
   }
 }
 

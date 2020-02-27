@@ -497,6 +497,10 @@ label {
   .affiliateBottom {
     width: 100vw;
   }
+
+  ins.widget-banner a img {
+    width: 100vw;
+  }
 }
 @media screen and (prefers-color-scheme: light) and (min-width: 750px) {
   .spin button:hover {
@@ -1023,6 +1027,10 @@ label {
   }
 
   .affiliateBottom {
+    width: 100vw;
+  }
+
+  ins.widget-banner a img {
     width: 100vw;
   }
 }
