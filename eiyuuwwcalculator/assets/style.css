@@ -494,10 +494,9 @@ label {
     color: #db5876;
   }
 
-  .affiliateBottom {
+  ins.widget-banner a {
     width: 100vw;
   }
-
   ins.widget-banner a img {
     object-fit: contain;
   }
@@ -1026,10 +1025,9 @@ label {
     color: #db5876;
   }
 
-  .affiliateBottom {
+  ins.widget-banner a {
     width: 100vw;
   }
-
   ins.widget-banner a img {
     object-fit: contain;
   }

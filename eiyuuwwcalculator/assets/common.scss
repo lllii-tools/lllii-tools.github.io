@@ -205,11 +205,10 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 
   // Affiliate
   .affiliate{
-    &Bottom{width: 100vw;
-    }
+    &Bottom{}
   }
   ins.widget-banner{
-    a{
+    a{width: 100vw;
       img{object-fit: contain;}
     }
   }
