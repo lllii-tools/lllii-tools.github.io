@@ -169,8 +169,8 @@ select{width: 140px;padding:0 8px;text-align: right;background: $clWhite;border:
 // SP
 @media screen and (max-width:750px){
   .input,
-  button{
-    pointer-events:none;
+  button,
+  label{
     -webkit-touch-callout:none;
     -webkit-user-select:none;
     -moz-touch-callout:none;

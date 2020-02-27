@@ -461,8 +461,8 @@ select::selection {
 }
 @media screen and (prefers-color-scheme: light) and (max-width: 750px) {
   .input,
-button {
-    pointer-events: none;
+button,
+label {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-touch-callout: none;
@@ -972,8 +972,8 @@ select::selection {
 }
 @media screen and (prefers-color-scheme: dark) and (max-width: 750px) {
   .input,
-button {
-    pointer-events: none;
+button,
+label {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-touch-callout: none;
