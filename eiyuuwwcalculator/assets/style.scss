@@ -25,7 +25,9 @@
   $clCaution: rgb(248,64,64);
   $clClear: rgba(0,0,0,0);
 
-  @import "common.scss";//共通スタイル
+  @import "../../assets/calc_common.scss";//計算機共通スタイル
+  @import "../../assets/calc_ui.scss";//計算機用UI
+  @import "custom.scss";//個別スタイル
 }
 
 //ダークモード
@@ -51,5 +53,7 @@
   $clCaution: rgb(248,64,64);
   $clClear: rgba(0,0,0,0);
 
-  @import "common.scss";//共通スタイル
+  @import "../../assets/calc_common.scss";//計算機共通スタイル
+  @import "../../assets/calc_ui.scss";//計算機用UI
+  @import "custom.scss";//個別スタイル
 }
