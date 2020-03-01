@@ -6,6 +6,10 @@
   }
 
   body {
+<<<<<<< HEAD
+=======
+    min-width: 100vw;
+>>>>>>> aaf4191... [eiyuuwwcalc] 広告設置、レイアウト微修正
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -379,6 +383,7 @@ select::selection {
     position: sticky;
     bottom: 0;
   }
+<<<<<<< HEAD
 
   ins.widget-banner a {
     display: flex;
@@ -387,6 +392,8 @@ select::selection {
     object-fit: contain;
     height: auto;
   }
+=======
+>>>>>>> aaf4191... [eiyuuwwcalc] 広告設置、レイアウト微修正
 }
 @media screen and (prefers-color-scheme: light) and (max-width: 750px) {
   .input,
@@ -566,6 +573,10 @@ label {
   }
 
   body {
+<<<<<<< HEAD
+=======
+    min-width: 100vw;
+>>>>>>> aaf4191... [eiyuuwwcalc] 広告設置、レイアウト微修正
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -939,6 +950,7 @@ select::selection {
     position: sticky;
     bottom: 0;
   }
+<<<<<<< HEAD
 
   ins.widget-banner a {
     display: flex;
@@ -947,6 +959,8 @@ select::selection {
     object-fit: contain;
     height: auto;
   }
+=======
+>>>>>>> aaf4191... [eiyuuwwcalc] 広告設置、レイアウト微修正
 }
 @media screen and (prefers-color-scheme: dark) and (max-width: 750px) {
   .input,
