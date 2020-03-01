@@ -415,10 +415,6 @@ label {
     color: #db5876;
   }
 
-  .affiliateBottom {
-    background: gray;
-  }
-
   ins.widget-banner a img {
     width: 100vw;
   }
@@ -973,10 +969,6 @@ label {
 
   .results .formExpItems > div > div .spin button:active {
     color: #db5876;
-  }
-
-  .affiliateBottom {
-    background: gray;
   }
 
   ins.widget-banner a img {
