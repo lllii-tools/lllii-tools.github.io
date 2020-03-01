@@ -427,6 +427,6 @@ for(let i=0; i<atkMax.length; i++){
 const defMax = document.getElementsByClassName('defMax') as HTMLCollectionOf<HTMLElement>;
 for(let i=0; i<atkMax.length; i++){
   //defMax[i].innerText = String(defNextList.length - 1);
-  defMax[i].innerText = '114';
+  defMax[i].innerText = '162';
 }
 

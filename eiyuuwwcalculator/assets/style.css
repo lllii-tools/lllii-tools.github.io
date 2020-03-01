@@ -231,10 +231,10 @@ select::selection {
   .formBase .exps .slash {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 8px;
     left: calc(50% + 0.5px);
     width: 1px;
-    height: 40px;
+    height: 24px;
     background: #1e2333;
     transform: rotate(30deg);
   }
@@ -791,10 +791,10 @@ select::selection {
   .formBase .exps .slash {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 8px;
     left: calc(50% + 0.5px);
     width: 1px;
-    height: 40px;
+    height: 24px;
     background: #e8eaf3;
     transform: rotate(30deg);
   }
