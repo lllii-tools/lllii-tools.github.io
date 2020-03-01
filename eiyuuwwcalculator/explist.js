@@ -2495,6 +2495,7 @@ const atkNextList = [
     1000,
     1000,
     1000,
+    1000,
 ];
 const defNextList = [
     20,
