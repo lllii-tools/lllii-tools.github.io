@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ふるーつふるきゅーと！ 経験値計算機 | FruitfulCute! EXP Calculator</title>
+  <meta name="description" content="ふるーつふるきゅーと！の経験値計算機。">
+  <script src="https://kit.fontawesome.com/188d4ed550.js" crossorigin="anonymous"></script>
+  <link rel="preload stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>
+      <b class="langJp">ふるーつふるきゅーと！<small>EXP CALCULATOR</small></b>
+      <b class="langEn">FruitfulCute!<small>EXP Calculator</small></b>
+    </h1>
+    <a href="../" class="home"><img src="../src/logo.png" alt="lllii-tools"></a>
+    <select name="" class="selectLang" id="">
+      <option value="JP" selected>JP</option>
+      <option value="EN">EN</option>
+    </select>
+  </header>
+  <main>
+    <form action="" class="formBase" id="formBase">
+      <div class="exps">
+        <div class="expCurrent">
+          <label>
+            <b class="langJp">現在値</b class="langJp">
+            <b class="langEn">CURRENT</b class="langEn">
+          </label>
+          <div class="spin relLv">
+            <button type="button" value="1" class="spin-minus">-</button>
+            <input type="number" value="1" min="1" max="99" class="input spin-input selectAll" id="currentValLv">
+            <button type="button" value="1" class="spin-plus">+</button>
+          </div>
+        </div>
+        <span class="slash"></span>
+        <div class="expMax relLv">
+          <b>
+            <span class="langJp">目標値</span>
+            <span class="langEn">Goal</span>
+            <span id="expMaxR"></span>
+          </b class="langJp">
+          <select name="" id="maxValLvR4" class="relR4 calc">
+            <option value="100">100</option>
+            <option value="85">85</option>
+            <option value="70">70</option>
+            <option value="60">60</option>
+            <option value="50">50</option>
+            <option value="30">30</option>
+          </select>
+        </div>
+      </div>
+      <div class="expNext">
+        <b class="langJp">次の強化まで</b class="langJp">
+        <b class="langEn">FOR THE NEXT</b class="langEn">
+        <div class="spin">
+          <button type="button" value="1" class="spin-minus">-</button>
+          <input type="number" value="0" class="input spin-input selectAll" id="nextVal">
+          <button type="button" value="1" class="spin-plus">+</button>
+        </div>
+      </div>
+    </form>
+    <div class="results">
+      <div class="expResult">
+        <span>
+          <span class="langJp">必要経験値</span>
+          <span class="langEn">Required EXP</span>
+          <span id="expResultParam"></span>
+        </span>
+        <b id="resultExp"></b>
+      </div>
+      <form action="" class="formExpItems" id="formExpItems">
+        <div class="expBonus">
+          <div>
+            <b class="langJp">強化結果</b>
+            <b class="langEn">BONUS</b>
+          </div>
+          <div class="radio-group">
+            <input type="radio" value="bonus1" name="bonus" id="bonus1" class="radioBtn"><label for="bonus1">成功</label>
+            <input type="radio" value="bonus2" name="bonus" id="bonus2" class="radioBtn"><label for="bonus2">大成功</label>
+            <input type="radio" value="bonus3" name="bonus" id="bonus3" class="radioBtn"><label for="bonus3">超成功</label>
+          </div>
+        </div>
+        <div class="expItems relLv">
+          <div>
+            <div>
+              <b>同属性</b>
+              <small>アイテム</small>
+            </div>
+          </div>
+          <div>
+            <label for="">
+              <span>小</span>
+              <small class="expItem1">450 EXP</small>
+            </label>
+            <div class="spin">
+              <button type="button" value="1" class="spin-minus">-</button>
+              <input type="number" name="itemLv" value="0" min="0" max="999" class="input spin-input selectAll" id="itemLv1">
+              <button type="button" value="1" class="spin-plus">+</button>
+            </div>
+          </div>
+          <div>
+            <label for="">
+              <span>中</span>
+              <small class="expItem2">2250 EXP</small>
+            </label>
+            <div class="spin">
+              <button type="button" value="1" class="spin-minus">-</button>
+              <input type="number" name="itemLv" value="0" min="0" max="999" class="input spin-input selectAll" id="itemLv2">
+              <button type="button" value="1" class="spin-plus">+</button>
+            </div>
+          </div>
+          <div>
+            <label for="">
+              <span>大</span>
+              <small class="expItem3">11250 EXP</small>
+            </label>
+            <div class="spin">
+              <button type="button" value="1" class="spin-minus">-</button>
+              <input type="number" name="itemLv" value="0" min="0" max="999" class="input spin-input selectAll" id="itemLv3">
+              <button type="button" value="1" class="spin-plus">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="expItems relHp">
+          <div>
+            <div>
+              <b>他属性</b>
+              <small>アイテム</small>
+            </div>
+          </div>
+          <div>
+            <label for="">
+              <span>小</span>
+              <small class="expItem1">300 EXP</small>
+            </label>
+            <div class="spin">
+              <button type="button" value="1" class="spin-minus">-</button>
+              <input type="number" name="itemHp" value="0" min="0" max="999" class="input spin-input selectAll" id="itemHp1">
+              <button type="button" value="1" class="spin-plus">+</button>
+            </div>
+          </div>
+          <div>
+            <label for="">
+              <span>中</span>
+              <small class="expItem2">1500 EXP</small>
+            </label>
+            <div class="spin">
+              <button type="button" value="1" class="spin-minus">-</button>
+              <input type="number" name="itemHp" value="0" min="0" max="999" class="input spin-input selectAll" id="itemHp2">
+              <button type="button" value="1" class="spin-plus">+</button>
+            </div>
+          </div>
+          <div>
+            <label for="">
+              <span>大</span>
+              <small class="expItem3">7500 EXP</small>
+            </label>
+            <div class="spin">
+              <button type="button" value="1" class="spin-minus">-</button>
+              <input type="number" name="itemHp" value="0" min="0" max="999" class="input spin-input selectAll" id="itemHp3">
+              <button type="button" value="1" class="spin-plus">+</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="bottoms">
+      <button class="btn btnReset">
+        <span class="langJp">リセット</span>
+        <span class="langEn">Reset</span>
+      </button>
+      <p>
+        <span>Contact me</span>
+        <a href="https://twitter.com/lllii133" target="_blank"><i class="fab fa-twitter"></i></a>
+      </p>
+    </div>
+  </main>
+  <div class="affiliateBottom">
+    <ins class="widget-banner"></ins><script class="widget-banner-script" src="https://widget-view.dmm.com/js/banner_placement.js?affiliate_id=lllii-001&banner_id=276_640_100"></script>
+  </div>
+  <script src="../uikit/uikit.js"></script>
+  <script src="explist.js"></script>
+  <script src="frufulcalc.js"></script>
+</body>

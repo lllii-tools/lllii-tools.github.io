@@ -91,3 +91,13 @@ button {
     -webkit-touch-callout: none;
   }
 }
+@media screen and (max-width: 750px) {
+  .input,
+button,
+label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-touch-callout: none;
+    user-select: none;
+  }
+}

@@ -22,6 +22,7 @@ button{user-select: none;background:white;border:none;cursor:pointer;}
   input{grid-column-start: 2;grid-column-end: 2;width: 100%;padding:0 10px;text-align: right;border:none;}
   button{width: 32px;}
 }
+// PC
 @media screen and (min-width:750px){
   // PCブラウザ標準のスピンボタン非表示
   input{
@@ -32,4 +33,16 @@ button{user-select: none;background:white;border:none;cursor:pointer;}
   // 長押し時のメニュー非表示
   .spin-plus,
   .spin-minus{-webkit-touch-callout:none;}
+}
+// SP
+@media screen and (max-width:750px){
+  .input,
+  button,
+  label{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-touch-callout:none;
+    -moz-user-select:none;
+    user-select:none
+  }// 選択不可、長押し時のメニュー非表示
 }

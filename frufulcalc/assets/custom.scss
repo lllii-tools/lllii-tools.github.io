@@ -1,0 +1,29 @@
+.formExpItems{width: 320px;margin:0 auto;padding-bottom:16px;border-top:1px solid clDark(0.08);
+  & > div{
+    & > div{margin:0 !important;}
+  }
+}
+.exp{
+  &Result{border-bottom:none !important;}
+  &Bonus{display:flex;margin-top: 30px;
+    & > div{
+      &:first-of-type{width: 80px;}
+    }
+    .radio-group{width: 240px;height: 32px;}
+  }
+  &Items{display:grid;grid-template-columns: 80px auto;margin-top: 26px;padding: 0 !important;
+    & > div{padding:4px 0;
+      &:first-of-type{flex-wrap:wrap;grid-row-start: 1;grid-row-end: 4;
+        b{display:block;width: 100%;font-size: 14px;text-align: center;}
+        small{display:block;width: 100%;font-size: 11px;text-align: center;}
+      }
+      &:nth-of-type(2){}
+      &:last-of-type{}
+      label{
+        span{width: auto !important;padding: 0 1rem 0 0;}
+        small{width: auto !important;}
+      }
+      .spin{}
+    }
+  }
+}
