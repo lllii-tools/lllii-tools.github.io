@@ -161,7 +161,7 @@ function expCalculate() {
   const uBarmor: any = <HTMLInputElement> document.getElementById('uBarmor');
   document.getElementById('uBarmorExp').innerText = 40000*sarri()/10 + 'EXP';
   const uParmor: any = <HTMLInputElement> document.getElementById('uParmor');
-  document.getElementById('uParmorExp').innerText = 8000*sarri()/10 + 'EXP';
+  document.getElementById('uParmorExp').innerText = 5000*sarri()/10 + 'EXP';
   const uFarah: any = <HTMLInputElement> document.getElementById('uFarah');
   document.getElementById('uFarahExp').innerText = 20000*sarri()/10 + 'EXP';
   const uFreude: any = <HTMLInputElement> document.getElementById('uFreude');
@@ -178,7 +178,7 @@ function expCalculate() {
   // 経験値ユニット合計
   const uExp = (
     uBarmor.value*40000*sarri()/10 +
-    uParmor.value*8000*sarri()/10 +
+    uParmor.value*5000*sarri()/10 +
     uFarah.value*20000*sarri()/10 +
     uFreude.value*19000*sarri()/10 +
     uAlegria.value*18000*sarri()/10 +

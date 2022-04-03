@@ -1,4 +1,4 @@
-const nextBlackExp = [
+var nextBlackExp = [
     48,
     50,
     52,
@@ -98,7 +98,7 @@ const nextBlackExp = [
     3798,
     3915 //98
 ];
-const totalBlackExp = [
+var totalBlackExp = [
     0,
     48,
     98,
@@ -199,7 +199,7 @@ const totalBlackExp = [
     142052,
     145967 //99
 ];
-const nextPlatinumExp = [
+var nextPlatinumExp = [
     45,
     46,
     49,
@@ -299,7 +299,7 @@ const nextPlatinumExp = [
     3544,
     3654 //98
 ];
-const totalPlatinumExp = [
+var totalPlatinumExp = [
     0,
     45,
     91,
@@ -400,7 +400,7 @@ const totalPlatinumExp = [
     132581,
     136235 //99
 ];
-const nextGoldExp = [
+var nextGoldExp = [
     42,
     43,
     45,
@@ -500,7 +500,7 @@ const nextGoldExp = [
     3291,
     3393
 ];
-const totalGoldExp = [
+var totalGoldExp = [
     0,
     42,
     85,
@@ -601,7 +601,7 @@ const totalGoldExp = [
     123111,
     126504 //99
 ];
-const nextSilverExp = [
+var nextSilverExp = [
     38,
     40,
     42,
@@ -657,7 +657,7 @@ const nextSilverExp = [
     1140,
     1180
 ];
-const totalSilverExp = [
+var totalSilverExp = [
     0,
     38,
     78,
