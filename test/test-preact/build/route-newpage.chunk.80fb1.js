@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{Qixm:function(e,n,o){"use strict";o.r(n);var s=o("hosL"),c={home:"home__OHQox"};n.default=function(){return Object(s.h)("div",{class:c.newpage},Object(s.h)("h1",null,"New Page"),Object(s.h)("p",null,"This is NEW PAGE."))}}}]);
+//# sourceMappingURL=route-newpage.chunk.80fb1.js.map
