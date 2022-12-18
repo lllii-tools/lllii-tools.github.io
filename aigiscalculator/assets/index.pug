@@ -1,0 +1,158 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+meta(http-equiv="X-UA-Compatible", content="ie=edge")
+title 千年戦争アイギス経験値計算機 Lite
+meta(name="description", content="千年戦争アイギスの経験値計算機。「とりあえず最大レベルまでの経験値が計算できればいい」という方向け。細かい計算要素は省略。")
+script(src="https://kit.fontawesome.com/188d4ed550.js", crossorigin="anonymous")
+link(rel="stylesheet", href="assets/style.css")
+header
+  h1
+    b 千年戦争アイギス経験値計算機 Lite
+main
+  form#expCalculator(action, name="expCalculator")
+    div
+      p
+        b レアリティ
+      #rarityList
+        input#rarityBlack(type="radio", name="rarity", value="black", checked, onchange="selectRarity();")
+        label(for="rarityBlack") ブラック
+        input#rarityPlatinum(type="radio", name="rarity", value="platinum", onchange="selectRarity();")
+        label(for="rarityPlatinum") プラチナ
+        input#rarityGold(type="radio", name="rarity", value="gold", onchange="selectRarity();")
+        label(for="rarityGold") ゴールド
+        input#raritySilver(type="radio", name="rarity", value="silver", onchange="selectRarity();")
+        label(for="raritySilver") シルバー
+    .expMax
+      p
+        b
+          | 最大レベル（
+          span#expMaxRarity
+          | ）
+      #expMaxBlack.relBk
+        input#black99(type="radio", name="expMax", value="99")
+        label(for="black99") 99
+        input#black80(type="radio", name="expMax", value="80")
+        label(for="black80") 80
+        input#black50(type="radio", name="expMax", value="50")
+        label(for="black50") 50
+      #expMaxPlatinum.relPt
+        input#platinum99(type="radio", name="expMax", value="99")
+        label(for="platinum99") 99
+        input#platinum90(type="radio", name="expMax", value="90")
+        label(for="platinum90") 90
+        input#platinum70(type="radio", name="expMax", value="70")
+        label(for="platinum70") 70
+        input#platinum50(type="radio", name="expMax", value="50")
+        label(for="platinum50") 50
+      #expMaxGold.relGl
+        input#gold99(type="radio", name="expMax", value="99")
+        label(for="gold99") 99
+        input#gold80(type="radio", name="expMax", value="80")
+        label(for="gold80") 80
+        input#gold60(type="radio", name="expMax", value="60")
+        label(for="gold60") 60
+        input#gold50(type="radio", name="expMax", value="50")
+        label(for="gold50") 50
+      #expMaxSilver.relSl
+        input#silver55(type="radio", name="expMax", value="55")
+        label(for="silver55") 55
+        input#silver50(type="radio", name="expMax", value="50")
+        label(for="silver50") 50
+    div
+      b
+        label(for) 現在のレベル
+      input(type="number", name="expCurrent", value="1", min="1", max="98", onfocus="this.select();")
+    div
+      b
+        label(for) 次のレベルまで
+      input(type="number", name="expNext", value="48", min="0", max="3915", onfocus="this.select();")
+  #results
+    #expResult
+    #expUnits
+      form#formUnits(name="formUnits")
+        #haveSarriette
+          p
+            i.icon
+              img(src="assets/icon_sarriette.png", alt)
+            | 育成聖霊サリエット
+
+          label(for="uSarriette")
+            input#uSarriette(type="checkbox", name="sarriette")
+            span
+        .relBk.relPt.relGl
+          label(for)
+            i.icon
+              img(src="assets/icon_barmor.png", alt)
+            | ブラックアーマー
+            span#uBarmorExp
+          input#uBarmor(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        div
+          label(for)
+            i.icon
+              img(src="assets/icon_parmor.png", alt)
+            | プラチナアーマー
+            span#uParmorExp
+          input#uParmor(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        .relBk
+          label(for)
+            i.icon
+              img(src="assets/icon_farah.png", alt)
+            | 小祝福黒精霊ファラハ
+            span#uFarahExp
+          input#uFarah(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        .relPt
+          label(for)
+            i.icon
+              img(src="assets/icon_freude.png", alt)
+            | 小祝福白金精霊フロイデ
+            span#uFreudeExp
+          input#uFreude(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        .relGl
+          label(for)
+            i.icon
+              img(src="assets/icon_alegria.png", alt)
+            | 小祝福金精霊アレグリア
+            span#uAlegriaExp
+          input#uAlegria(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        //- .relSl
+        //-   label(for)
+        //-     i.icon
+        //-     | 小祝福銀精霊アムール
+        //-     span
+        //-   input#uAmour(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        div
+          label(for)
+            i.icon
+              img(src="assets/icon_please.png", alt)
+            | 小祝福精霊プレーゼ
+            span#uPleaseExp
+          input#uPlease(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        div
+          label(for)
+            i.icon
+              img(src="assets/icon_prazer.png", alt)
+            | 小祝福精霊プラセル
+            span#uPrazerExp
+          input#uPrazer(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        div
+          label(for)
+            i.icon
+              //- img(src="", alt)
+            | 同レア精霊
+            span#uSpiritSameExp
+          input#uSpiritSame(type="number", value="0", min="0", max="99", onfocus="this.select();")
+        div
+          label(for)
+            i.icon
+              //- img(src="", alt)
+            | 他レア精霊
+            span#uSpiritOthersExp
+          input#uSpiritOthers(type="number", value="0", min="0", max="99", onfocus="this.select();")
+  .bottom
+    button.btn(onclick="reset();") リセット
+    p
+      span Contact
+      a(href="https://twitter.com/lllii133", target="_blank")
+        i.fab.fa-twitter
+script(src="explist.js")
+script(src="aigiscalculator.js")

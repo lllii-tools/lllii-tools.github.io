@@ -9,6 +9,7 @@ Sl = Silver
 */
 
 
+
 const expCalculator = <HTMLFormElement> document.getElementById('expCalculator')
 const formUnits = <HTMLFormElement> document.getElementById('formUnits')
 const idBlack99 = <HTMLInputElement> document.getElementById('black99');
@@ -159,21 +160,26 @@ function expCalculate() {
 
   // 経験値ユニット
   const uBarmor: any = <HTMLInputElement> document.getElementById('uBarmor');
-  document.getElementById('uBarmorExp').innerText = 40000*sarri()/10 + 'EXP';
   const uParmor: any = <HTMLInputElement> document.getElementById('uParmor');
-  document.getElementById('uParmorExp').innerText = 5000*sarri()/10 + 'EXP';
   const uFarah: any = <HTMLInputElement> document.getElementById('uFarah');
-  document.getElementById('uFarahExp').innerText = 20000*sarri()/10 + 'EXP';
   const uFreude: any = <HTMLInputElement> document.getElementById('uFreude');
-  document.getElementById('uFreudeExp').innerText = 19000*sarri()/10 + 'EXP';
   const uAlegria: any = <HTMLInputElement> document.getElementById('uAlegria');
-  document.getElementById('uAlegriaExp').innerText = 18000*sarri()/10 + 'EXP';
   //const uAmour: any = <HTMLInputElement> document.getElementById('uAmour');
-  //document.getElementById('uAmourExp').innerText = 4000*sarri()/10 + 'EXP';
   const uPlease: any = <HTMLInputElement> document.getElementById('uPlease');
-  document.getElementById('uPleaseExp').innerText = 18000*sarri()/10 + 'EXP';
   const uPrazer: any = <HTMLInputElement> document.getElementById('uPrazer');
+  const uSpiritSame: any = <HTMLInputElement> document.getElementById('uSpiritSame');
+  const uSpiritOthers: any = <HTMLInputElement> document.getElementById('uSpiritOthers');
+
+  document.getElementById('uBarmorExp').innerText = 40000*sarri()/10 + 'EXP';
+  document.getElementById('uParmorExp').innerText = 5000*sarri()/10 + 'EXP';
+  document.getElementById('uFarahExp').innerText = 20000*sarri()/10 + 'EXP';
+  document.getElementById('uFreudeExp').innerText = 19000*sarri()/10 + 'EXP';
+  document.getElementById('uAlegriaExp').innerText = 18000*sarri()/10 + 'EXP';
+  //document.getElementById('uAmourExp').innerText = 4000*sarri()/10 + 'EXP';
+  document.getElementById('uPleaseExp').innerText = 18000*sarri()/10 + 'EXP';
   document.getElementById('uPrazerExp').innerText = 10000*sarri()/10 + 'EXP';
+  document.getElementById('uSpiritSameExp').innerText = 1000*sarri()/10 + 'EXP';
+  document.getElementById('uSpiritOthersExp').innerText = 500*sarri()/10 + 'EXP';
 
   // 経験値ユニット合計
   const uExp = (
@@ -184,7 +190,9 @@ function expCalculate() {
     uAlegria.value*18000*sarri()/10 +
     //uAmour.value*4000*sarri()/10 +
     uPlease.value*18000*sarri()/10 +
-    uPrazer.value*10000*sarri()/10
+    uPrazer.value*10000*sarri()/10 +
+    uSpiritSame.value*1000*sarri()/10 +
+    uSpiritOthers.value*500*sarri()/10
   )
 
   let rareBk = <HTMLInputElement> document.getElementById('rarityBlack');
