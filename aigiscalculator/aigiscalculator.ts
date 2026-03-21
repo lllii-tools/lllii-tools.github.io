@@ -1,4 +1,4 @@
-/// <reference path='explist.ts'/>
+// <reference path='explist.ts'/>
 
 /*
 略称
@@ -10,9 +10,9 @@ Sl = Silver
 
 
 
-const expCalculator = <HTMLFormElement> document.getElementById('expCalculator')
-const formUnits = <HTMLFormElement> document.getElementById('formUnits')
-const idBlack99 = <HTMLInputElement> document.getElementById('black99');
+const expCalculator = <HTMLFormElement>document.getElementById('expCalculator')
+const formUnits = <HTMLFormElement>document.getElementById('formUnits')
+const idBlack99 = <HTMLInputElement>document.getElementById('black99');
 
 
 // 初期設定
@@ -24,7 +24,7 @@ const expUnitsForm = expUnits.getElementsByTagName('form')[0];
 const expMaxRadio = document.getElementsByName('expMax');
 // ラジオボタンの選択を解除
 function clearRadio() {
-  for(let i=0; i < expMaxRadio.length; i++) {
+  for (let i = 0; i < expMaxRadio.length; i++) {
     (expMaxRadio[i] as HTMLInputElement).checked = false;
   }
 }
@@ -32,7 +32,7 @@ function clearRadio() {
 // class^=rel要素のスタイル
 function clearRel() {
   let query = document.querySelectorAll('[class^=rel]');
-  for(let i=0; i < query.length; i++) {
+  for (let i = 0; i < query.length; i++) {
     (query[i] as HTMLElement).style.display = 'none';
   }
 }
@@ -40,7 +40,7 @@ function clearRel() {
 // class^=rel要素の表示初期化
 clearRel();
 const relBk = document.getElementsByClassName('relBk');
-for(let i=0; i < relBk.length; i++) {
+for (let i = 0; i < relBk.length; i++) {
   (relBk[i] as HTMLElement).style.display = 'flex';
 }
 expCalculate();
@@ -50,7 +50,7 @@ document.addEventListener('keyup', expCalculate);
 
 // タグinputに変更があった場合、関数expCalculateを実行する
 const input = document.getElementsByTagName('input');
-for(let i = 0; i < input.length; i++) {
+for (let i = 0; i < input.length; i++) {
   input[i].addEventListener('change', expCalculate);
 }
 
@@ -59,9 +59,9 @@ const relList = ['relBk', 'relPt', 'relGl', 'relSl'];
 
 // 指定したclassが付けられた要素取得
 function getClass(...x) {
-  x.forEach(function(z) {
+  x.forEach(function (z) {
     const y = document.getElementsByClassName(z);
-    for(let i=0; i < y.length; i++) {
+    for (let i = 0; i < y.length; i++) {
       (y[i] as HTMLElement).style.display = 'flex';
     }
   })
@@ -69,16 +69,16 @@ function getClass(...x) {
 
 // 選択したレアリティにより表示／非表示する要素
 function rarityFilter(rr) {
-  if(rr == rr) {
+  if (rr == rr) {
 
     // 選択レアリティの場合
-    const selected = relList.filter(function(x) {
+    const selected = relList.filter(function (x) {
       return x == rr
     })
     getClass(selected);
 
     // 選択レアリティじゃない場合
-    const selectedNot = relList.filter(function(x) {
+    const selectedNot = relList.filter(function (x) {
       return x != rr
     })
     getClass(selectedNot);
@@ -90,45 +90,45 @@ function rarityFilter(rr) {
 function selectRarity() {
   const selectedRarity = document.getElementById('expMaxRarity');
 
-  let rareBk = <HTMLInputElement> document.getElementById('rarityBlack');
-  let rarePt = <HTMLInputElement> document.getElementById('rarityPlatinum');
-  let rareGl = <HTMLInputElement> document.getElementById('rarityGold');
-  let rareSl = <HTMLInputElement> document.getElementById('raritySilver');
+  let rareBk = <HTMLInputElement>document.getElementById('rarityBlack');
+  let rarePt = <HTMLInputElement>document.getElementById('rarityPlatinum');
+  let rareGl = <HTMLInputElement>document.getElementById('rarityGold');
+  let rareSl = <HTMLInputElement>document.getElementById('raritySilver');
 
   // サリエットチェックの有無
-  const sarriette = <HTMLInputElement> document.getElementById('uSarriette');
+  const sarriette = <HTMLInputElement>document.getElementById('uSarriette');
   function sarriChecked() {
-    if(sarriette.checked == true) {
+    if (sarriette.checked == true) {
       formUnits.reset();
       sarriette.checked = true
-    } else if(sarriette.checked == false) {
+    } else if (sarriette.checked == false) {
       formUnits.reset();
       sarriette.checked = false
     }
   }
 
-  if(rareBk.checked) {
+  if (rareBk.checked) {
     selectedRarity.innerText = 'ブラック';
     sarriChecked();
     clearRadio();
     clearRel();
     rarityFilter('relBk');
     (document.getElementById('black99') as HTMLInputElement).checked = true;
-  } else if(rarePt.checked) {
+  } else if (rarePt.checked) {
     selectedRarity.innerText = 'プラチナ';
     sarriChecked();
     clearRadio();
     clearRel();
     rarityFilter('relPt');
     (document.getElementById('platinum99') as HTMLInputElement).checked = true;
-  } else if(rareGl.checked) {
+  } else if (rareGl.checked) {
     selectedRarity.innerText = 'ゴールド';
     sarriChecked();
     clearRadio();
     clearRel();
     rarityFilter('relGl');
     (document.getElementById('gold99') as HTMLInputElement).checked = true;
-  } else if(rareSl.checked) {
+  } else if (rareSl.checked) {
     selectedRarity.innerText = 'シルバー';
     sarriChecked();
     clearRadio();
@@ -149,56 +149,56 @@ function expCalculate() {
   const expResult = document.getElementById('expResult');
 
   // サリエット所持判定
-  const sarriette =  <HTMLInputElement> document.getElementById('uSarriette');
+  const sarriette = <HTMLInputElement>document.getElementById('uSarriette');
   function sarri() {
-    if(sarriette.checked == true){
+    if (sarriette.checked == true) {
       return 11;
-    } else if(sarriette.checked == false) {
+    } else if (sarriette.checked == false) {
       return 10;
     }
   }
 
   // 経験値ユニット
-  const uBarmor: any = <HTMLInputElement> document.getElementById('uBarmor');
-  const uParmor: any = <HTMLInputElement> document.getElementById('uParmor');
-  const uFarah: any = <HTMLInputElement> document.getElementById('uFarah');
-  const uFreude: any = <HTMLInputElement> document.getElementById('uFreude');
-  const uAlegria: any = <HTMLInputElement> document.getElementById('uAlegria');
+  const uBarmor: any = <HTMLInputElement>document.getElementById('uBarmor');
+  const uParmor: any = <HTMLInputElement>document.getElementById('uParmor');
+  const uFarah: any = <HTMLInputElement>document.getElementById('uFarah');
+  const uFreude: any = <HTMLInputElement>document.getElementById('uFreude');
+  const uAlegria: any = <HTMLInputElement>document.getElementById('uAlegria');
   //const uAmour: any = <HTMLInputElement> document.getElementById('uAmour');
-  const uPlease: any = <HTMLInputElement> document.getElementById('uPlease');
-  const uPrazer: any = <HTMLInputElement> document.getElementById('uPrazer');
-  const uSpiritSame: any = <HTMLInputElement> document.getElementById('uSpiritSame');
-  const uSpiritOthers: any = <HTMLInputElement> document.getElementById('uSpiritOthers');
+  const uPlease: any = <HTMLInputElement>document.getElementById('uPlease');
+  const uPrazer: any = <HTMLInputElement>document.getElementById('uPrazer');
+  const uSpiritSame: any = <HTMLInputElement>document.getElementById('uSpiritSame');
+  const uSpiritOthers: any = <HTMLInputElement>document.getElementById('uSpiritOthers');
 
-  document.getElementById('uBarmorExp').innerText = 40000*sarri()/10 + 'EXP';
-  document.getElementById('uParmorExp').innerText = 5000*sarri()/10 + 'EXP';
-  document.getElementById('uFarahExp').innerText = 20000*sarri()/10 + 'EXP';
-  document.getElementById('uFreudeExp').innerText = 19000*sarri()/10 + 'EXP';
-  document.getElementById('uAlegriaExp').innerText = 18000*sarri()/10 + 'EXP';
+  document.getElementById('uBarmorExp').innerText = 40000 * sarri() / 10 + 'EXP';
+  document.getElementById('uParmorExp').innerText = 5000 * sarri() / 10 + 'EXP';
+  document.getElementById('uFarahExp').innerText = 20000 * sarri() / 10 + 'EXP';
+  document.getElementById('uFreudeExp').innerText = 19000 * sarri() / 10 + 'EXP';
+  document.getElementById('uAlegriaExp').innerText = 18000 * sarri() / 10 + 'EXP';
   //document.getElementById('uAmourExp').innerText = 4000*sarri()/10 + 'EXP';
-  document.getElementById('uPleaseExp').innerText = 18000*sarri()/10 + 'EXP';
-  document.getElementById('uPrazerExp').innerText = 10000*sarri()/10 + 'EXP';
-  document.getElementById('uSpiritSameExp').innerText = 1000*sarri()/10 + 'EXP';
-  document.getElementById('uSpiritOthersExp').innerText = 500*sarri()/10 + 'EXP';
+  document.getElementById('uPleaseExp').innerText = 18000 * sarri() / 10 + 'EXP';
+  document.getElementById('uPrazerExp').innerText = 10000 * sarri() / 10 + 'EXP';
+  document.getElementById('uSpiritSameExp').innerText = 1250 * sarri() / 10 + 'EXP';
+  document.getElementById('uSpiritOthersExp').innerText = 500 * sarri() / 10 + 'EXP';
 
   // 経験値ユニット合計
   const uExp = (
-    uBarmor.value*40000*sarri()/10 +
-    uParmor.value*5000*sarri()/10 +
-    uFarah.value*20000*sarri()/10 +
-    uFreude.value*19000*sarri()/10 +
-    uAlegria.value*18000*sarri()/10 +
+    uBarmor.value * 40000 * sarri() / 10 +
+    uParmor.value * 5000 * sarri() / 10 +
+    uFarah.value * 20000 * sarri() / 10 +
+    uFreude.value * 19000 * sarri() / 10 +
+    uAlegria.value * 18000 * sarri() / 10 +
     //uAmour.value*4000*sarri()/10 +
-    uPlease.value*18000*sarri()/10 +
-    uPrazer.value*10000*sarri()/10 +
-    uSpiritSame.value*1000*sarri()/10 +
-    uSpiritOthers.value*500*sarri()/10
+    uPlease.value * 18000 * sarri() / 10 +
+    uPrazer.value * 10000 * sarri() / 10 +
+    uSpiritSame.value * 1250 * sarri() / 10 +
+    uSpiritOthers.value * 500 * sarri() / 10
   )
 
-  let rareBk = <HTMLInputElement> document.getElementById('rarityBlack');
-  let rarePt = <HTMLInputElement> document.getElementById('rarityPlatinum');
-  let rareGl = <HTMLInputElement> document.getElementById('rarityGold');
-  let rareSl = <HTMLInputElement> document.getElementById('raritySilver');
+  let rareBk = <HTMLInputElement>document.getElementById('rarityBlack');
+  let rarePt = <HTMLInputElement>document.getElementById('rarityPlatinum');
+  let rareGl = <HTMLInputElement>document.getElementById('rarityGold');
+  let rareSl = <HTMLInputElement>document.getElementById('raritySilver');
 
 
   const maxBlackLevel = [50, 80, 99];
@@ -207,7 +207,7 @@ function expCalculate() {
   const maxPlatinumExp = [18666, 51334, 107334, 136235];
   const maxGoldLevel = [50, 60, 80, 99];
   const maxGoldExp = [17333, 30333, 69333, 126504];
-  const maxSilverLevel = [50,55];
+  const maxSilverLevel = [50, 55];
   const maxSilverExp = [16000, 21492];
 
   // ラジオボタンのvalueはデフォルトだとString型として扱われているようなのでNumber型指定をする。
@@ -217,20 +217,20 @@ function expCalculate() {
     // indexOfで検索されるデータはデフォルトだとString型として扱われているようなのでNumber型指定をする。型指定が適切でないと「-1」を返す。
     const x = maxLevel.indexOf(Number(max));
     let requiredExp: number = (maxExp[x] - (totalExp[current]) - (nextExp[current] - next));
-    if(!(requiredExp)) {
+    if (!(requiredExp)) {
       expResult.innerHTML = '必要経験値　' + '<span>無効な数値が入力されています</span>';
     } else {
       expResult.innerHTML = '必要経験値　' + '<span>' + (requiredExp - uExp) + '</span>';
     }
   }
 
-  if(rareBk.checked) {
+  if (rareBk.checked) {
     reqExp(maxBlackLevel, maxBlackExp, totalBlackExp, nextBlackExp);
-  } else if(rarePt.checked) {
+  } else if (rarePt.checked) {
     reqExp(maxPlatinumLevel, maxPlatinumExp, totalPlatinumExp, nextPlatinumExp);
-  } else if(rareGl.checked) {
+  } else if (rareGl.checked) {
     reqExp(maxGoldLevel, maxGoldExp, totalGoldExp, nextGoldExp);
-  } else if(rareSl.checked) {
+  } else if (rareSl.checked) {
     reqExp(maxSilverLevel, maxSilverExp, totalSilverExp, nextSilverExp);
   }
 }
